@@ -1,0 +1,34 @@
+-- Haskell Playground 1.0
+appedCatty "woohoo!"
+frappe "1"
+appedCatty (frappe "blue")
+
+
+recursiveSum 4
+
+recursiveMultiply 100 6
+
+
+dividedBy 10 (-3)
+
+dividedBy 10 0
+
+
+mc91 101
+mc91 102
+mc91 100
+mc91 4
+
+map mc91 [95..110]
+
+
+(read ['1']) :: Int
+
+
+
+digits 23423123
+
+
+concat $ intersperse "-" ["hello", "world"]
+
+wordNumber 123456

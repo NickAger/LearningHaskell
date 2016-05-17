@@ -1,0 +1,11 @@
+name: Chapter7
+version: 1.0
+cabal-version: 1.6
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+Executable Chapter7
+  main-is: Chapter7.hs
+  buildable: True
+  build-depends:
+      base -any

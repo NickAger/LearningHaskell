@@ -1,0 +1,11 @@
+name: Chapter6
+version: 1.0
+cabal-version: 1.6
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+Executable Chapter6
+  main-is: Chapter6.hs
+  buildable: True
+  build-depends:
+      base -any

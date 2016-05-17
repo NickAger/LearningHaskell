@@ -1,0 +1,56 @@
+-- Haskell Playground 1.0
+let a = TisAn 5
+let b = TisAn 6
+
+a == b
+
+let c = TisAn 5
+
+a == c
+
+(Two 1 2) == (Two 1 2)
+(Two 2 2) == (Two 1 2)
+
+TisAnInt 6 == TisAnInt 6
+TisAString "hello" == TisAString "hello"
+
+TisAnInt 6 == TisAnInt 7
+TisAString "hello" == TisAString "hello3"
+
+TisAString "hello" == TisAnInt 6
+
+Pair 1 2 == Pair 1 2
+Pair 2 2 == Pair 1 2
+Pair "hello" "world" == Pair "hello" "world"
+Pair "hello" "world" == Pair "hello" "world2"
+
+Tuple 1 2 == Tuple 1 2
+Tuple 2 2 == Tuple 1 2
+Tuple "hello" "world" == Tuple "hello" "world"
+Tuple "hello" "world" == Tuple "hello" "world2"
+
+Tuple 1 "hello" == Tuple 1 "hello"
+Tuple 1 "hello" == Tuple 1 "bye"
+
+ThisOne 1 == ThisOne 1
+ThisOne "help" == ThisOne "help"
+ThatOne 1 == ThatOne 1
+ThatOne "help" == ThatOne "help"
+ThisOne 1 == ThatOne 1
+
+Hello "there" == Hello "there"
+Hello "there" == Hello "there2"
+Goodbye "there" == Goodbye "there"
+Goodbye "there" == Goodbye "there2"
+Hello "there" == Goodbye 3
+
+printPerson (Person True)
+
+-- settleDown 5
+
+let s1 = Sentence "dogs" "drool"
+let s2 = Sentence "Julie" "loves" "dogs"
+
+let i = 1
+
+let f = 1.0

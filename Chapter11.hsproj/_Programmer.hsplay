@@ -1,0 +1,6 @@
+-- Haskell Playground 1.0
+length allProgrammers
+length (nub allProgrammers)
+length allLanguages * length allOperatingSystems
+
+

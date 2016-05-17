@@ -1,0 +1,51 @@
+-- Haskell Playground 1.0
+let myCar = Car Mini (Price 14000)
+let urCar = Car Mazda (Price 20000)
+let doge = Plane PapuAir (Size 300)
+
+isCar myCar
+isCar doge
+
+getManu myCar
+
+getManu doge
+
+maxBound :: Int
+minBound :: Int
+
+tooMany (42 ::Int)
+-- tooMany (42 ::Integer)
+
+tooMany (Goats 43)
+tooMany (Goats 44)
+
+tooMany (42 ::Int, "hello")
+tooMany (43 ::Int, "hello")
+
+tooMany (12::Int, 20::Int)
+tooMany (22::Int, 21::Int)
+
+let a = TestAgain 126
+
+map quantity allJam
+totalJam allJam
+totalJam2 allJam
+
+mostRow allJam
+mostRow2 allJam
+
+compare row1 row1
+compare row1 row4
+compare row1 row2
+
+compare Peach Plum
+compare Apple Peach
+compare Apple Blackberry
+
+groupJams allJam
+
+let bess = First (CowInfo "Bess" 4) :: Animal'
+let elmer' = Second (SheepInfo "Elmer" 5 5)
+let elmer = Second elmer' :: Animal'
+
+

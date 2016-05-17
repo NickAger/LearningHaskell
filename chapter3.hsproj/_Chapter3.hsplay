@@ -1,0 +1,47 @@
+-- Haskell Playground 1.0
+main
+
+changeMood Woot
+changeMood Blah
+
+'a' > 'A'
+["Merry"] > ["Happy"]
+(1 * 2) > 5
+(56, "hello")
+
+import Data.Tuple
+
+let myTup = (1 :: Integer, "blah")
+
+swap myTup
+
+let awesome = ["Papuchon", "curry", ":)"]
+let alsoAwesome = ["Quake", "The Simons"]
+let allAwesome = [awesome, alsoAwesome]
+
+length [1,2,3,4,5]
+length [(1,2), (2,3), (3,4)]
+length allAwesome
+length $ concat allAwesome
+
+
+6 `div` length [1,2,3]
+2 + 3 == 5
+length allAwesome == 2
+
+(8 == 8) && ('b' < 'a')
+
+
+
+isPalindrome "Oxo"
+
+myAbs 67
+myAbs (-67)
+myAbs 0
+myAbs (-1)
+
+f1 "hello"
+f1
+
+(\ (x:xs) -> x) "hello world"
+f2 (1,2)

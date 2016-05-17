@@ -1,0 +1,27 @@
+-- Haskell Playground 1.0
+dodgy 1 0
+dodgy 1 1
+dodgy 2 2
+dodgy 1 2
+dodgy 2 1
+
+oneIsOne 1
+oneIsOne 2
+
+oneIsTwo 1
+oneIsTwo 2
+
+oneIsOne 3
+oneIsTwo 3
+
+addOne . addOne $ 0
+
+tensDigit 123
+
+tensDigit2 123
+
+hunsD 5123
+
+print((roundTrip3 4))
+--print(id 4)
+
