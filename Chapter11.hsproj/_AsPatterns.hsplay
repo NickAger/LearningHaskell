@@ -1,0 +1,21 @@
+-- Haskell Playground 1.0
+isSubsequenceOf "blah" "blahwoot"
+isSubsequenceOf "blah" "wootblah"
+isSubsequenceOf "blah" "wboloath"
+isSubsequenceOf "blah" "wootbla"
+
+capitalizeWords "hello world"
+
+capitalizeWord "Titter"
+capitalizeWord "titter"
+
+splitAt 6 "hello world"
+
+
+foldr (\(c,n) acc -> if c == '.' then n:acc else acc) [] $ zip "blah. woot ha." [0..]
+foldr (\(n) (orig, splits) -> let (first, second) = splitAt n orig in (first, second:splits)) ("blah. woot ha.", []) [4,13]
+
+
+map capitalizeSentence $ splitSentences "blah. woot ha."
+
+capitalizeParagraph "blah. woot ha."

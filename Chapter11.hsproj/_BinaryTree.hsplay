@@ -7,3 +7,9 @@ postorder2 testTree == [1, 3, 2]
 
 foldr insert' Leaf [1..10]
 foldr insert' Leaf [8,6,4,1,7,3,5]
+
+ 
+
+(10/3) * 3
+
+

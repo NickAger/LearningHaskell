@@ -13,6 +13,8 @@ Executable Chapter11
       base -any
   other-modules:
       Programmer
+      AsPatterns
       VigenereCipher
+      PhoneExercise
       BinaryTree
       BinaryTree2
