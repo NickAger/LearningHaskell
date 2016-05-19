@@ -1,0 +1,38 @@
+-- Haskell Playground 1.0
+map chars $ buttons standardKeypad
+
+let button = find (\b -> 'c' `elem` (chars b)) $ buttons standardKeypad
+let c = chars <$> button
+let d = c 
+let f = chars <$> button >>= elemIndex 'c'
+
+reverseTaps standardKeypad 'a'
+reverseTaps standardKeypad 'A'
+
+
+concat ["hello", "hello"]
+
+map (cellPhonesDead standardKeypad) convo
+
+map fingerTaps $ map (cellPhonesDead standardKeypad) convo
+
+groupWith fst $ cellPhonesDead standardKeypad "Wanna play 20 questions"
+
+mostPopularLetter "Wanna play 20 questions"
+
+coolestLtr convo
+
+words "Wanna play 20 questions"
+
+concat $ map words convo
+groupBy (==) $ concat $ map words convo
+
+
+groupBy (==) ["hello", "again", "I", "said", "hello", "why", "doesn't", "this", "work", "as", "I", "expect"]
+
+
+group $ sort ["hello", "again", "I", "said", "hello", "why", "doesn't", "this", "work", "as", "I", "expect"]
+
+length [1..10]
+
+coolestWord convo
