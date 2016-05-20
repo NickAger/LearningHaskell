@@ -1,0 +1,5 @@
+-- Haskell Playground 1.0
+treeBuild 0
+treeBuild 1
+treeBuild 2
+treeBuild 3

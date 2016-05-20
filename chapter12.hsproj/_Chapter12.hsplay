@@ -1,0 +1,84 @@
+-- Haskell Playground 1.0
+map Just [1..4]
+
+notThe "the"
+notThe "woot"
+
+replaceThe "the cow loves us"
+
+
+'a' `elem` "aeiou"
+
+countTheBeforeVowel "the cow"
+countTheBeforeVowel "the evil cow"
+
+countTheBeforeVowel2 "the cow"
+countTheBeforeVowel2 "the evil cow"
+
+
+countVowels "the evil cow"
+
+mkWord "hello"
+mkWord "elo"
+
+let wds = words "the cow loves us"
+let pairs = zip wds $ tail wds
+filter ((=="the").fst) pairs
+
+natToInteger Zero
+natToInteger (Succ Zero)
+natToInteger (Succ (Succ Zero))
+
+integerToNat 0
+integerToNat 1
+integerToNat 2
+integerToNat (-1)
+
+isJust (Just 1)
+isJust Nothing
+
+isNothing (Just 1)
+isNothing Nothing
+
+mayybee 0 (+1) Nothing
+mayybee 0 (+1) (Just 1)
+
+fromMaybe' 0 Nothing
+fromMaybe' 0 (Just 1)
+
+fromMaybe2 0 Nothing
+fromMaybe2 0 (Just 1)
+
+listToMaybe [1,2,3]
+listToMaybe []
+
+maybeToList (Just 1)
+maybeToList Nothing
+
+maybeToList2 (Just 1)
+maybeToList2 Nothing
+
+catMaybes [Just 1, Just 2, Just 3]
+catMaybes [Just 1, Nothing, Just 3]
+catMaybes [Nothing, Nothing, Nothing]
+
+flipMaybe [Just 1, Just 2, Just 3]
+flipMaybe [Just 1, Nothing, Just 3]
+
+
+lefts' [Left 10, Right "hello", Left 30]
+rights' [Left 10, Right "hello", Left 30]
+
+partitionEithers' [Left 10, Right "hello", Left 30]
+
+eitherMaybe' (+1) (Right 2)
+eitherMaybe' (+1) (Left 2)
+
+take 10 $ iterate (+1) 0
+take 10 $ myIterate (+1) 0
+
+take 10 $ unfoldr (\b -> Just(b, b+1)) 0
+take 10 $ myUnfoldr (\b -> Just(b, b+1)) 0
+
+take 10 $ betterIterate (+1) 0
+

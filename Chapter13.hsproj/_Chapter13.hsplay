@@ -1,0 +1,5 @@
+-- Haskell Playground 1.0
+main
+
+map (const Nothing) "hello"
+take (length "hello") $ repeat Nothing
