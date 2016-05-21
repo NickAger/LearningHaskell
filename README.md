@@ -10,6 +10,7 @@ From the stack video:
 > ...install stack
 > stack setup
 > ls ~/.stack/programs/x86_64-osx/ghc-7.10.3
+> stack path
 
 
 From the getting started with haskell:
