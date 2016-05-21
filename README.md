@@ -11,6 +11,7 @@ From the stack video:
 > stack setup
 > ls ~/.stack/programs/x86_64-osx/ghc-7.10.3
 > stack path
+> stack build wreq
 
 
 From the getting started with haskell:
