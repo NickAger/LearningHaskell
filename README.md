@@ -13,11 +13,13 @@ From the stack video:
 > stack path
 > stack build wreq
 >
-> # finding out where docker file system is on the local machine
+> -- finding out where docker file system is on the local machine
 > cd /var/lib/docker/aufs/mnt
 > docker ps
 > cd 
 > cd ~/.stack/snapshots/x86_64-osx/lts-5.9/7.10.3/pkgdb
+>
+> stack install pandoc
 
 
 
