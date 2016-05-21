@@ -9,6 +9,7 @@ From the stack video:
 > docker run -t -i ubuntu bash
 > ...install stack
 > stack setup
+> ls ~/.stack/programs/x86_64-osx/ghc-7.10.3
 
 
 From the getting started with haskell:
