@@ -6,6 +6,7 @@ Some links:
 * http://lonelyproton.com/posts/26-getting-started-with-haskell-development-3
 
 From the stack video:
+```
 > docker run -t -i ubuntu bash
 > ...install stack
 > stack setup
@@ -20,6 +21,7 @@ From the stack video:
 > cd ~/.stack/snapshots/x86_64-osx/lts-5.9/7.10.3/pkgdb
 >
 > stack install pandoc
+```
 
 
 
