@@ -7,6 +7,8 @@ Some links:
 
 From the stack video:
 > docker run -t -i ubuntu bash
+> ...install stack
+> stack setup
 
 
 From the getting started with haskell:
