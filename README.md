@@ -43,6 +43,22 @@ this will try to find stackage lts that will resolve all dependencies. If howeve
 
 ```
 stack init --resolver lts-3.10
+```
+
+finding out which debian package contains some libraries:
+
+```
+sudo apt-cache search icu dev
+```
+
+alternatively when you are searching for a specific shared object file (or DLL) eg `libtinfo.so`. First install `apt-file`
+
+```
+sudo apt-get install apt-file
+sudo apt-file update
+sudo apt-file search libtinfo.so
+```
+
 
 ---
 
