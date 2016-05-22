@@ -6,6 +6,7 @@ Workspaces made within http://haskellformac.com created while learning http://ha
 Some links:
 * Comprehensive Stack [overview video tutorial](https://www.youtube.com/watch?v=sRonIB8ZStw)
 * http://lonelyproton.com/posts/26-getting-started-with-haskell-development-3
+* https://github.com/bitemyapp/learnhaskell/blob/master/code_to_learn_from.md
 
 From the stack video:
 ```
@@ -33,6 +34,13 @@ From the stack video:
 sudo apt-get darcs
 ```
 
+To take a project which doesn't have a `stack.yml` and add one:
+
+```
+stack init
+```
+
+---
 
 From the getting started with haskell:
 
