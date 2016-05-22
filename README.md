@@ -29,6 +29,10 @@ From the stack video:
 
 "stack replaces `cabal install`"
 
+```
+sudo apt-get darcs
+```
+
 
 From the getting started with haskell:
 
