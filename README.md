@@ -1,6 +1,8 @@
 # LearningHaskell
 Workspaces made within http://haskellformac.com created while learning http://haskellbook.com
 
+----
+
 Some links:
 * Comprehensive Stack [overview video tutorial](https://www.youtube.com/watch?v=sRonIB8ZStw)
 * http://lonelyproton.com/posts/26-getting-started-with-haskell-development-3
@@ -21,6 +23,8 @@ From the stack video:
 > cd ~/.stack/snapshots/x86_64-osx/lts-5.9/7.10.3/pkgdb
 >
 > stack install pandoc
+>
+> stack new test.project
 ```
 
 
