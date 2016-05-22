@@ -24,7 +24,7 @@ From the stack video:
 >
 > stack install pandoc
 >
-> stack new test.project
+> stack new test-project
 ```
 
 
