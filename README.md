@@ -39,6 +39,10 @@ To take a project which doesn't have a `stack.yml` and add one:
 ```
 stack init
 ```
+this will try to find stackage lts that will resolve all dependencies. If however you want to specify an lts version manually:
+
+```
+stack init --resolver lts-3.10
 
 ---
 
