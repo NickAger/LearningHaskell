@@ -57,6 +57,7 @@ alternatively when you are searching for a specific shared object file (or DLL) 
 sudo apt-get install apt-file
 sudo apt-file update
 sudo apt-file search libtinfo.so
+sudo apt-get intall libtinfo-dev
 ```
 
 
