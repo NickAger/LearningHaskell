@@ -27,6 +27,7 @@ From the stack video:
 > stack new test-project
 ```
 
+"stack replaces `cabal install`"
 
 
 From the getting started with haskell:
