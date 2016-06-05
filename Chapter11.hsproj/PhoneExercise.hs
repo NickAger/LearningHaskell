@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -fwarn-incomplete-patterns #-}
+
 module PhoneExercise where
 import Data.Char
 import Data.List

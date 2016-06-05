@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -fwarn-incomplete-patterns #-}
+
 module AsPatterns where
   
 import Data.Char
@@ -27,4 +29,4 @@ capitalizeSentence ('.':x:xs) =  '.':(toUpper x):xs
 capitalizeSentence (x:xs) =  (toUpper x):xs
 
 capitalizeParagraph :: String -> String
-capitalizeParagraph s = concat $ map capitalizeSentence $ splitSentences "blah. woot ha."
+capitalizeParagraph s = concat $ map capitalizeSentence $ splitSentences s
