@@ -19,3 +19,5 @@ foldr (\(n) (orig, splits) -> let (first, second) = splitAt n orig in (first, se
 map capitalizeSentence $ splitSentences "blah. woot ha."
 
 capitalizeParagraph "blah. woot ha."
+
+
