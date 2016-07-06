@@ -1,0 +1,19 @@
+-- Haskell Playground 1.0
+sample' trivialInt
+sample' oneThroughThree
+
+sample' genBool
+sample' genBool'
+
+sample' genOrdering
+
+sample' genTuple
+sample' (genTuple :: Gen (Int, Float))
+sample' (genTuple :: Gen ([()], Char))
+
+sample' (genEither :: Gen (Either Int String))
+
+sample' (genMaybe :: Gen (Maybe Int))
+sample' (genMaybe' :: Gen (Maybe Int))
+
+runQc
