@@ -7,10 +7,16 @@ stability: experimental
 x-ghc-framework-version: 7.10.3-5.9-2
 x-last-ide-version: HfM1.2.1
 Executable Chapter14
-  main-is: Chapter14.hs
+  main-is: QuickCheck1.hs
   buildable: True
   build-depends:
       base -any,
       QuickCheck -any
   other-modules:
+      QuickCheck2
+      QuickCheck3
+      QuickCheck6
+      QuickCheck7
       Addition
+      QuickCheck5
+      QuickCheck4

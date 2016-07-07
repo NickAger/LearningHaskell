@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+listOrdered $ sort [4,2,5,6]
+
+runQc
