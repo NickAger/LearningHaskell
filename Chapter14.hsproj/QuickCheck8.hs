@@ -8,7 +8,8 @@ import Test.QuickCheck.Function
 -- Write a property for the definition of ($).-- f $ a == f a
 -- f . g == \x -> f (g x)
 
-
+-- modified code in:
+-- https://hackage.haskell.org/package/QuickCheck-2.8.2/docs/Test-QuickCheck-Function.html#t:Function
 prop_funcdollar :: Fun String Integer -> String -> Bool
 prop_funcdollar (Fn f) x = (f $ x) == (f x)
 
