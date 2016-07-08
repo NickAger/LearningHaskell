@@ -13,10 +13,14 @@ Executable Chapter14
       base -any,
       QuickCheck -any
   other-modules:
+      QuickCheck9
       QuickCheck2
       QuickCheck3
+      QuickCheck11
       QuickCheck6
       QuickCheck7
       Addition
       QuickCheck5
+      QuickCheck8
+      QuickCheck10
       QuickCheck4

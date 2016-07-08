@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+quickCheck prop_foldrConcat
+
+verboseCheck prop_foldrConcat2

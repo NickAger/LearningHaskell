@@ -4,20 +4,18 @@ module QuickCheck7 where
 
 import Test.QuickCheck
 
--- Is (^) associative? Is it commutative? Use QuickCheck to see if the computer can contradict such an assertion.
+-- Test that reversing a list twice is the same as the identity of the list:
+-- reverse . reverse == id
 
-powerAssociative x y z =  x ^ (y ^ z) == (x ^ y) ^ z
-  
-powerCommutative x y =
-  x ^ y == y ^ x
-  
-prop_associative :: (Eq a, Integral a) => a -> a -> a -> Bool
-prop_associative = powerAssociative
+prop_doubleReverse :: Eq a => [a] -> Bool
+prop_doubleReverse xs = (reverse . reverse) xs == id xs
 
-prop_commutative :: (Eq a, Integral a) => a -> a -> Bool
-prop_commutative = powerCommutative
+
+-- from https://www.dcc.fc.up.pt/~pbv/aulas/tapf/slides/quickcheck.html#5.0
+prop_rev_rev xs = reverse (reverse xs) == xs
+   where types = xs::[Int]
+
 
 runQc :: IO ()
 runQc = do
-  quickCheck prop_associative
-  quickCheck prop_commutative
+  quickCheck prop_doubleReverse
