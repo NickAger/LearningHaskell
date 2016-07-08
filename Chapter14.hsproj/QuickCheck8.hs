@@ -10,6 +10,8 @@ import Test.QuickCheck.Function
 
 -- modified code in:
 -- https://hackage.haskell.org/package/QuickCheck-2.8.2/docs/Test-QuickCheck-Function.html#t:Function
+-- told I should also look at CoArbitary -> https://hackage.haskell.org/package/QuickCheck-2.8.2/docs/Test-QuickCheck-Arbitrary.html
+-- not quite sure what its doing...
 prop_funcdollar :: Fun String Integer -> String -> Bool
 prop_funcdollar (Fn f) x = (f $ x) == (f x)
 
