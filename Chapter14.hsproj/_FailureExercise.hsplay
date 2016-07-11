@@ -1,0 +1,7 @@
+-- Haskell Playground 1.0
+-- quickCheck prop_squareIdentity
+
+verboseCheck prop_squareIdentity
+
+squareIdentity 9 == 9
+

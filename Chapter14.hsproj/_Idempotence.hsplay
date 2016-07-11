@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+quickCheck prop_capitalizationIdemptence
+
+quickCheck prop_sortIdemptence

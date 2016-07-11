@@ -11,16 +11,22 @@ Executable Chapter14
   buildable: True
   build-depends:
       base -any,
-      QuickCheck -any
+      QuickCheck -any,
+      random -any
   other-modules:
-      QuickCheck9
+      Hangman
       QuickCheck2
-      QuickCheck3
+      Idempotence
+      GenExercises
       QuickCheck11
-      QuickCheck6
       QuickCheck7
-      Addition
       QuickCheck5
       QuickCheck8
       QuickCheck10
       QuickCheck4
+      QuickCheck3
+      QuickCheck6
+      QuickCheck9
+      Addition
+      FailureExercise
+      HangmanTesting
