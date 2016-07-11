@@ -22,12 +22,11 @@ puzzleGenerator = do
       
       fillInDiscoveredLetters :: String -> [Char] -> [Maybe Char]
       fillInDiscoveredLetters word guessed = 
-        foldl fillInGuessCharacter emptyDiscovered guessed
+        map fillInGuessCharacter word
         where
-          emptyDiscovered = take (length word) $ repeat Nothing
-          fillInGuessCharacter acc c = zipWith (zipper c) word acc
-            where
-              zipper guess wordChar discovered = if wordChar == guess then Just wordChar else discovered   
+          fillInGuessCharacter c 
+            | elem c guessed = Just c
+            | otherwise = Nothing   
       
 instance Arbitrary Puzzle where
   arbitrary = puzzleGenerator
