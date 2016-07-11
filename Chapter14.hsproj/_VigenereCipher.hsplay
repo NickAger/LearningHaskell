@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+vigenèreCipher "ALLY" "MEET AT DAWN" == "MPPR AE OYWY"
+
+vigenèreUnCipher "ALLY" "MPPR AE OYWY"

@@ -1,6 +1,6 @@
 -- Haskell Playground 1.0
 sample puzzleGenerator
 quickCheck prop_fillInCharacter
-
--- quickCheck prop_handleGuess2
+ 
+quickCheck prop_handleGuess2
 

@@ -19,14 +19,17 @@ Executable Chapter14
       Idempotence
       GenExercises
       QuickCheck11
-      QuickCheck7
+      CaesarCipher
       QuickCheck5
+      QuickCheck7
       QuickCheck8
       QuickCheck10
       QuickCheck4
       QuickCheck3
+      TestCiphers
       QuickCheck6
       QuickCheck9
       Addition
+      VigenereCipher
       FailureExercise
       HangmanTesting

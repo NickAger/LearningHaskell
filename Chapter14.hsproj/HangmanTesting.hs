@@ -3,7 +3,7 @@
 module HangmanTesting where
 
 import Test.QuickCheck
---import Test.QuickCheck.Monadic
+import Test.QuickCheck.Monadic
 import Hangman
 import Control.Monad
 
@@ -60,11 +60,12 @@ prop_handleGuess puzzle@(Puzzle word _ guessed _) c
     checkNotFoundLetter (Puzzle _ _ _ initialNumGuesses) = do
       (Puzzle _ discoveredLetters guesses numGuesses) <- handleGuess puzzle c
       return (not (elem (Just c) discoveredLetters) && (numGuesses == initialNumGuesses + 1) && elem c guesses) 
-    
---prop_handleGuess2 puzzle c = monadicIO $ do
---  (_, _, result) <- run (prop_handleGuess puzzle c)
---  return True
-
    
+-- see http://stackoverflow.com/questions/2259926/testing-io-actions-with-monadic-quickcheck
+prop_handleGuess2 :: Puzzle -> Char -> Property 
+prop_handleGuess2 puzzle c = monadicIO $ do
+  result <- run (prop_handleGuess puzzle c)
+  assert $ result == True
+
   
      

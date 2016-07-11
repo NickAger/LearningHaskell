@@ -1,0 +1,12 @@
+-- Haskell Playground 1.0
+caesarCipher 20 "HELLO"
+uncaesarCipher 20 "BYFFI"
+
+vigenèreCipher "ALLY" "MEET AT DAWN" == "MPPR AE OYWY"
+
+vigenèreUnCipher "ALLY" "MPPR AE OYWY"
+
+quickCheck prop_caesarCipher
+quickCheck prop_vigenèreCipher
+
+caesarCipher 0 " TEST"
