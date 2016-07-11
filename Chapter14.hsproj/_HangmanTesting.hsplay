@@ -4,12 +4,3 @@ quickCheck prop_fillInCharacter
 
 -- quickCheck prop_handleGuess2
 
-let puzzle@(Puzzle _ initialDiscovered _ _) = Puzzle "hello" [Nothing, Just 'e', Nothing, Nothing, Just 'o'] "eo" 0
-
-let puzzle2@(Puzzle _ discovered _ _) = fillInCharacter puzzle 'o'
-puzzle2
-
-initialDiscovered == discovered
-
-trace "hello" True
-

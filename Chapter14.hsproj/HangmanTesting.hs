@@ -3,37 +3,35 @@
 module HangmanTesting where
 
 import Test.QuickCheck
-import Test.QuickCheck.Monadic
+--import Test.QuickCheck.Monadic
 import Hangman
-import Debug.Trace
+import Control.Monad
 
 puzzleGenerator :: Gen Puzzle
 puzzleGenerator = do
     NonEmpty word <- arbitrary
-    discoveredLetters <- generateDiscoveredLetters word
-    let guessed = foldl fillInGuessCharacter [] discoveredLetters
+    guessed <- generateGuessLetters word
+    let discoveredLetters = fillInDiscoveredLetters word guessed
     return (Puzzle word discoveredLetters guessed 0)
-    where      
-      generateDiscoveredLetters :: String -> Gen [Maybe Char]
-      generateDiscoveredLetters word = do
-        mapM discoveredLetter word
+    where
+      generateGuessLetters :: String -> Gen [Char]
+      generateGuessLetters word = filterM includeCharacter word        
+        where 
+          includeCharacter :: Char -> Gen Bool
+          includeCharacter _ = arbitrary
+      
+      fillInDiscoveredLetters :: String -> [Char] -> [Maybe Char]
+      fillInDiscoveredLetters word guessed = 
+        foldl fillInGuessCharacter emptyDiscovered guessed
         where
-          discoveredLetter :: Char -> Gen (Maybe Char)
-          discoveredLetter c = do
-             value <- generateBool
-             return (if value == True then Just c else Nothing)
-          generateBool :: Gen Bool
-          generateBool = do
-            value <- arbitrary
-            return value
-      fillInGuessCharacter :: [Char] -> Maybe Char -> [Char]      
-      fillInGuessCharacter acc (Just c) = c : acc 
-      fillInGuessCharacter acc Nothing = acc      
+          emptyDiscovered = take (length word) $ repeat Nothing
+          fillInGuessCharacter acc c = zipWith (zipper c) word acc
+            where
+              zipper guess wordChar discovered = if wordChar == guess then Just wordChar else discovered   
       
 instance Arbitrary Puzzle where
   arbitrary = puzzleGenerator
   
--- TODO: why does it fail (ocassionally) with the test (initialDiscoveredLetters == discoveredLetters)
 prop_fillInCharacter :: Puzzle -> Char -> Bool
 prop_fillInCharacter puzzle@(Puzzle word _ guessed _) c
   | elem c guessed = alreadyGuessed puzzle updatedPuzzle
@@ -42,12 +40,7 @@ prop_fillInCharacter puzzle@(Puzzle word _ guessed _) c
   where
     updatedPuzzle = fillInCharacter puzzle c
     alreadyGuessed (Puzzle _ initialDiscoveredLetters _ initialNumGuesses) (Puzzle _ discoveredLetters _ numGuesses) =
-      (numGuesses == initialNumGuesses + 1) && 
-      (
-        (trace ("initialDiscoveredLetters: '" ++ (show initialDiscoveredLetters) ++ "'") initialDiscoveredLetters)
-         == 
-        (trace ("discoveredLetters: '" ++ (show discoveredLetters) ++ "'") discoveredLetters)
-      ) 
+      (numGuesses == initialNumGuesses + 1) && initialDiscoveredLetters == discoveredLetters
     checkFoundLetter (Puzzle _ _ _ initialNumGuesses) (Puzzle _ discoveredLetters guesses numGuesses) = 
       elem (Just c) discoveredLetters && (numGuesses == initialNumGuesses + 1) && elem c guesses 
     checkNotFoundLetter (Puzzle _ _ _ initialNumGuesses) (Puzzle _ discoveredLetters guesses numGuesses) = 
