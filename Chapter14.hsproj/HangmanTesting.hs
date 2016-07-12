@@ -27,7 +27,11 @@ puzzleGenerator = do
           fillInGuessCharacter c 
             | elem c guessed = Just c
             | otherwise = Nothing   
-      
+
+-- WARNING: "Orphan instance: instance Arbitrary Puzzle"
+-- see Chapter 15 - "The problem of orphan instances"
+-- "Define your own newtype wrapping the original type and now you’ve got a type that “belongs” to you for which you can rightly define typeclass instances. There are means of making this less annoying which we’ll discuss later..."
+-- I've still to read: "means of making this less annoying"
 instance Arbitrary Puzzle where
   arbitrary = puzzleGenerator
   

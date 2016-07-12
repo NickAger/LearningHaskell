@@ -5,7 +5,8 @@ module Hangman (
   ) where
   
 -- note this won't work in HaskellForMac as there is no option for interactive input
--- however I've imported it all for testing...
+-- however I've imported it as-is from Chapter 13 as we're interested in testing
+-- here not running hangman
 
 import Control.Monad (forever)
 import Data.Char (toLower)
