@@ -10,7 +10,11 @@ Executable Chapter15
   main-is: Chapter15.hs
   buildable: True
   build-depends:
-      base -any
+      base -any,
+      QuickCheck -any
   other-modules:
       OptionalMonoid
+      MaybeAnotherMonoid
+      Bull
       MadLibs
+      MonoidAssociationLaws

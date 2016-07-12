@@ -1,0 +1,7 @@
+-- Haskell Playground 1.0
+main
+
+First' (Only 1) `mappend` First' Nada
+First' Nada `mappend` First' Nada
+First' Nada `mappend` First' (Only 2)
+First' (Only 1) `mappend` First' (Only 2)

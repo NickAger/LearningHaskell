@@ -1,4 +1,6 @@
-module OptionalMonoid where
+module OptionalMonoid (
+    Optional (Nada, Only)
+  ) where
 
 import Data.Monoid 
   

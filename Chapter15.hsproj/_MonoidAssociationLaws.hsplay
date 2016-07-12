@@ -1,0 +1,8 @@
+-- Haskell Playground 1.0
+-- for brevity
+type S = String
+type B = Bool
+
+quickCheck (monoidAssoc :: S -> S -> S -> B)
+quickCheck (monoidLeftIdentity :: S -> B)
+quickCheck (monoidRightIdentity :: S -> B)
