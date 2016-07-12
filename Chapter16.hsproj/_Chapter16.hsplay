@@ -1,0 +1,13 @@
+-- Haskell Playground 1.0
+map (+1) [1..10]
+
+-- function application is a functor
+let tossEmOne = fmap (+1) negate
+tossEmOne 10
+tossEmOne (-10)
+tossEmOne (-1)
+tossEmOne 1
+
+
+
+
