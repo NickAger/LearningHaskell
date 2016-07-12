@@ -1,19 +1,25 @@
 module CaesarCipher (
-  caesarCipher,
-  uncaesarCipher
+    caesarCipher
+  , uncaesarCipher
   )  where
   
 import Data.Char
+import CipherDirection
 
-caesarCipher ::  Int -> String -> String
-caesarCipher n s = map encryptCharacter s
+--
+masterCaesarCipher :: CipherDirection -> Int -> String -> String
+masterCaesarCipher direction n s = map cipherCharacter s
   where
-    encryptCharacter ' ' = ' '
-    encryptCharacter c = chr ((ord 'A') + ((ord . toUpper $ c) - (ord 'A') + n) `mod` 26)
+    cipherCharacter ' ' = ' '
+    cipherCharacter c = chr ((ord 'A') + ((ord . toUpper $ c) - (ord 'A') `directionOperator` n) `mod` 26)
+    directionOperator = case direction of
+      Cipher ->  (-)
+      UnCipher -> (+)
+
+-- 
+caesarCipher ::  Int -> String -> String
+caesarCipher = masterCaesarCipher Cipher
 
 
 uncaesarCipher ::  Int -> String -> String
-uncaesarCipher n s = map decryptCharacter s 
-  where
-     decryptCharacter ' ' = ' '
-     decryptCharacter c =  chr ((ord 'A') + ((ord . toUpper $ c) - (ord 'A') - n) `mod` 26)
+uncaesarCipher = masterCaesarCipher UnCipher

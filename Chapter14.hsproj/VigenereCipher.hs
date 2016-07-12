@@ -6,9 +6,8 @@ module VigenereCipher (
   ) where
   
 import Data.Char
+import CipherDirection
 
-data CipherDirection = UnCipher | Cipher deriving (Show, Eq)
- 
 -- I was attached to using cycle and zip to provide the seed letters
 -- for each letter in the target phrase. However that then meant
 -- that I had to remove the spaces, remembering their location
@@ -23,9 +22,9 @@ masterVigenèreCipher direction seed s =
     applyCipher seed s = map applyCipherToChar $ letterCiphers seed s
     
     applyCipherToChar :: (Char, Int) -> Char
-    applyCipherToChar (c, s) = chr ((ord 'A') + ((ord . toUpper $ c) - (ord 'A') `cipherDirection` s) `mod` 26)
+    applyCipherToChar (c, s) = chr ((ord 'A') + ((ord . toUpper $ c) - (ord 'A') `directionOperator` s) `mod` 26)
       where
-        cipherDirection = case direction of
+        directionOperator = case direction of
           Cipher ->  (-)
           UnCipher -> (+)
     

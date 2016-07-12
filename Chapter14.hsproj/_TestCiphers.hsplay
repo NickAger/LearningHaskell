@@ -10,3 +10,7 @@ quickCheck prop_caesarCipher
 quickCheck prop_vigenèreCipher
 
 caesarCipher 0 " TEST"
+
+null "hello"
+
+

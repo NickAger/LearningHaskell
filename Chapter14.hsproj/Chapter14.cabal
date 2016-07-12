@@ -14,7 +14,7 @@ Executable Chapter14
       QuickCheck -any,
       random -any
   other-modules:
-      Hangman
+      HangmanTesting
       QuickCheck2
       Idempotence
       GenExercises
@@ -27,9 +27,10 @@ Executable Chapter14
       QuickCheck4
       QuickCheck3
       TestCiphers
+      CipherDirection
       QuickCheck6
       QuickCheck9
       Addition
       VigenereCipher
       FailureExercise
-      HangmanTesting
+      Hangman

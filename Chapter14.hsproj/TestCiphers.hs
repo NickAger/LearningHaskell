@@ -15,7 +15,8 @@ genUpperString = listOf genUpperChar
 newtype UpperString = UpperString { unwrapUpperString :: String }
     deriving Show
 
--- ensure we don't generate empty strings; from NonEmptyList
+-- ensure we don't generate empty strings - genUpperString `suchThat` (not . null)  
+-- code taken from Test.QuickCheck.Modifiers.NonEmptyList
 instance Arbitrary UpperString where
     arbitrary = UpperString <$> (genUpperString `suchThat` (not . null))
 --
