@@ -1,0 +1,122 @@
+
+-- (1) Try to predict the performance of the following functions. Also
+-- generate heap profiles:
+--
+-- rev   =  foldl (flip (:)) []
+-- rev'  =  foldr (\ x r -> r ++ [x]) []
+--
+-- Use them as function f in a main program as follows:
+--
+-- main = print $ f [1 .. 1000000]
+--
+-- Adapt the number 1000000 as needed to get good results. First
+-- try without GHC optimization, then with. Explain the results.
+--
+--
+-- (2) Then do the same for:
+--
+-- conc xs ys = foldr (:) ys xs
+-- conc'      = foldl (\ k x -> k . (x:)) id
+--
+-- and
+--
+-- main = print $ f [1 .. 1000000] [1 .. 1000000]
+--
+--
+-- (3) Then do the same again for
+--
+-- f1 = let xs = [1 .. 1000000] in if length xs > 0 then head xs else 0
+-- f2 = if length [1 .. 1000000] > 0 then head [1 .. 1000000] else 0
+--
+-- and
+--
+-- main = print f
+--
+--
+-- (4) Given
+--
+--   data Tree a = Leaf a | Node (Tree a) (Tree a)
+--
+-- define a function
+--
+--   spineTree :: Tree a -> b -> b
+--
+-- that evaluates the spine of the tree (but not the elements),
+-- and a function
+--
+--   forceTree :: Tree a -> b -> b
+--
+-- that evaluates the spine and the elments of a tree.
+--
+--
+-- (5) Try to profile your spell-checker. Again, try to predict space
+-- use before you actually view it.
+--
+--
+-- (6) Try to compute the edit distance between two lists. An edit
+-- operation is supposed to be
+--
+--   data Edit a = Cp a | Ins a | Del a
+--     deriving (Eq, Show)
+--
+-- We are aiming to write
+--
+--   diff :: Eq a => [a] -> [a] -> [Edit a]
+--
+-- and
+--
+--   cost :: [Edit a] -> Int
+--
+-- such that we can then define
+--
+--   dist :: Eq a => [a] -> [a] -> Int
+--   dist xs ys = cost (diff xs ys)
+--
+-- Step 1. Define the function
+--
+--   cost :: [Edit a] -> Int
+--
+-- such that each Cp operation is free, and each other operation
+-- has a cost of 1.
+--
+-- Step 2. Define a function
+--
+--   patch :: Eq a => [a] -> [Edit a] -> Maybe [a]
+--
+-- that tries to apply a sequence of edit operations to a given
+-- string.
+--
+-- Step 3. Define a function
+--
+--   revert :: [Edit a] -> [Edit a]
+--
+-- that changes all inserts into deletions and all deletions into
+-- inserts.
+--
+-- Step 4. Define a function
+--
+--   pick :: Int -> [Edit a] -> [Edit a] -> [Edit a]
+--
+-- that looks at two sequences of edit operations and picks the
+-- better one by looking at a prefix of the given length each and
+-- picking the one where the prefix has lower cost.
+--
+-- Step 5. Define the function
+--
+--   diff :: Eq a => [a] -> [a] -> [Edit a]
+--
+-- that traverses the two lists simultaneously. If one list is empty,
+-- it is clear that we have to either insert or delete. If both lists
+-- are non-empty, we look at the first element. If the two elements
+-- are the same, then copying is clearly the best option. Otherwise,
+-- we have a choice between
+--
+--   * deleting an element from the first list (Del), or
+--   * deleting an element from the second list (Ins).
+--
+-- We simply call pick with a suitable bound to choose the better one.
+--
+-- Step 6. The function you've just written is horribly inefficient.
+-- Why? How could you use tabulation and lazy evaluation to improve its
+-- performance? [If you get to this point, ask for additional help
+-- before starting.]
