@@ -1,0 +1,14 @@
+-- Haskell Playground 1.0
+main
+
+let x = AccumulateRight(Success(Sum 10))
+let y = AccumulateRight(Success(Sum 2))
+
+let z = AccumulateRight(Failure 10)
+let a = AccumulateRight(Failure 1)
+
+x <> y
+
+z <> y
+y <> z
+a <> z

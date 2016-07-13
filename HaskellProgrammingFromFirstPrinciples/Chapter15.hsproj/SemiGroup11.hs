@@ -1,4 +1,6 @@
-module SemiGroup11 where
+module SemiGroup11 (
+  Validation (Failure, Success)
+  ) where
   
 import Data.Semigroup
 import Test.QuickCheck hiding (Failure, Success)

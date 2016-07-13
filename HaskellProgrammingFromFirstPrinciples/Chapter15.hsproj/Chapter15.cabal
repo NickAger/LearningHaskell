@@ -19,17 +19,21 @@ Executable Chapter15
       SemiGroupAssociativeLaw
       SemigroupTest
       SemiGroup6
-      SemiGroup2
       MonoidLaws
       ArbitrarySum
-      SemiGroup3
+      SemiGroup13
       MadLibs
+      SemiGroup2
+      SemiGroup3
       SemiGroup5
       SemiGroup7
-      SemiGroup9
+      Monoid1
       MaybeAnotherMonoid
       SemiGroup11
+      SemiGroup12
+      Monoid2
       SemiGroup4
+      SemiGroup9
       OptionalMonoid
       Bull
       SemiGroup8
