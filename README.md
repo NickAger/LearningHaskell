@@ -15,6 +15,7 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 
 # Links
 
+* [The five arguments on why people struggle with monads](http://chrisdone.com/posts/monads)
 * [A wreq tutorial](http://www.serpentine.com/wreq/tutorial.html) - Learn how to write web clients. We start easy, then ramp up the power.
 * [A monad for reactive programming](https://www.schoolofhaskell.com/user/agocorona/monad-reactive-programming-2)
 * [Monads: From Web 2.0 to Hardware Drivers](http://www.well-typed.com/blog/2015/02/ziria/)
