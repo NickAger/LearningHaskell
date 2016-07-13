@@ -10,3 +10,4 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 
 * [newtype](notes/newtype.md)
 * [Orphan instances](notes/orphaninstances.md)
+* [NonEmpty](notes/nonempty.md)
