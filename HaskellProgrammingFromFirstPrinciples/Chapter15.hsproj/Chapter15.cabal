@@ -14,11 +14,14 @@ Executable Chapter15
       QuickCheck -any,
       semigroups -any
   other-modules:
+      SemiGroup2
+      SemiGroup3
+      Semigroup1
       MaybeAnotherMonoid
       SemiGroupAssociativeLaw
       SemigroupTest
       MonoidLaws
-      OptionalMonoid
+      ArbitrarySum
       Bull
       MadLibs
-      Semigroup1
+      OptionalMonoid

@@ -68,6 +68,9 @@ runQc = quickCheck prop_additionGreater
 
 main :: IO ()
 main = return ()
+
+-- commented out as "Haskell for the Mac" doesn't 
+-- include hspec in its package list
 --main = hspec $ do
 --  describe "Addition" $ do
 --    it "15 divided by 3 is 5" $ do
