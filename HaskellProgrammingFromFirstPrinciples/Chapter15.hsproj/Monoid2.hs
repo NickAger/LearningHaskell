@@ -16,9 +16,7 @@ instance (Semigroup a, Monoid a) => Monoid (Identity a)  where
   mappend = (<>)
     
 instance Arbitrary a => Arbitrary (Identity a) where
-   arbitrary = do
-    x <- arbitrary 
-    return (Identity x)
+   arbitrary = Identity <$> arbitrary
    
 type IdentityAssoc = Identity (Sum Int) -> Identity (Sum Int) -> Identity (Sum Int) -> Bool
 
