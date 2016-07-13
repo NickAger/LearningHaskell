@@ -7,3 +7,5 @@ In summary, why you might use newtype:
 3. Add different type class instances to a type that is otherwise unchanged representationally.
 
 
+> For veteran programmers that understand pointers newtype is like a single-member C union that avoids creating an extra pointer, but still gives you a new type constructor and data constructor so you don’t mix up the many many many things
+that share a single representation.
