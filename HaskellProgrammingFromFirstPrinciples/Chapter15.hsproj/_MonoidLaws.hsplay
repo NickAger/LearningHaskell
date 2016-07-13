@@ -1,4 +1,6 @@
 -- Haskell Playground 1.0
+import Test.QuickCheck
+
 -- for brevity
 type S = String
 type B = Bool

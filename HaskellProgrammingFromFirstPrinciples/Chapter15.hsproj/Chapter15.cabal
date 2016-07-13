@@ -11,10 +11,14 @@ Executable Chapter15
   buildable: True
   build-depends:
       base -any,
-      QuickCheck -any
+      QuickCheck -any,
+      semigroups -any
   other-modules:
-      OptionalMonoid
       MaybeAnotherMonoid
+      SemiGroupAssociativeLaw
+      SemigroupTest
+      MonoidLaws
+      OptionalMonoid
       Bull
       MadLibs
-      MonoidAssociationLaws
+      Semigroup1

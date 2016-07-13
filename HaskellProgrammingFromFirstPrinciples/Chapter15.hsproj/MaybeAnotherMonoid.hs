@@ -1,7 +1,7 @@
 module MaybeAnotherMonoid where
 
 import OptionalMonoid
-import MonoidAssociationLaws
+import MonoidLaws
 import Test.QuickCheck
 
 newtype First' a =

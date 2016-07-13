@@ -1,0 +1,11 @@
+-- Haskell Playground 1.0
+let xs = 1 :| [2, 3]
+let ys = 4 :| [5, 6]
+
+xs <> ys
+N.head xs
+N.length $ xs <> ys
+
+N.map (*2) (xs <> ys)
+
+
