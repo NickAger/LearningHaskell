@@ -12,16 +12,25 @@ Executable Chapter15
   build-depends:
       base -any,
       QuickCheck -any,
+      HUnit -any,
       semigroups -any
   other-modules:
-      SemiGroup2
-      SemiGroup3
       Semigroup1
-      MaybeAnotherMonoid
       SemiGroupAssociativeLaw
       SemigroupTest
+      SemiGroup6
+      SemiGroup2
       MonoidLaws
       ArbitrarySum
-      Bull
+      SemiGroup3
       MadLibs
+      SemiGroup5
+      SemiGroup7
+      SemiGroup9
+      MaybeAnotherMonoid
+      SemiGroup11
+      SemiGroup4
       OptionalMonoid
+      Bull
+      SemiGroup8
+      SemiGroup10

@@ -21,4 +21,3 @@ type TwoAssoc = Two (Sum Int) (Sum Int) -> Two (Sum Int) (Sum Int) -> Two (Sum I
 main :: IO ()
 main = 
   quickCheck (semigroupAssoc :: TwoAssoc)
-  
