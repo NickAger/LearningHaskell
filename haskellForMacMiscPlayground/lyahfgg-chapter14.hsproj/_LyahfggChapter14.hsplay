@@ -1,0 +1,47 @@
+-- Haskell Playground 1.0
+import Control.Monad.Writer
+
+isBigGang 3
+isBigGang 30
+
+(3, "Smallish gang.") `applyLog` isBigGang
+
+(30, "A freaking platoon.") `applyLog` isBigGang
+
+
+testMonoid [5]
+testMonoid "hello"
+testMonoid Sum 5
+testMonoid Product 5
+
+Sum {getSum=5}
+getSum (Sum 5)
+
+Sum 3 <> Sum 9
+
+("beans", Sum 10) `applyLog` addDrink
+
+("jerky", Sum 25) `applyLog` addDrink
+
+("dogmeat", Sum 5) `applyLog` addDrink
+
+
+Car {company="Ford", model="Mustang", year=1967}
+
+Car "Ford" "Mustang" 1967
+
+SpecialConstructorCar {company'="Ford", model'="Mustang", year'=1967}
+
+let w = writer ("hello", "there")
+runWriter w
+
+runWriter (return 3 :: Writer String Int)
+
+runWriter (return 3 :: Writer (Sum Int) Int)
+
+runWriter (return 3 :: Writer (Product Int) Int)
+
+runWriter multWithLog
+
+
+

@@ -1,0 +1,9 @@
+-- Haskell Playground 1.0
+import Data.Monoid
+import Control.Applicative
+Monoid
+Functor
+Monad
+
+
+Applicative

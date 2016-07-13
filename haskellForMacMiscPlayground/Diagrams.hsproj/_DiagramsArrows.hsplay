@@ -1,0 +1,5 @@
+-- Haskell Playground 1.0
+import Graphics.SpriteKit hiding (node)
+
+renderDia Rasterific (RasterificOptions (Width 200)) $
+  alignedCircles

@@ -1,0 +1,12 @@
+-- Haskell Playground 1.0
+import Graphics.SpriteKit
+
+env <- chartEnv
+
+renderChart env amplitudeModulation
+
+renderChart env relativePopulation
+
+renderChart env msftVSaapl
+
+renderChart env electricCharges

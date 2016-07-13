@@ -1,0 +1,32 @@
+-- Haskell Playground 1.0
+import Graphics.SpriteKit hiding (node)
+
+renderDia Rasterific (RasterificOptions (Width 200)) $
+  alignedCircles
+  
+renderDia Rasterific (RasterificOptions (Width 80)) $
+  node 1
+  
+
+renderDia Rasterific (RasterificOptions (Width 250)) $
+  tournament 6
+
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ sunflower 2000 # bg white
+
+
+
+
+
+
+
+
+
+
+
+
+renderDia Rasterific (RasterificOptions (Width 250)) $
+  composition1
+
+
+

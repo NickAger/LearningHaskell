@@ -1,0 +1,29 @@
+-- Haskell Playground 1.0
+landRight 1 (0,0) >>= landLeft 2
+
+
+Nothing >>= landLeft 2
+
+return (0,0) >>= landRight 2 >>= landLeft 2 >>= landRight 2
+
+
+return (0,0) >>= landLeft 1 >>= landRight 4 >>= landLeft (-1) >>= landRight (-2)
+
+return (0, 0) >>= landLeft 1 >>= banana >>= landRight 1
+
+Nothing >> Just 3
+
+Just 3 >> Just 4
+
+Just 3 >> Nothing
+
+return (0,0) >>= landLeft 1 >> Nothing >>= landRight 1
+
+
+routine
+
+routineWithApply
+
+
+
+routine2

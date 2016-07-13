@@ -1,0 +1,6 @@
+-- Haskell Playground 1.0
+char 'f' <> text "oo"
+
+compact (char 'f' <> text "oo")
+
+empty </> char 'a'

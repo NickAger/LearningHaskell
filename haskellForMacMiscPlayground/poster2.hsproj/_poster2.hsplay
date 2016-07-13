@@ -1,0 +1,15 @@
+-- Haskell Playground 1.0
+import Graphics.SpriteKit hiding (node)
+renderDia Rasterific (RasterificOptions (Width 500)) $ tlcPoster # bg white
+
+-- renderDia ::
+--  (Backend b v, InnerSpace v, Data.Data.Data v,
+--   OrderedField (Scalar v), Data.Data.Data (Scalar v), Monoid' m) =>
+--  b -> Options b v -> QDiagram b v m -> Result b v
+--  	-- Defined in ‘Diagrams.Core.Compile’
+
+--tlcPoster ::
+--  (Backend b R2, Renderable (Diagrams.Prelude.Path R2) b) =>
+--  QDiagram b R2 Any
+
+map (+1) [1..10] 

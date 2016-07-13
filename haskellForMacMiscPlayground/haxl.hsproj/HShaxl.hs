@@ -1,0 +1,11 @@
+-- https://skillsmatter.com/skillscasts/6644-keynote-from-simon-marlow
+-- https://github.com/facebook/Haxl
+-- https://github.com/simonmar/haskell-eXchange-2015
+-- http://gelisam.blogspot.co.uk/2015/01/haxl-anti-tutorial.html
+-- https://en.wikibooks.org/wiki/Haskell/GADT
+-- https://wiki.haskell.org/Existential_type
+
+-- Existentialism
+-- Søren Kierkegaard proposed that each individual—not society or religion—is solely responsible for giving meaning to life and living it passionately and sincerely ("authentically")
+-- In existentialism, the individual's starting point is characterised by what has been called "the existential attitude", or a sense of disorientation and confusion in the face of an apparently meaningless or absurd world.[
+-- Many existentialists have also regarded traditional systematic or academic philosophies, in both style and content, as too abstract and remote from concrete human experience.

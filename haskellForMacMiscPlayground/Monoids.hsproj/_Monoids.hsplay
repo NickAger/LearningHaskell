@@ -1,0 +1,23 @@
+-- Haskell Playground 1.0
+import Data.Foldable
+
+fact0 10
+
+let x = runWriter (fact1 10)
+print $ snd x
+runWriter (fact2 10)
+runState (fact3 10) 0
+runWriter (fact4 10)
+runWriter (fact5 10)
+runWriter (fact6 10)
+
+Sum 2 `mappend` Sum 3
+
+Product 2 `mappend` Product 3
+
+[1,2] ++ [3,4]
+[1,2] `mappend` [3,4]
+
+foldMap Sum [1,2,3,4]
+
+Prelude.foldr (+) 0 [1,2,3,4]

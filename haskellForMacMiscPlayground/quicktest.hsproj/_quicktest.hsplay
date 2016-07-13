@@ -1,0 +1,30 @@
+-- Haskell Playground 1.0
+duplicate 4 "hello"
+
+let x = Person "Nick" 47
+age x
+
+let y = empty :: Map String [Person]
+
+
+zip [1..6] ['a'..]
+
+let z = [x, Person "Olga" 39, Person "Sasha" 2]
+z
+
+agesPointFree z
+
+
+let h = indexPersonsByName z
+h
+
+let g = indexPersonsByAge z
+g
+
+
+M.partition (\p -> (age $ head p) > 40) g
+
+
+concat (elems (snd (split 30 g)))
+
+

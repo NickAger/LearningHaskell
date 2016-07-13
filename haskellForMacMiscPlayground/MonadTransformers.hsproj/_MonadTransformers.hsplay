@@ -1,0 +1,19 @@
+-- Haskell Playground 1.0
+2 + 2
+
+
+eval0 Map.empty exampleExp
+
+runEval1 (eval1 Map.empty exampleExp)
+
+eval1 Map.empty exampleExp
+
+runEval2 (eval2a Map.empty exampleExp)
+
+runEval2 (eval2a Map.empty (Plus (Lit 1) (Abs "x" (Var "x"))))
+
+runEval2 (eval2a Map.empty  (Lit 12 `Plus` (App (Abs "x" (Var "y"))(Lit 4 `Plus` Lit 2))))
+
+
+
+

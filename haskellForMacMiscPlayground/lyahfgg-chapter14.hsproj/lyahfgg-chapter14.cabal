@@ -1,0 +1,14 @@
+name: lyahfgg-chapter14
+version: 1.0
+cabal-version: 1.6
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+x-ghc-framework-version: 7.10.3-5.9-2
+x-last-ide-version: HfM1.2.1
+Executable lyahfgg-chapter14
+  main-is: LyahfggChapter14.hs
+  buildable: True
+  build-depends:
+      base -any,
+      mtl -any

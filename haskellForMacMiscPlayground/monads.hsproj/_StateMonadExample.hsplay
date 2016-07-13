@@ -1,0 +1,6 @@
+-- Haskell Playground 1.0
+import System.Random
+random (mkStdGen 100) :: (Int, StdGen)
+
+threeCoins (mkStdGen 100)
+threeCoins (mkStdGen 200)

@@ -1,0 +1,92 @@
+-- Haskell Playground 1.0
+import Graphics.SpriteKit hiding (node)
+
+renderDia Rasterific (RasterificOptions (Width 200)) $
+  alignedCircles
+renderDia Rasterific (RasterificOptions (Width 40)) $
+  node 1
+
+renderDia Rasterific (RasterificOptions (Width 250)) $
+  sqNewEnv
+ 
+
+
+
+-- renderDia Rasterific (RasterificOptions (Width 250)) $ withEnvelopeEx
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ boundingTestWithPadding
+
+
+
+
+
+
+
+
+
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ boundingTest
+
+
+
+
+
+
+
+
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ beside1
+
+
+
+
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ beside2
+
+
+
+
+
+
+
+
+
+rotateBy (1/4) (3 ^& 6) :: R2 
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ vector1
+
+
+
+
+
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ vector2
+
+
+
+
+
+
+
+
+
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ vector3
+
+
+
+
+
+
+
+
+renderDia Rasterific (RasterificOptions (Width 250)) $ vector4
+
+
+
+
+
+
+
+
+

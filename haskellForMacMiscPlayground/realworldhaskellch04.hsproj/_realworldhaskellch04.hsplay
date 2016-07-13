@@ -1,0 +1,24 @@
+-- Haskell Playground 1.0
+import Data.List
+
+splitLines "foo"
+break isLineTerminator "foo"
+splitLines "foo\r\nbar\nkdjgkjdf"
+
+break isLineTerminator "foo\r\nbar\ndfgdfg"
+
+loop 0 "12345"
+
+loop2 0 "108374"
+
+
+foldl' (+) 0 [1..1000]
+
+tail [1,2,3,4]
+tails [1,2,3,4]
+
+tails "foo"
+
+suffixes "foo"
+
+noAsPattern "foo"

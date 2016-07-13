@@ -1,0 +1,20 @@
+-- Haskell Playground 1.0
+import Prettify
+
+take 4 simpleEscapes
+
+
+renderJValue (JNumber 1)
+renderJValue (JBool True)
+
+
+
+let value = renderJValue (JObject [("f", JNumber 1), ("q", JBool True)])
+
+value
+
+let y = compact value
+
+y
+
+

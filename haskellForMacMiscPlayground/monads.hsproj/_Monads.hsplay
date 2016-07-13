@@ -1,0 +1,49 @@
+-- Haskell Playground 1.0
+import Control.Applicative
+import Control.Monad.Writer
+import Control.Monad.Reader
+
+-- from:
+-- http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html
+
+-- functors
+half 8
+fmap half $ Just 8
+half <$> Just 8
+
+-- applicatives
+Just half <*> Just 8
+(+) <$> (Just 5)
+-- Just (+5)
+
+Just (+5) <*> (Just 3)
+(+) <$> Just 5 <*> Just 3
+liftA2(+) (Just 5) (Just 3)
+
+-- monads
+Just 3 >>= halfv2
+Just 4 >>= halfv2
+Nothing >>= halfv2
+
+
+Just 20 >>= halfv2 >>= halfv2 >>= halfv2
+
+-- from
+-- http://adit.io/posts/2013-06-10-three-useful-monads.html
+
+-- writer monad
+runWriter $ halfWithWriter 8
+runWriter $ halfWithWriter 8 >>= halfWithWriter
+
+-- writer monad part 2
+runWriter multWithLog 
+
+runWriter (gcd' 8 3)
+
+
+-- reader monad
+runReader greeter $ "adit"
+
+-- state monad
+runState greeter2 $ "adit"
+

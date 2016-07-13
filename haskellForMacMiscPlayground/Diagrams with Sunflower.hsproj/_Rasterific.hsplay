@@ -1,0 +1,14 @@
+-- Haskell Playground 1.0
+import Graphics.SpriteKit
+
+redColor
+img
+
+-- We can use Rasterific output as SpriteKit textures
+let transparent = PixelRGBA8 0 0 0 0
+    img = renderDrawing 40 40 transparent $
+            withTexture (uniformTexture drawColor) $ do
+              fill $ circle (V2 20 20) 10
+    tex = textureWithImage (toImage img)
+tex
+
