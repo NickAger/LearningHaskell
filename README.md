@@ -11,3 +11,11 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 * [newtype](notes/newtype.md)
 * [Orphan instances](notes/orphaninstances.md)
 * [NonEmpty](notes/NonEmpty.md)
+
+
+# Links
+
+* [A wreq tutorial](http://www.serpentine.com/wreq/tutorial.html) - Learn how to write web clients. We start easy, then ramp up the power.
+* [A monad for reactive programming](https://www.schoolofhaskell.com/user/agocorona/monad-reactive-programming-2)
+* [Monads: From Web 2.0 to Hardware Drivers](http://www.well-typed.com/blog/2015/02/ziria/)
+* [Dependently typed servers in Servant](http://www.well-typed.com/blog/2015/12/dependently-typed-servers/)
