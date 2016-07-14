@@ -11,6 +11,7 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 * [newtype](notes/newtype.md)
 * [Orphan instances](notes/orphaninstances.md)
 * [NonEmpty](notes/NonEmpty.md)
+* [fmap](notes/fmap.md)
 
 
 # Links
