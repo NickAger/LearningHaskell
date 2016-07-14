@@ -27,6 +27,7 @@ Executable Chapter15
       MadLibs
       SemiGroup11
       Monoid2
+      Monoid6
       MonoidLaws
       SemiGroup13
       SemiGroup7
