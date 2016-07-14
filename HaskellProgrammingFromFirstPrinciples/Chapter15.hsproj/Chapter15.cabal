@@ -15,7 +15,7 @@ Executable Chapter15
       HUnit -any,
       semigroups -any
   other-modules:
-      SemiGroup10
+      SemiGroup8
       Monoid3
       Semigroup1
       SemiGroupAssociativeLaw
@@ -27,11 +27,13 @@ Executable Chapter15
       MadLibs
       SemiGroup11
       Monoid2
+      Monoid8
       Monoid6
       MonoidLaws
+      Monoid7
       SemiGroup13
-      SemiGroup7
       SemiGroup3
+      SemiGroup7
       SemiGroup9
       Monoid1
       MaybeAnotherMonoid
@@ -39,6 +41,6 @@ Executable Chapter15
       SemiGroup12
       SemiGroup4
       OptionalMonoid
-      SemiGroup8
       Bull
       Monoid5
+      SemiGroup10
