@@ -2,9 +2,7 @@ module Monoid7 where
   
 import Data.Semigroup
 import Test.QuickCheck
-import SemiGroupAssociativeLaw
 import Test.HUnit
-import MonoidLaws
 import Text.Show.Functions
 
 newtype Comp a = Comp { unComp :: (a -> a) } deriving Show
@@ -53,4 +51,3 @@ main =  do
   
   counts <- runTestTT (TestList [test1, test2, test3, test4, test5])
   print counts
-  return ()

@@ -2,7 +2,6 @@ module SemiGroup10 where
   
 import Data.Semigroup
 import Test.QuickCheck
-import SemiGroupAssociativeLaw
 import Test.HUnit
 import Text.Show.Functions
 

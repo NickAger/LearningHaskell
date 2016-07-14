@@ -24,4 +24,3 @@ main = do
   quickCheck (semigroupAssoc :: TrivialAssoc)
   quickCheck (monoidLeftIdentity :: Trivial -> Bool)
   quickCheck (monoidRightIdentity :: Trivial -> Bool)
-  

@@ -2,8 +2,6 @@ module Monoid6 where
   
 import Data.Semigroup
 import Test.QuickCheck
-import SemiGroupAssociativeLaw
-import MonoidLaws
 import Test.HUnit
 import ArbitrarySum
 import Text.Show.Functions
@@ -48,4 +46,3 @@ main =  do
 
   counts <- runTestTT test1
   print counts
-  return ()

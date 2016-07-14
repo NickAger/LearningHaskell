@@ -25,4 +25,3 @@ main = do
   quickCheck (semigroupAssoc :: IdentityAssoc)
   quickCheck (monoidLeftIdentity :: Identity (Sum Int) -> Bool)
   quickCheck (monoidRightIdentity :: Identity (Sum Int) -> Bool)
-  
