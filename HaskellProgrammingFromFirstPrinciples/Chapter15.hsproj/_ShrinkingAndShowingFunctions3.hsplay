@@ -1,3 +1,2 @@
 -- Haskell Playground 1.0
-fst (1,2)
-snd (1,2)
+quickCheck prop_HaskellML

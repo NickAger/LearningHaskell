@@ -7,7 +7,7 @@ stability: experimental
 x-ghc-framework-version: 7.10.3-5.9-2
 x-last-ide-version: HfM1.2.1
 Executable Chapter15
-  main-is: Chapter15.hs
+  main-is: ShrinkingAndShowingFunctions1.hs
   buildable: True
   build-depends:
       base -any,
@@ -18,7 +18,9 @@ Executable Chapter15
       SemiGroup8
       Monoid3
       Semigroup1
+      ShrinkingAndShowingFunctions2
       SemiGroupAssociativeLaw
+      ShrinkingAndShowingFunctions3
       SemigroupTest
       SemiGroup6
       SemiGroup2

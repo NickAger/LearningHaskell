@@ -41,5 +41,5 @@ main :: IO ()
 main =  do
 --  quickCheck (semigroupAssoc :: MemAssoc)
   counts <- runTestTT (TestList [test1, test2, test3, test4, test5])
-  putStrLn(show counts)
+  print counts
   return ()

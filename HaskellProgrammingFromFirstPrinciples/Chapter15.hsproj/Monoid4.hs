@@ -35,4 +35,4 @@ main = do
   quickCheck (monoidLeftIdentity :: BoolConj -> Bool)
   quickCheck (monoidRightIdentity :: BoolConj -> Bool)
   counts <- runTestTT (TestList [test1, test2])
-  putStrLn(show counts)
+  print counts

@@ -31,5 +31,5 @@ main :: IO ()
 main =  do
   quickCheck (semigroupAssoc :: OrAssoc)
   counts <- runTestTT (TestList [test1, test2, test3, test4])
-  putStrLn(show counts)
+  print counts
   return ()
