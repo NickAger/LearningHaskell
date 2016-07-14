@@ -1,8 +1,9 @@
-module SemiGroup7 where
+module Monoid5 where
   
 import Data.Semigroup
 import Test.QuickCheck
 import SemiGroupAssociativeLaw
+import MonoidLaws
 import Test.HUnit
 
 newtype BoolDisj = BoolDisj Bool deriving (Eq, Show)
@@ -17,8 +18,8 @@ instance Arbitrary BoolDisj where
 type BoolDisjAssoc = BoolDisj -> BoolDisj -> BoolDisj -> Bool
 
 -- Expected:
--- (BoolDisj True) <> (BoolDisj True) == BoolDisj True
--- (BoolDisj True) <> (BoolDisj False) == BoolDisj True
+-- (BoolDisj True) `mappend` mempty == BoolDisj True
+-- mempty `mappend` (BoolDisj False) == BoolDisj False
 
 test1 = TestCase (assertEqual "equal true propogated" (BoolDisj True <> BoolDisj True) (BoolDisj True))
 test2 = TestCase (assertEqual "any true propogated" (BoolDisj True <> BoolDisj False) (BoolDisj True))

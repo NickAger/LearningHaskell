@@ -28,4 +28,3 @@ main = do
   quickCheck (semigroupAssoc :: BoolConjAssoc)
   counts <- runTestTT (TestList [test1, test2])
   putStrLn(show counts)
-  return ()
