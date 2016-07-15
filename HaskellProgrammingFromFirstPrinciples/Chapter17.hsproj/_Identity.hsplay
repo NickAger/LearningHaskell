@@ -1,0 +1,3 @@
+-- Haskell Playground 1.0
+const <$> [1,2,3] <*> [9,9,9]
+const <$> Identity [1,2,3] <*> Identity [9 ,9,9]

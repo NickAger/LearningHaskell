@@ -1,0 +1,14 @@
+-- Haskell Playground 1.0
+-- Ex 1:
+-- (added pure)
+(const <$> Just "Hello") <*> (pure "World")
+
+-- Ex 2:
+-- Fix this:
+-- (,,,) (Just 90) <*> (Just 10) (Just "Tierness") [1,2,3]
+(,,,) (Just 90) (Just 10) (Just "Tierness") [1,2,3]
+
+(,,,) <$> Just 90 <*> Just 10 <*> Just "Tierness" <*> pure [1,2,3]
+
+
+

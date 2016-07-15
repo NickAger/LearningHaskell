@@ -12,5 +12,7 @@ Executable Chapter17
   build-depends:
       base -any
   other-modules:
-      Exercises1
+      FixerUpper
       Identity
+      Constant
+      Exercises1

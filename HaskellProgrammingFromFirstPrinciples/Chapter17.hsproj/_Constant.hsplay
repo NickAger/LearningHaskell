@@ -1,0 +1,7 @@
+-- Haskell Playground 1.0
+Constant (Sum 1) <*> Constant (Sum 2)
+
+Constant undefined <*> Constant (Sum 2)
+
+pure 1
+pure 1 :: Constant String Int
