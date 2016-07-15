@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+type IntToInt = Fun Int Int
+type IntFC = [Int] -> IntToInt -> IntToInt -> Bool
+quickCheck (functorCompose' :: IntFC)
