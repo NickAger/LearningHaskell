@@ -1,5 +1,7 @@
 > Functor is a means of lifting functions over structure so that we may transform only the contents, leaving the structure alone.
 
+and
+
 > fmap lifts functions into a structure
 
 ```haskell
