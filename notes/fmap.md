@@ -1,4 +1,6 @@
-fmap lifts functions into a structure
+> Functor is a means of lifting functions over structure so that we may transform only the contents, leaving the structure alone.
+
+> fmap lifts functions into a structure
 
 ```haskell
 let lms = [Just "Ave", Nothing, Just "woohoo"]
