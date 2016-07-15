@@ -15,7 +15,7 @@ The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://
 * [NonEmpty](notes/NonEmpty.md)
 * [fmap](notes/fmap.md)
 * [stack](notes/stack.md)
-
+* [setup](notes/setup.md)
 
 # Links
 
