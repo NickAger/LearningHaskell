@@ -1,5 +1,4 @@
 * Comprehensive Stack [overview video tutorial](https://www.youtube.com/watch?v=sRonIB8ZStw)
-* http://lonelyproton.com/posts/26-getting-started-with-haskell-development-3
 
 From the stack video:
 ```
