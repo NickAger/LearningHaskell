@@ -9,7 +9,6 @@ I would love to compare my exercises solutions with others learning haskell thro
 Some links:
 * Comprehensive Stack [overview video tutorial](https://www.youtube.com/watch?v=sRonIB8ZStw)
 * http://lonelyproton.com/posts/26-getting-started-with-haskell-development-3
-* https://github.com/bitemyapp/learnhaskell/blob/master/code_to_learn_from.md
 
 From the stack video:
 ```
