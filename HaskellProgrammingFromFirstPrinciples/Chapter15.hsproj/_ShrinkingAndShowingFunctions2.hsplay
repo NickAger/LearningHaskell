@@ -1,0 +1,19 @@
+-- Haskell Playground 1.0
+quickCheck prop_MapFilter
+
+{-
+Interpreting the results:
+
+*** Failed! Falsifiable (after 3 tests and 13 shrinks): 
+{_->2}
+{3->True, _->False}
+[3]
+
+{_->2}                (1)means: function that takes anything and returns 2
+{3->True, _->False}   (2)means:
+[3]                   (3)
+
+(1) function that takes anything and returns 2
+(2) a predicate that takes 3 and return True and anything else and returns False
+(3) xs == [3]
+-}

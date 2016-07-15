@@ -11,3 +11,7 @@ Executable Chapter16
   buildable: True
   build-depends:
       base -any
+  other-modules:
+      FunctorLaws
+      ExercisesHeavyLifting
+      ReplacementExperiment

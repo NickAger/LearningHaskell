@@ -7,5 +7,5 @@ import Test.QuickCheck
 import Test.QuickCheck.Poly
 import Test.QuickCheck.Function
 
-prop_MapFilter (Fun f) (Fun p) (xs::[A]) =
+prop_MapFilter (Fun _ f) (Fun _ p) (xs::[A]) =
   map f (filter p xs) == filter p (map f xs)

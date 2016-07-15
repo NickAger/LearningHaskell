@@ -7,6 +7,7 @@ import Test.QuickCheck
 import Test.QuickCheck.Poly
 import Text.Show.Functions
 
+-- A lot of this 
 prop_MapFilter f p (xs::[A]) =
   whenFail (print (table f xs)) $
     whenFail (print (table p (xs ++ map f xs))) $

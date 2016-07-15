@@ -1,13 +1,49 @@
 -- Haskell Playground 1.0
 map (+1) [1..10]
 
--- function application is a functor
+fmap (+1) (Just 1)
+fmap (10/) (4, 5)
+fmap (++ ", Esq.") (Right "Nick Ager")
+
+fmap (+1) (Pls 1)
+
+
+fmap id "Hi Nick"
+id "Hi Nick"
+
+fmap id ItDoesnt
+fmap id WhatThisIsCalled
+
+
+let replaceWithP = const 'p'
+replaceWithP 1000
+replaceWithP "woohoo"
+replaceWithP (Just 10)
+
+fmap replaceWithP (Just 10)
+fmap replaceWithP Nothing
+
+fmap replaceWithP [1,2,3,4,5]
+fmap replaceWithP "Ave"
+
+fmap replaceWithP (10, 20)
+fmap replaceWithP (10, "woo")
+
 let tossEmOne = fmap (+1) negate
 tossEmOne 10
 tossEmOne (-10)
 tossEmOne (-1)
 tossEmOne 1
 
+let lms = [Just "Ave", Nothing, Just "woohoo"]
 
+replaceWithP lms
+fmap replaceWithP lms
+(fmap.fmap) replaceWithP lms
+(fmap.fmap.fmap) replaceWithP lms
 
-
+-- (.) :: (b -> c) -> (a -> b) -> a -> c
+-- class Functor (f :: * -> *) where fmap :: (a -> b) -> f a -> f b
+-- (fmap.fmap) :: (Functor f, Functor f1) => (a -> b) -> f (f1 a) -> f (f1 b)
+-- replaceWithP :: b -> Char
+-- (.) :: (b -> c) -> ([Maybe String] -> []) -> [Maybe String] -> c
