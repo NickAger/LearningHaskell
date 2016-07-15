@@ -6,12 +6,15 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 * [Penn University CIS 194](http://www.seas.upenn.edu/~cis194/lectures/01-intro.html) 
 * [Well-Typed Haskell training](http://www.well-typed.com/services_training/) 
 
+The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://github.com/NickAger/LearningHaskell/tree/master/HaskellProgrammingFromFirstPrinciples). I would love to compare my exercises solutions with others learning haskell through [Haskell Programming from first principles](http://haskellbook.com) book. Please contact me.
+
 ## Notes
 
 * [newtype](notes/newtype.md)
 * [Orphan instances](notes/orphaninstances.md)
 * [NonEmpty](notes/NonEmpty.md)
 * [fmap](notes/fmap.md)
+* [stack](notes/stack.md)
 
 
 # Links
