@@ -1,12 +1,14 @@
 # LearningHaskell
-Workspaces made within [Haskell for Mac](http://haskellformac.com) and 
-[Atom configured for Haskell](http://achernyak.me/universal-haskell-dev-enviornment), created while studying:
+Learning Haskell by studying:
 
 * [Haskell Programming from first principles](http://haskellbook.com) - [@haskellbook](https://twitter.com/haskellbook) - my main learning resource 
 * [Penn University CIS 194](http://www.seas.upenn.edu/~cis194/lectures/01-intro.html) 
 * [Well-Typed Haskell training](http://www.well-typed.com/services_training/) 
 
 The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://github.com/NickAger/LearningHaskell/tree/master/HaskellProgrammingFromFirstPrinciples). I would love to compare my exercises solutions with others learning haskell through [Haskell Programming from first principles](http://haskellbook.com) book. Please contact me.
+
+Workspaces made within [Haskell for Mac](http://haskellformac.com) and 
+[Atom configured for Haskell](http://achernyak.me/universal-haskell-dev-enviornment).
 
 ## Notes
 
