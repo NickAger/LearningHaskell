@@ -19,6 +19,7 @@ The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://
 
 # Links
 
+* [Open-source Haskell projects](https://github.com/bitemyapp/learnhaskell/blob/master/code_to_learn_from.md) - "Code to learn from"
 * [The five arguments on why people struggle with monads](http://chrisdone.com/posts/monads)
 * [A wreq tutorial](http://www.serpentine.com/wreq/tutorial.html) - Learn how to write web clients. We start easy, then ramp up the power.
 * [A monad for reactive programming](https://www.schoolofhaskell.com/user/agocorona/monad-reactive-programming-2)
