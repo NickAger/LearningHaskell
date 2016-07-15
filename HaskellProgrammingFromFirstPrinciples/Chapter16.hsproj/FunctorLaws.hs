@@ -1,6 +1,8 @@
 {-# LANGUAGE ViewPatterns #-}
 
-module FunctorLaws where
+module FunctorLaws (
+  functorCompose'
+  ) where
 
 import Test.QuickCheck
 import Test.QuickCheck.Function

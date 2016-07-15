@@ -1,0 +1,8 @@
+-- Haskell Playground 1.0
+fmap (+1) (LiftItOut (Just 1))
+fmap (+1) (DaWrappa (Just 1) ([1,2,6]))
+
+let list  = Cons 6 (Cons 5 Nil)
+show list
+
+fmap (+1) list

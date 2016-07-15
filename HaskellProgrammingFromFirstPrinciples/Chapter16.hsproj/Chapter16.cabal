@@ -11,9 +11,14 @@ Executable Chapter16
   buildable: True
   build-depends:
       base -any,
-      QuickCheck -any
+      QuickCheck -any,
+      HUnit -any
   other-modules:
-      FunctorLaws
       InstancesOfFunctorExercises
-      ExercisesHeavyLifting
       ReplacementExperiment
+      Either
+      Possibility
+      FunctorLaws
+      ExercisesHeavyLifting
+      Exercises
+      Exercises2

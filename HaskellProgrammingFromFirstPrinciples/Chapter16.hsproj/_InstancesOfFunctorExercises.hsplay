@@ -1,0 +1,10 @@
+-- Haskell Playground 1.0
+-- seems you can't have too many running at once!
+
+--quickCheck (functorCompose' :: IdentityFC)
+--quickCheck (functorCompose' :: PairFC)
+--quickCheck (functorCompose' :: TwoFC)
+--quickCheck (functorCompose' :: ThreeFC)
+--quickCheck (functorCompose' :: ThreeFC')
+quickCheck (functorCompose' :: FourFC)
+quickCheck (functorCompose' :: FourFC')
