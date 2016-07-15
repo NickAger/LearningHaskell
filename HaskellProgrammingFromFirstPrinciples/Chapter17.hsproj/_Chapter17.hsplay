@@ -1,0 +1,34 @@
+-- Haskell Playground 1.0
+import Data.Monoid
+
+fmap (+1) [1, 2, 3]
+pure (+1) <*> [1..3]
+
+pure 1 :: [Int]
+pure 1 :: Maybe Int
+pure 1 :: Either a Int
+pure 1 :: ([a], Int)
+
+((Sum 2), (+1)) <*> ((Sum 0), 0)
+
+((Product 3), (+9)) <*> ((Product 2), 8)
+
+((All True), (+1)) <*> ((All False), 0)
+
+fmap (2^) [1,2,3]
+fmap (^2) [1,2,3]
+
+((,)6) <$> [3,4]
+
+lookup 3 [(3, "hello")]
+
+---
+
+f 3
+g 8
+(++) <$> f 3 <*> g 7
+(+) <$> h 5 <*> m 1
+(+) <$> h 5 <*> m 6
+
+liftA2 (++) (g 9) (f 4)
+liftA2 (^) (h 5) (m 4)
