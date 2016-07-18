@@ -50,7 +50,7 @@ flatMap f (Cons x xs) = f x `append` flatMap f xs
 instance Arbitrary a => Arbitrary (List a) where
   arbitrary = arrayToList <$> arbitrary
 
-instance CoArbitrary (List a)
+instance (Arbitrary a, CoArbitrary a) => CoArbitrary (List a)
 
 instance Eq a => EqProp (List a) where
   Nil =-= ys = ys `eq` Nil
