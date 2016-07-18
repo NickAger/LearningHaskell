@@ -1,6 +1,7 @@
 From Chapter 14
 
-It turns out, as long as your datatype has a Generic instance derived, you can get these instances for free. 
+It turns out, as long as your datatype has a Generic instance derived, you can get these instances [CoArbitary instances] for free. 
+
 The following should work just fine:
 
 ```haskell
