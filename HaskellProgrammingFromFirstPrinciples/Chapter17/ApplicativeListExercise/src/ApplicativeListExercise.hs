@@ -1,4 +1,4 @@
-module ListApplicativeExercise where
+module ApplicativeListExercise where
 
 import Control.Applicative
 import Data.Monoid
@@ -18,22 +18,16 @@ take' n (Cons x xs) = Cons x (take' (n-1) xs)
 
 instance Functor List where
   fmap f = fold (\x acc -> Cons (f x) acc) Nil
-
   -- non fmap implementation:
   -- fmap _ Nil = Nil
   -- fmap f (Cons x xs) = Cons (f x) (fmap f xs)
 
--- try implementing <*> using fmap, append, fold, concat' & flatmap
--- see also
--- instance Applicative [] where
---    fs <*> xs = [f x | f <- fs, x <- xs]
+
+-- note "flatMap (`fmap` xs) fs" which translate
+-- to flatMap (\f -> flatMap fmap f xs) fs
 instance Applicative List where
   pure f = Cons f Nil
-  (<*>) _ Nil = Nil
-  (<*>) Nil _ = Nil
-  -- (<*>) fs xs =
-  --   fold (\f acc -> )
-  --   Cons (f x) (f' <*> xs)
+  fs <*> xs = flatMap (`fmap` xs) fs
 
 append :: List a -> List a -> List a
 append Nil ys = ys
