@@ -1,0 +1,29 @@
+-- Haskell Playground 1.0
+-- Applicative
+pure id <*> [1..5]
+pure id <*> Just "Hello Applicative"
+pure id <*> Nothing
+pure id <*> Left "Error'ish"
+pure id <*> Right 8001
+pure id <*> (+1) $ 2
+
+-- Comparing Functor & Applicative
+id [1..5]
+fmap id [1..5]
+pure id <*> [1..5]
+
+---
+pure (+1) <*> pure 1 :: Maybe Int
+pure ((+1) 1) :: Maybe Int
+
+pure (+1) <*> pure 1 :: [Int]
+pure ((+1) 1) :: [Int]
+
+pure (+1) <*> pure 1 :: Either a Int
+pure ((+1) 1) :: Either a Int
+
+(Just (+2) <*> pure 2) == (pure ($ 2) <*> Just (+2))[(+1), (*2)] <*> pure 1
+pure ($ 1) <*> [(+1), (*2)]
+
+Just (+3) <*> pure 1
+pure ($ 1) <*> Just (+3)
