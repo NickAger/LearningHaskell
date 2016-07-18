@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveGeneric #-}
+
 module ApplicativeListExercise where
 
 import Control.Applicative
@@ -5,11 +7,12 @@ import Data.Monoid
 import Test.QuickCheck
 import Test.QuickCheck.Checkers
 import Test.QuickCheck.Classes
+import GHC.Generics
 
 data List a =
     Nil
   | Cons a (List a)
-  deriving (Eq, Show)
+  deriving (Eq, Show, Generic)
 
 take' :: Int -> List a -> List a
 take' 0 xs = Nil
@@ -45,19 +48,25 @@ flatMap _ Nil = Nil
 flatMap f (Cons x xs) = f x `append` flatMap f xs
 
 instance Arbitrary a => Arbitrary (List a) where
-  arbitrary = do
-    xs <- arbitrary
-    return $ fold Cons xs Nil
+  arbitrary = arrayToList <$> arbitrary
+
+instance CoArbitrary (List a)
 
 instance Eq a => EqProp (List a) where
   Nil =-= ys = ys `eq` Nil
   xs =-= Nil = xs `eq` Nil
   Cons x xs =-= Cons y ys = x `eq` y .&. xs `eq` ys
 
+-- Nick helpers
+arrayToList :: [a] -> List a
+arrayToList = foldr Cons Nil
+
+
+-- ZipList'
+
 newtype ZipList' a =
   ZipList' (List a)
   deriving (Eq, Show)
-
 
 instance Eq a => EqProp (ZipList' a) where
   xs =-= ys = xs' `eq` ys'
@@ -66,6 +75,18 @@ instance Eq a => EqProp (ZipList' a) where
           ys' = let (ZipList' l) = ys
                 in take' 3000 l
 
--- Nick helper
-arrayToList :: [a] -> List a
-arrayToList = foldr Cons Nil
+instance Functor ZipList' where
+  fmap f (ZipList' xs) = ZipList' (fmap f xs)
+
+instance Applicative ZipList' where
+  pure f = ZipList' (arrayToList $ repeat f)
+  ZipList' fs <*> ZipList' xs = ZipList' $ zip' fs xs
+    where
+      zip' Nil _ = Nil
+      zip' _ Nil = Nil
+      zip' (Cons f fs) (Cons a as) = Cons (f a) (zip' fs as)
+
+instance Arbitrary a => Arbitrary (ZipList' a) where
+  arbitrary = ZipList' <$> arbitrary
+
+-- testZipList' = quickBatch (applicative (undefined :: ZipList' (List String, List Int, List String)))
