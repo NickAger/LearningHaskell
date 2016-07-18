@@ -18,3 +18,5 @@ deriving (Generic)
 
 instance CoArbitrary Bool'
 ```
+
+need to ensure you `import GHC.Generics` otherwise you'll endup with `Not in scope: type constructor or class ‘Generic’`
