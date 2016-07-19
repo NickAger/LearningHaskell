@@ -1,0 +1,36 @@
+-- Haskell Playground 1.0
+import Control.Applicative
+import Data.Monoid
+import Text.Show.Functions
+
+-- Ex1: []
+
+-- from ghci 8.0.1
+-- :set -XTypeApplications
+-- :t (<*>) @[]
+-- (<*>) @[] :: [a -> b] -> [a] -> [b]
+-- pure @[] :: a -> [a
+(<*>) `asAppliedTo` []
+
+-- --- ---
+-- Ex2: IO 
+
+-- pure @IO :: a -> IO a
+-- (<*>) @IO :: IO (a -> b) -> IO a -> IO b
+
+-- --- ---
+-- Ex3: (,)a
+
+-- :t (<*>) @((,)(Sum Int))
+-- (<*>) @((,)(Sum Int)) :: (Sum Int, a -> b) -> (Sum Int, a) -> (Sum Int, b)
+-- pure  @((,)(Sum Int)) :: a -> (Sum Int, a)
+ (<*>) `asAppliedTo` (undefined :: Sum Int, undefined)
+
+-- pure  @((,)String) :: a -> (String, a)
+-- (<*>)  @((,)String) :: (String, a -> b) -> (String, a) -> (String, b)
+
+-- --- ---
+-- Ex4: (->) e
+
+-- (<*>)  @((->)String) :: (String -> a -> b) -> (String -> a) -> String -> b
+-- pure  @((->)String) :: a -> String -> a
