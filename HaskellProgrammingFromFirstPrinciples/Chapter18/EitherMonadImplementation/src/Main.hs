@@ -34,8 +34,6 @@ instance (Eq a, Eq b) => EqProp (Sum a b) where
 
 -- monad is defined - https://github.com/conal/checkers/blob/master/src/Test/QuickCheck/Classes.hs
 -- monad :: {-lots of stuff)-} => m (a,b,c) -> TestBatch
-
--- couldn't get this to work
+-- "The argument the monad TestBatch wants is identical to the Applicative, a tuple of three value types embedded in the structural type."
 main :: IO ()
-main = do
-  quickBatch (monad (Second 3))
+main = quickBatch $ monad (undefined :: Sum String (Int, String, Char))
