@@ -10,7 +10,7 @@ The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://
 Workspaces made within [Haskell for Mac](http://haskellformac.com) and 
 [Atom configured for Haskell](http://achernyak.me/universal-haskell-dev-enviornment).
 
-## Notes
+## My Notes
 
 * [newtype](notes/newtype.md)
 * [Orphan instances](notes/orphaninstances.md)
