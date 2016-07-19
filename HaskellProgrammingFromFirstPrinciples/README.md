@@ -7,3 +7,4 @@ The code is contained in workspaces made within http://haskellformac.com.
 
 I've found the following repositories of exercises from [Haskell Programming from first principles](http://haskellbook.com)
 * https://github.com/dmvianna/haskellbook
+* https://lukleh.github.io/haskell-book-exercises/
