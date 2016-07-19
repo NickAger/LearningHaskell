@@ -1,0 +1,26 @@
+-- Haskell Playground 1.0
+f' 9001
+g' 9001
+
+(f' <> g') 9001
+(y <> z) 9
+
+let f = M.fromList [('a', 1)]
+let g = M.fromList [('b', 2)]
+
+f <> g
+mappend f g
+f `mappend` g
+M.fromList [('a', 1)]
+
+
+M.fromList [('a', 1)] <> M.fromList [('a', 2)]
+
+Data.Map.fromList [('a', 1)]
+
+-- note that same key is used here
+-- nothing to do with function
+-- application of (<>)
+Data.Map.fromList [('a', 1)] <> Data.Map.fromList [('a', 2)]
+
+Data.Map.fromList [('a', 1)] <> Data.Map.fromList [('b', 2)]
