@@ -29,3 +29,4 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 * [Monads: From Web 2.0 to Hardware Drivers](http://www.well-typed.com/blog/2015/02/ziria/)
 * [Dependently typed servers in Servant](http://www.well-typed.com/blog/2015/12/dependently-typed-servers/)
 * [Generative Art Haskell](https://github.com/rickerbh/GenerativeArtHaskell) - Playground for Haskell For Mac
+* [Why Haskell is Great - 10 minutes](https://www.youtube.com/watch?v=RqvCNb7fKsg)
