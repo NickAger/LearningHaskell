@@ -5,6 +5,7 @@ import Test.QuickCheck
 import Test.QuickCheck.Checkers
 import Test.QuickCheck.Classes
 import ArbitrarySum
+import Combinations
 
 -- 1. Identity
 newtype Identity a = Identity a deriving (Show, Eq)
