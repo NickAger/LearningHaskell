@@ -1,4 +1,4 @@
-# LearningHaskell
+# Learning Haskell
 Exercises completed while working through [Haskell Programming from first principles](http://haskellbook.com). 
 
 Please contact me, if you'd like to compare solutions.
