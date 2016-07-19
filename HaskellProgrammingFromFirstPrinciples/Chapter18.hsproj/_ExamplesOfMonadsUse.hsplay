@@ -1,0 +1,14 @@
+-- Haskell Playground 1.0
+twiceWhenEven [1..4]
+twiceWhenEven' [1..4]
+
+--
+
+mkSphericalCow "Bess" 5 499
+mkSphericalCow "Bess" 5 500
+
+mkSphericalCow' "Bess" 5 499
+mkSphericalCow' "Bess" 5 500
+
+mkSphericalCow'' "Bess" 5 499
+mkSphericalCow'' "Bess" 5 500

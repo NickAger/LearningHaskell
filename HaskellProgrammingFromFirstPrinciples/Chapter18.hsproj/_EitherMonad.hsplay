@@ -1,0 +1,10 @@
+-- Haskell Playground 1.0
+mkSoftware 0 0
+mkSoftware (-1) 0
+mkSoftware (-1) (-1)
+mkSoftware 0 (-1)
+
+mkSoftware 500 0
+mkSoftware 501 0
+mkSoftware 100 5001
+mkSoftware 0 500
