@@ -1,0 +1,9 @@
+-- Haskell Playground 1.0
+j [[1,2], [], [3]]
+j (Just (Just 1))
+j (Just Nothing)
+j Nothing
+
+meh [1..4] (\x -> Just x) 
+
+flipType $ Just <$> [1..4]
