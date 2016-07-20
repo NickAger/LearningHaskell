@@ -1,0 +1,74 @@
+-- Haskell Playground 1.0
+import Data.Foldable
+import Data.Monoid
+
+foldr (+) 0 [1..5]
+fold [Sum 1, Sum 2, Sum 3, Sum 4, Sum 5]
+fold [1,2,3,4,5 :: Sum Integer]
+fold [1,2,3,4,5 :: Product Integer]
+
+-- In some cases, the compiler can identify and use the stan- dard Monoid for a type, without us being explicit:
+
+foldr (++) "" ["hello", " julie"]
+fold ["hello", " julie"]
+
+-- Unlike fold, foldMap has a function as its first element
+-- the first (function) argument of foldMap must explicitly map each element of the structure to a Monoid:
+foldMap Sum [1..5]
+foldMap Product [1..5]
+
+foldMap All [True, False, True]
+foldMap Any [True, False, True]
+
+foldMap All [(3==4), (9 > 5)]
+foldMap Any [(3==4), (9 > 5)]
+
+foldMap First [Just 1, Nothing, Just 5]
+foldMap Last [Just 1, Nothing, Just 5]
+
+-- foldMap can also have a function to map that is different from the Monoid it’s using
+foldMap (*5) [1, 2, 3 :: Product Integer]
+foldMap (*5) [1, 2, 3 :: Sum Integer]
+
+getProduct $ foldMap (*5) [1, 2, 3]
+getSum $ foldMap (*5) [1, 2, 3]
+
+
+foldMap (*5) [(Sum 5)]
+
+-- how does this work? See explanation opposite
+(*5) (Sum 5)
+-- is it because instance Num a => Num (Sum a)
+
+
+-- also
+-- fmap (*5) (Sum 5)
+-- works in ghc 8.x as later libraries define
+-- Functor Sum - but not the ones I'm using here.
+
+(* (Sum 5)) (Sum 5)
+
+foldr (*) 3 [1, 2, 3 :: Sum Integer]
+foldr (*) 3 [1, 2, 3 :: Product Integer]
+
+-- Product and Sum are identical when apply to a single value
+getProduct $ foldMap (*5) (Just 100)
+getSum $ foldMap (*5) (Just 5)
+
+-- or
+getProduct $ foldMap (*5) [100]
+getSum $ foldMap (*5) [5]
+
+-- but not in the case mempty is applied:
+getProduct $ foldMap (*5) Nothing
+getSum $ foldMap (*5) Nothing
+
+-- or alternatively:
+foldMap (*5) Nothing :: Product Integer
+foldMap (*5) Nothing :: Sum Integer
+
+
+
+
+
+

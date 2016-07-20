@@ -1,0 +1,19 @@
+name: Chapter20
+version: 1.0
+cabal-version: 1.11
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+x-ghc-framework-version: 7.10.3-5.9-2
+x-last-ide-version: HfM1.2.1
+Executable Chapter20
+  main-is: Chapter20.hs
+  buildable: True
+  build-depends:
+      base -any
+  other-modules:
+      ExercisesLibraryFunctions
+      OtherDerivedOperations
+      ChapterExercises206
+      OptionalMonoid
+      FoldableInstances

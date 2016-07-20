@@ -1,0 +1,26 @@
+-- Haskell Playground 1.0
+foldr (\_ _ -> "nothing") "hello" (Constant 5) 
+foldMap Sum (Constant 5)
+
+foldMap Sum (Two 2 3)
+foldr (\(Two a b) acc -> b + acc) 4 (Two 2 6)
+foldMap Sum (Three "dont" "care" 3)
+foldMap Sum (Three' "dont care" 2 3)
+foldMap Any (Three' "dont care" True False)
+foldMap All (Three' "dont care" True False)
+
+foldMap Sum (Four' "dont care" 2 3 4)
+foldMap Any (Four' "dont care" True False False)
+foldMap All (Four' "dont care" True False True)
+
+
+
+
+(Just $ Sum 10) <> (Just $ Sum 2)
+
+filterF oddSum [1,2,3 :: Sum Integer] :: [Sum Integer]
+
+filterF' oddSum [1,2,3 :: Sum Integer] :: [Sum Integer]
+
+filterF odd [1,2,3] :: [Int]
+filterF' odd [1,2,3] :: [Int]

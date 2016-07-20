@@ -1,0 +1,63 @@
+-- Haskell Playground 1.0
+import Data.Foldable
+import Data.Monoid
+
+toList $ Just 1
+
+toList [Just 1, Just 2, Just 3]
+map toList [Just 1, Just 2, Just 3]
+concatMap toList [Just 1, Just 2, Just 3]
+concatMap toList [Just 1, Just 2, Nothing]
+toList (1,2)
+
+null (Left 3)
+null []
+
+null Nothing
+null (1,2)
+fmap null [Just 1, Just 2, Nothing]
+
+length (1,2)
+length [(1,2), (3,4), (5,6)]
+fmap length [(1,2), (3,4), (5,6)]
+
+length $ Just [1,2,3]
+fmap length Just [1,2,3] -- the a of Just a in this case is a list, and there is only one list
+fmap length $ Just [1,2,3]
+fmap length [Just 1, Just 2, Just 3]
+fmap length [Just 1, Just 2, Nothing]
+
+elem 2 (Just 3)
+
+elem True (Left False)
+elem True (Left True)
+
+elem True (Right False)
+elem True (Right True)
+
+fmap (elem 3) [Right 1, Right 2, Right 3]
+
+maximum [10,12,33,5]
+fmap maximum [Just 2, Just 10, Just 4]
+fmap maximum $ Just [3,7,10,2]
+
+minimum "julie"
+fmap minimum $ Just "julie"
+fmap minimum [Just 'j', Just 'u', Just 'l']
+
+-- expected: "[4,3,*** Exception: minimum: empty structure"
+fmap minimum [Just 4, Just 3, Nothing]
+
+-- expected: "*** Exception: minimum: empty structure"
+minimum $ Left 3
+
+sum Nothing
+sum (7,5)
+fmap sum [(7,5), (3,4)]
+fmap sum $ Just [1,2,3,4,5]
+
+product Nothing
+fmap product $ Just []
+fmap product $ Right [1,2,3]
+
+

@@ -1,0 +1,16 @@
+-- Haskell Playground 1.0
+foldr (*) 1 (Identity 5)
+foldl (*) 5 (Identity 5)
+
+foldMap (*5) (Identity 100) :: Product Integer
+
+foldr (+) 1 Nothing
+getSum $ foldMap (+1) Nothing
+
+foldr (+) 1 (Just 3)
+getSum $ foldMap (+1) $ Just 3
+
+getSum $ foldMap (+1) Nada
+getProduct $ foldMap (+1) Nada
+
+getSum $ foldMap (+1) (Only 1)
