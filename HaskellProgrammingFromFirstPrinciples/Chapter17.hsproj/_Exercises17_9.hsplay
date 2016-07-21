@@ -3,7 +3,9 @@ import Control.Applicative
 import Data.Monoid
 import Text.Show.Functions
 
--- Ex1: []
+-- Given a type that has an instance of Applicative, specialize the types of the methods. Test your specialization in the REPL.
+
+-- 1: []
 
 -- from ghci 8.0.1
 -- :set -XTypeApplications
@@ -13,13 +15,13 @@ import Text.Show.Functions
 (<*>) `asAppliedTo` []
 
 -- --- ---
--- Ex2: IO 
+-- 2: IO 
 
 -- pure @IO :: a -> IO a
 -- (<*>) @IO :: IO (a -> b) -> IO a -> IO b
 
 -- --- ---
--- Ex3: (,)a
+-- 3: (,)a
 
 -- :t (<*>) @((,)(Sum Int))
 -- (<*>) @((,)(Sum Int)) :: (Sum Int, a -> b) -> (Sum Int, a) -> (Sum Int, b)
@@ -30,7 +32,23 @@ import Text.Show.Functions
 -- (<*>)  @((,)String) :: (String, a -> b) -> (String, a) -> (String, b)
 
 -- --- ---
--- Ex4: (->) e
+-- 4: (->) e
 
 -- (<*>)  @((->)String) :: (String -> a -> b) -> (String -> a) -> String -> b
 -- pure  @((->)String) :: a -> String -> a
+
+
+--
+
+-- From Chapter 21, perhaps the book meant something like:
+let f = undefined :: a -> Maybe b
+let xs = undefined :: [a]
+-- :t map f xs
+-- map f xs :: [Maybe b]
+
+-- how would this work for the items above? eg item 1
+let fs = undefined :: [a -> b]
+-- :t fs <*> xs
+-- fs <*> xs :: [b]
+-- it requires a little more thought as you have to work out the
+-- types then apply them.

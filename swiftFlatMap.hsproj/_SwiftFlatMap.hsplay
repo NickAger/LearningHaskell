@@ -3,4 +3,11 @@ let testArray = [Just 4, Nothing, Just 10, Nothing, Just 20]
 
 swiftFlatMap (*2) testArray
 
+swiftFlatMap2 (*2) testArray
+
+swiftFlatMap3 (*2) testArray
+
+mempty (undefined :: [a])
+
+(mempty [1,2,3]):[5,6,7]
 

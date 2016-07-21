@@ -1,0 +1,22 @@
+name: Chapter21
+version: 1.0
+cabal-version: 1.11
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+x-ghc-framework-version: 7.10.3-5.9-2
+x-last-ide-version: HfM1.2.1
+Executable Chapter21
+  main-is: Chapter21.hs
+  buildable: True
+  build-depends:
+      base -any,
+      containers -any,
+      wreq -any,
+      bytestring -any,
+      transformers -any
+  other-modules:
+      TraversableInstances
+      MorseCodeRevisited
+      HttpStuff
+      ReimplementingWeakerTypes

@@ -39,6 +39,8 @@ foldMap (*5) [(Sum 5)]
 -- how does this work? See explanation opposite
 (*5) (Sum 5)
 -- is it because instance Num a => Num (Sum a)
+getSum $ (*5) (Sum 5)
+
 
 
 -- also
@@ -66,7 +68,6 @@ getSum $ foldMap (*5) Nothing
 -- or alternatively:
 foldMap (*5) Nothing :: Product Integer
 foldMap (*5) Nothing :: Sum Integer
-
 
 
 

@@ -1,0 +1,16 @@
+-- Haskell Playground 1.0
+import Data.Maybe
+
+morseToChar "gobbledegook"
+morseToChar "-.-."
+
+fromMaybe ' ' (morseToChar "-.-.")
+
+stringToMorse "chris"
+fromMaybe [] (stringToMorse "chris")
+
+let morse s = fromMaybe [] (stringToMorse s)
+
+fmap morseToChar (morse "chris")
+
+sequence $ fmap morseToChar (morse "chris")

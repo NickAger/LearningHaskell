@@ -1,0 +1,11 @@
+-- Haskell Playground 1.0
+traverse (Identity . (+1)) [1,2]
+runIdentity $ traverse (Identity . (+1)) [1,2]
+
+edgelordMap (+1) [1..5]
+
+let xs = [1,2,3,4,5 :: Sum Integer]
+traverse (Constant . (+1)) xs
+
+foldMap' Sum [1..5]
+

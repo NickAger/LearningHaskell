@@ -1,0 +1,11 @@
+-- Haskell Playground 1.0
+traverse (\n -> Just $ n+1) $ Right 2
+traverse (\n -> Just $ n+1) $ Left "error"
+
+sequenceA $ Left "error"
+sequenceA $ Right [2]
+
+
+traverse (Just . (+1)) $ Right 2
+
+traverse ((:[]) . (+1)) $ Right 2
