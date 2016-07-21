@@ -9,3 +9,7 @@ sequenceA $ Right [2]
 traverse (Just . (+1)) $ Right 2
 
 traverse ((:[]) . (+1)) $ Right 2
+
+Test' "hello"
+
+

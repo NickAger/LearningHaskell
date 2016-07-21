@@ -15,3 +15,5 @@ prop_MapFilter f p (xs::[A]) =
 
 
 table h xs = [ (x, h x) | x <- xs]
+
+data S n a = S (n a) a deriving Show

@@ -2,3 +2,8 @@
 
 
 verboseCheck prop_MapFilter
+
+
+
+let x = S (Just 3) 10
+S Nothing "hello"
