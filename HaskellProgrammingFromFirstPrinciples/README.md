@@ -9,7 +9,7 @@ For comparing solutions, I've found the following other developers' repositories
 * https://github.com/dmvianna/haskellbook
 * https://lukleh.github.io/haskell-book-exercises/
 
-There are also the following resources:
+Some other resources:
 * [HaskellBook subreddit](https://www.reddit.com/r/HaskellBook/)
 * [Julie's beginners Haskell links](http://argumatronic.com/noobs.html)
 * [Chris's learn Haskell repo](https://github.com/bitemyapp/learnhaskell)
