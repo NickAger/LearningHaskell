@@ -20,4 +20,4 @@ Some other resources:
 
 --
 
-(1) `stack new anExercise simple`
+(1) `> stack new anExercise simple`
