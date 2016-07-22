@@ -17,6 +17,7 @@ Some other resources:
 * https://haskell-lang.org
 * https://www.haskell.org
 * [Chris's how I start Haskell](http://howistart.org/posts/haskell/1)
+* [#haskell-beginners irc](http://ircbrowse.net/haskell-beginners)
 
 --
 
