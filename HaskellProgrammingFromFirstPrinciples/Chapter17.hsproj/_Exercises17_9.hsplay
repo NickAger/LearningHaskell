@@ -11,14 +11,18 @@ import Text.Show.Functions
 -- :set -XTypeApplications
 -- :t (<*>) @[]
 -- (<*>) @[] :: [a -> b] -> [a] -> [b]
--- pure @[] :: a -> [a
+-- pure @[] :: a -> [a]
 (<*>) `asAppliedTo` []
+(<*>)::[a -> b] -> [a] -> [b]
+pure::a -> [a]
 
 -- --- ---
 -- 2: IO 
 
 -- pure @IO :: a -> IO a
 -- (<*>) @IO :: IO (a -> b) -> IO a -> IO b
+pure::a -> IO a
+(<*>):: IO (a -> b) -> IO a -> IO b
 
 -- --- ---
 -- 3: (,)a
@@ -26,17 +30,23 @@ import Text.Show.Functions
 -- :t (<*>) @((,)(Sum Int))
 -- (<*>) @((,)(Sum Int)) :: (Sum Int, a -> b) -> (Sum Int, a) -> (Sum Int, b)
 -- pure  @((,)(Sum Int)) :: a -> (Sum Int, a)
- (<*>) `asAppliedTo` (undefined :: Sum Int, undefined)
+(<*>) `asAppliedTo` (undefined :: Sum Int, undefined)
+pure::a -> (Sum Int, a)
+(<*>)::(Sum Int, a->b) -> (Sum Int, a) -> (Sum Int, b)
+ 
 
 -- pure  @((,)String) :: a -> (String, a)
 -- (<*>)  @((,)String) :: (String, a -> b) -> (String, a) -> (String, b)
+pure::a -> (String, a)
+(<*>)::(String, a->b) -> (String, a) -> (String, b)
 
 -- --- ---
 -- 4: (->) e
 
 -- (<*>)  @((->)String) :: (String -> a -> b) -> (String -> a) -> String -> b
 -- pure  @((->)String) :: a -> String -> a
-
+pure :: a -> String -> a
+(<*>) :: (String -> a -> b) -> (String -> a) -> String -> b
 
 --
 
@@ -52,3 +62,6 @@ let fs = undefined :: [a -> b]
 -- fs <*> xs :: [b]
 -- it requires a little more thought as you have to work out the
 -- types then apply them.
+
+--
+

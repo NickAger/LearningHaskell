@@ -32,4 +32,25 @@ kadoban: So, /msg lambdabot > "hi" should work, for example
 TODO: types vs terms
 -}
 
+--
  
+-- from Chapter 22, perhaps the book meant something like:
+{-
+One of the nice things about Haskell is we can assert a more concrete type for functions like (<*>) and see if the compiler agrees we're putting force something hypothetically possible.
+Let's remind ourselves of the type of (<*>):
+
+Prelude> :t (<*>)
+(<*>)::Applicative f=> f (a -> b) -> f a -> f b
+
+-- in this case, we know f is ((->) a)
+-- so we concretize it thusly
+Prelude>:t(<*>)::(a->a->b)->(a->a)->(a->b)
+(<*>)::(a->a->b)->(a->a)->(a->b)
+
+The compiler agrees that this is a possible type for (<*>).
+-}
+
+-- UPDATE: I fairly sure this is what the book intended. I've updated the exercises accordingly.
+
+
+
