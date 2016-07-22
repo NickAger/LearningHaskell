@@ -18,4 +18,6 @@ Some other resources:
 * https://www.haskell.org
 * [Chris's how I start Haskell](http://howistart.org/posts/haskell/1)
 
+--
+
 (1) `stack new anExercise simple`
