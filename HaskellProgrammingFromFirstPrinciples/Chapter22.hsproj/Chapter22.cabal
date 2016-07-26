@@ -11,3 +11,10 @@ Executable Chapter22
   buildable: True
   build-depends:
       base -any
+  other-modules:
+      ReaderPractice
+      FunctionApplicative
+      MonadOfFunctions
+      TypedHoles
+      Ask
+      WarmingUp

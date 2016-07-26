@@ -1,0 +1,18 @@
+-- Haskell Playground 1.0
+composed "Julie"
+fmapped "Chris"
+
+tupled "Julie"
+
+tupledDo "Julie"
+tupledBind "Julie"
+
+-- class Applicative m => Monad (m :: * -> *) where
+--  (>>=) :: m a -> (a -> m b) -> m b
+
+(>>=) :: (a -> a) -> (a -> a -> b) -> a -> b
+
+(>>=) :: ([Char] -> [Char]) -> ([Char] -> [Char] -> ([Char], [Char])) -> [Char] -> ([Char], [Char])
+
+tupledDo "Monad confusion"
+

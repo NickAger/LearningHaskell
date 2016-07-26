@@ -1,0 +1,10 @@
+-- Haskell Playground 1.0
+foo $ Just 3
+foo $ [1..5]
+
+bar 10 [1..8]
+bar 10 $ Just 3
+
+frooty [1..4]
+
+frooty $ Just 10
