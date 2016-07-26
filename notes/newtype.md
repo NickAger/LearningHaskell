@@ -9,3 +9,5 @@ In summary, why you might use newtype:
 
 > For veteran programmers that understand pointers newtype is like a single-member C union that avoids creating an extra pointer, but still gives you a new type constructor and data constructor so you don’t mix up the many many many things
 that share a single representation.
+
+See also "Phantom types" in [Four months with Haskell](http://lexi-lambda.github.io/blog/2016/06/12/four-months-with-haskell/)
