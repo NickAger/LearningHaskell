@@ -12,6 +12,7 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 
 ## My Notes
 
+* [MagicHaskeller](http://nautilus.cs.miyazaki-u.ac.jp/~skata/MagicHaskeller.html) - `f "hello" == "HELLO"` -> `f = map toUpper`
 * [newtype](notes/newtype.md)
 * [Orphan instances](notes/orphaninstances.md)
 * [NonEmpty](notes/NonEmpty.md)
