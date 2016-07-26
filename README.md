@@ -20,6 +20,7 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 * [setup](notes/setup.md)
 * [CoArbitrary](notes/CoArbitrary.md)
 * [composition](notes/composition.md)
+* [lifting](notes/lifting.md)
 
 # Links
 
