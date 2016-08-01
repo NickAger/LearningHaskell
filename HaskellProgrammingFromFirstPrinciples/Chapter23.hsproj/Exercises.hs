@@ -2,8 +2,11 @@ module Exercises where
   
 import Control.Monad.Trans.State hiding (get, put, modify)
 
--- reminder, it isn't quite like this but it will
--- do as an approximation ie the State constructor is not exposed
+-- reminder, State isn't defined like this but it will
+-- do as an approximation... 
+-- ... a major difference is that the State constructor
+-- is not exposed.
+--
 -- newtype State s a = State { runState :: s -> (a,s) }
 
 -- 1.

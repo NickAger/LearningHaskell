@@ -28,6 +28,12 @@ instance Applicative (Moi s) where
         in
            (fab a, s')
            
+-- Question:
+-- I have choosen to ignore the state resulting in (g s) rather than ignoring the state from (f s) 
+-- is one is prefered over the other or
+-- both are equally good?
+-- ... hmm if s is a monoid then we could combine them. 
+
 
 instance Monad (Moi s) where
   return = pure
