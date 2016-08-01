@@ -8,3 +8,4 @@ mapM addResult [1..100]
 
 -- StateT [String] Data.Functor.Identity.Identity ()
 mapM_ addResult [1..100]
+ 

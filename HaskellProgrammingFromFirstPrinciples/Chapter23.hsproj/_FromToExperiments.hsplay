@@ -1,0 +1,5 @@
+-- Haskell Playground 1.0
+[100,99..1]
+
+enumFromThenTo 10 9 1
+

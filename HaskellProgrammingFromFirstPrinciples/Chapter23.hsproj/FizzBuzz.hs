@@ -26,6 +26,10 @@ main =
   
  
 -- execState :: State s a -> s -> s
+-- execState m s = snd (runState m s)
+-- Evaluate a state computation with the given initial state and return the final state, discarding the final value.
+
+
 -- class (Functor t, Foldable t) => Traversable (t :: * -> *) where
 --  mapM :: Monad m => (a -> m b) -> t a -> m (t b)
 

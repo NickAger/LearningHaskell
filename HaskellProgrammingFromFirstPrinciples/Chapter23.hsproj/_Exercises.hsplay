@@ -1,0 +1,13 @@
+-- Haskell Playground 1.0
+runState get "curryIsAmaze"
+
+exec (put "wilma") "daphne"
+
+exec get "scooby papu"
+
+eval get "bunnicula"
+eval (put "wilma") "daphne"
+
+runState (modify (+1)) 0
+
+runState (modify (+1) >> modify (+1)) 0

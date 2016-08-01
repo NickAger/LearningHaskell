@@ -17,8 +17,10 @@ Executable Chapter23
   other-modules:
       MoiState
       FizzBuzz3
+      FromToExperiments
       RandomExample2
       RandomExample
       FizzBuzzDifferently
       FizzBuzz2
+      Exercises
       FizzBuzz
