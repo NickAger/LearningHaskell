@@ -1,0 +1,10 @@
+-- Haskell Playground 1.0
+addResult 5
+
+fizzbuzzList [1..100]
+
+-- StateT [String] Data.Functor.Identity.Identity [()]
+mapM addResult [1..100]
+
+-- StateT [String] Data.Functor.Identity.Identity ()
+mapM_ addResult [1..100]

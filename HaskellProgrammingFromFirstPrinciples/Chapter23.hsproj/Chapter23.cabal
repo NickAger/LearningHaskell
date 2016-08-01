@@ -1,0 +1,24 @@
+name: Chapter23
+version: 1.0
+cabal-version: 1.11
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+x-ghc-framework-version: 7.10.3-5.9-2
+x-last-ide-version: HfM1.2.1
+Executable Chapter23
+  main-is: Chapter23.hs
+  buildable: True
+  build-depends:
+      base -any,
+      random -any,
+      dlist -any,
+      transformers -any
+  other-modules:
+      MoiState
+      FizzBuzz3
+      RandomExample2
+      RandomExample
+      FizzBuzzDifferently
+      FizzBuzz2
+      FizzBuzz

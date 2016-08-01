@@ -1,0 +1,22 @@
+-- Haskell Playground 1.0
+let sg = mkStdGen 0 
+next sg
+next sg
+
+let sg' = mkStdGen 1
+next sg'
+
+let newSg = snd (next sg)
+next newSg
+next (snd (next newSg))
+
+let n = 10
+n * 5
+
+(\n -> n * 2)  4
+
+
+-- extra experiments
+-- reminding myself
+-- how reader works
+runReader (Reader (\n -> (n * 2)))  4
