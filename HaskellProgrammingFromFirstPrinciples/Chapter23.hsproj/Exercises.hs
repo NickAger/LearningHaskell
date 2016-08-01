@@ -6,6 +6,7 @@ import Control.Monad.Trans.State hiding (get, put, modify)
 -- do as an approximation... 
 -- ... a major difference is that the State constructor
 -- is not exposed.
+-- see https://mail.haskell.org/pipermail/beginners/2011-October/008882.html
 --
 -- newtype State s a = State { runState :: s -> (a,s) }
 
