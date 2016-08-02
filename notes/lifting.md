@@ -6,3 +6,7 @@ From Chapter 22:
 > `data (->) a b`
 >
 > the same rule applies; you have to lift over the `(->) a` and only transform the `b` value.
+
+From: [Swiftz the power of liftz](https://www.stackbuilders.com/news/swiftz-the-power-of-liftz)
+
+> Intuitively, functors convert regular functions into functions that can operate within a given computational context. This is what we call "lifting"
