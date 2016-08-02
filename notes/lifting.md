@@ -10,3 +10,8 @@ From Chapter 22:
 From: [Swiftz the power of liftz](https://www.stackbuilders.com/news/swiftz-the-power-of-liftz)
 
 > Intuitively, functors convert regular functions into functions that can operate within a given computational context. This is what we call "lifting"
+
+`fmap` allows us to go from the world of non-specialised functions to for example:
+* world of functions on futures - "contexts that have yet to be resolved"
+* world of functions on arrays
+* world of functions on Optional / Maybe - "computational context where failure can be represented"
