@@ -12,7 +12,6 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 
 ## My Notes
 
-* [MagicHaskeller](http://nautilus.cs.miyazaki-u.ac.jp/~skata/MagicHaskeller.html) - `f "hello" == "HELLO"` -> `f = map toUpper`
 * [newtype](notes/newtype.md)
 * [Orphan instances](notes/orphaninstances.md)
 * [NonEmpty](notes/NonEmpty.md)
@@ -25,10 +24,12 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 
 # Links
 
+* [MagicHaskeller](http://nautilus.cs.miyazaki-u.ac.jp/~skata/MagicHaskeller.html) - `f "hello" == "HELLO"` -> `f = map toUpper`
 * [Functors, Applicatives and Monads in pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 * [Open-source Haskell projects](https://github.com/bitemyapp/learnhaskell/blob/master/code_to_learn_from.md) - "Code to learn from"
 * [The five arguments on why people struggle with monads](http://chrisdone.com/posts/monads)
 * [A wreq tutorial](http://www.serpentine.com/wreq/tutorial.html) - Learn how to write web clients. "We start easy, then ramp up the power."
+* [A collection of interesting Haskell talks](https://github.com/0xmohit/talks)
 * [A monad for reactive programming](https://www.schoolofhaskell.com/user/agocorona/monad-reactive-programming-2)
 * [Monads: From Web 2.0 to Hardware Drivers](http://www.well-typed.com/blog/2015/02/ziria/)
 * [Dependently typed servers in Servant](http://www.well-typed.com/blog/2015/12/dependently-typed-servers/)
