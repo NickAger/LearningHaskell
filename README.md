@@ -2,7 +2,7 @@
 Learning Haskell by studying:
 
 * [Haskell Programming from first principles](http://haskellbook.com) - [@haskellbook](https://twitter.com/haskellbook) - my main learning resource 
-* [Penn University CIS 194](http://www.seas.upenn.edu/~cis194/lectures/01-intro.html) 
+* [Penn University CIS 194](http://www.seas.upenn.edu/~cis194/lectures/01-intro.html) - I completed the [exercises](https://github.com/NickAger/LearningHaskell/tree/master/CIS194) for first 4 lectures.  
 * [Well-Typed Haskell training](http://www.well-typed.com/services_training/) 
 
 The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://github.com/NickAger/LearningHaskell/tree/master/HaskellProgrammingFromFirstPrinciples). I would love to compare my exercises solutions with others learning haskell through [Haskell Programming from first principles](http://haskellbook.com) book. Please contact me.
