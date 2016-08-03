@@ -10,4 +10,5 @@ Executable Chapter24
   main-is: Chapter24.hs
   buildable: True
   build-depends:
-      base -any
+      base -any,
+      transformers -any

@@ -14,11 +14,12 @@ Executable Chapter16
       QuickCheck -any,
       HUnit -any
   other-modules:
+      Exercises2
       InstancesOfFunctorExercises
-      ReplacementExperiment
       Either
       Possibility
+      ReplacementExperiment
       FunctorLaws
       ExercisesHeavyLifting
+      Experiments
       Exercises
-      Exercises2

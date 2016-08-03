@@ -1,0 +1,9 @@
+-- Haskell Playground 1.0
+runStateT (put 8) 7
+runStateT get 8
+runStateT (put 1 >> get) 8
+(runStateT $ put 1 >> get) 0
+(runStateT $ put 2 >> get) 1020324234
+(runStateT $ put 2 >> return 9001) 0
+
+

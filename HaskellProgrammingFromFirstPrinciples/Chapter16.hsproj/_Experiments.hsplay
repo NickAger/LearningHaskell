@@ -1,0 +1,22 @@
+-- Haskell Playground 1.0
+
+-- from https://www.stackbuilders.com/news/swiftz-the-power-of-liftz
+-- Intuitively, functors convert regular functions into functions that can operate within a given computational context. This is what we call "lifting"
+
+let a = Just 4
+let f = (+2)
+let liftedF = fmap f
+
+let result = liftedF a
+result
+
+
+-- but we wouldn't do this normally we'd do:
+
+(+2) <$> Just 4
+
+-- some Swift:
+-- User.logIn(username,password).onSuccess(doSomethingWithPosts)
+    
+-- The doSomethingWithPosts function will be invoked within the context of a successfully completed login action in the future
+-- This method effectively allows us to apply regular functions in contexts that have yet to be resolved
