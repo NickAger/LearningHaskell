@@ -16,8 +16,12 @@ testParse :: Parser Char -> IO ()
 testParse p =
     print $ parseString p mempty "123"
 
-testParse' :: Parser String -> IO ()
-testParse' p =
+testParseString :: Parser String -> IO ()
+testParseString p =
+    print $ parseString p mempty "123"
+
+testParseBottom :: Parser () -> IO ()
+testParseBottom p =
     print $ parseString p mempty "123"
 
 -- 1.
@@ -36,6 +40,10 @@ all2' = string "123" >> eof
 all2'' :: Parser String
 all2'' = string "123" >>= (\rst -> eof >> return rst)
 
+all2''' :: Parser String
+all2''' = string "123" <* eof
+
+-- trick is to try to parse the largest first
 any2'' :: Parser String
 any2'' = stringEof "123" <|> stringEof "12" <|> stringEof "1"
   where
@@ -50,6 +58,12 @@ any2'''' = stringStop "123" <|> stringStop "12" <|> stringStop "1"
   where
     stringStop s =
       string s >> stop
+
+any2''''' :: Parser String
+any2''''' = stringEof "123" <|> stringEof "12" <|> stringEof "1"
+  where
+    stringEof s =
+      string s <* eof
 
 -- 3.
 string' :: String -> Parser String

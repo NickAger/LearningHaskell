@@ -16,3 +16,21 @@ main = do
   testParse oneTwo
   pNL "oneTwo':"
   testParse oneTwo'
+  pNL "all2:"
+  testParseString all2
+  pNL "all2':"
+  testParseBottom all2'
+  pNL "all2'':"
+  testParseString all2''
+  pNL "all2''':"
+  testParseString all2'''
+  pNL "any2'':"
+  testParseString any2''
+  pNL "any2''':"
+  testParseString any2'''
+  pNL "any2'''':"
+  testParseString any2''''
+  pNL "any2''''':"
+  testParseString any2'''''
+  pNL "string':"
+  testParseString $ string' "123"

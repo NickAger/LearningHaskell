@@ -11,7 +11,6 @@ alsoBad = "10"
 shouldWork = "1/2"
 shouldAlsoWork = "2/1"
 
-
 parseFraction :: Parser Rational
 parseFraction = do
   numerator <- decimal
@@ -131,3 +130,53 @@ I'd argue applicative-when-you-can-but-monadic-when-you-must is also the better
 way to see what's going on.
 
 -}
+
+{-
+See also:
+http://stackoverflow.com/questions/38707813/parsec-applicatives-vs-monads/38719766#38719766
+
+-}
+
+-- Exercise Try
+-- Warning see: (Parsec: “try a <|> b” considered harmful)
+-- http://blog.ezyang.com/2014/05/parsec-try-a-or-b-considered-harmful/
+-- related IRC - http://ircbrowse.net/browse/haskell-beginners?events_page=25036
+
+{-
+`try` is useful for backtracking if the
+parser has already consumed input.
+Often can can eliminate `try` by using `<\>`
+at the point of difference eg see below:
+-}
+
+parseDecimal :: Fractional a => Parser a
+parseDecimal = do
+  i <- decimal
+  char '.'
+  d <- decimal
+  return $ fromIntegral i + toDecimal d
+
+toDecimal :: (Fractional a) => Integer -> a
+toDecimal d = fromIntegral d / (10 ^^ (length $ show d))
+
+parseDecimalOrFraction :: Parser Rational
+parseDecimalOrFraction = try parseFraction <|> parseDecimal
+
+-- without `try` and returning with Either
+parseDecimalOrFraction' :: Parser (Either Rational Double)
+parseDecimalOrFraction' = do
+  i <- decimal
+  sep <- char '.' <|> char '/'
+  d <- decimal
+  return $ leftOrRight sep i d
+  where
+    leftOrRight '.' i d = Left $ i % d
+    leftOrRight '/' i d = Right $ fromIntegral i + toDecimal d
+
+-- same as above but attempting to use Applicative rather than Monad
+parseDecimalOrFraction'' :: Parser (Either Rational Double)
+parseDecimalOrFraction'' =
+  leftOrRight <$> decimal <*> (char '.' <|> char '/') <*> decimal
+  where
+    leftOrRight i '.' d = Left $ i % d
+    leftOrRight i '/' d = Right $ fromIntegral i + toDecimal d
