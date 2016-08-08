@@ -67,8 +67,7 @@ implicit
 
 {-
 Stating the obvious, as we know its a monad it must also be an
-Applicative. Opps not so obvious, something can be a Monad and
-not an Applicative.
+Applicative.
 -}
 
 {-
