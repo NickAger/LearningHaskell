@@ -70,3 +70,7 @@ parseNumberOrString = toNumberOrString <$> some alphaNum
     toNumberOrString a
       | all isDigit a = NOSI $ read a
       | otherwise = NOSS a
+
+instance Ord SemVer where
+  compare a b = compare (toValue a) (toValue b)
+    where toValue (SemVer mj mn p _ _) = (mj * 100) + (mn * 10) + p
