@@ -1,13 +1,13 @@
 # LearningHaskell
 Learning Haskell by studying:
 
-* [Haskell Programming from first principles](http://haskellbook.com) - [@haskellbook](https://twitter.com/haskellbook) - my main learning resource 
+* [Haskell Programming from first principles](http://haskellbook.com) - [@haskellbook](https://twitter.com/haskellbook) - my main learning resource
 * [Penn University CIS 194](http://www.seas.upenn.edu/~cis194/lectures/01-intro.html) - I completed the [exercises](https://github.com/NickAger/LearningHaskell/tree/master/CIS194) for first 4 lectures.  
-* [Well-Typed Haskell training](http://www.well-typed.com/services_training/) 
+* [Well-Typed Haskell training](http://www.well-typed.com/services_training/)
 
 The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://github.com/NickAger/LearningHaskell/tree/master/HaskellProgrammingFromFirstPrinciples). I would love to compare my exercises solutions with others learning haskell through [Haskell Programming from first principles](http://haskellbook.com) book. Please contact me.
 
-Workspaces made within [Haskell for Mac](http://haskellformac.com) and 
+Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 [Atom configured for Haskell](http://achernyak.me/universal-haskell-dev-enviornment).
 
 ## My Notes
@@ -38,3 +38,4 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 * [Why Haskell is Great - 10 minutes](https://www.youtube.com/watch?v=RqvCNb7fKsg)
 * [Four months with Haskell](http://lexi-lambda.github.io/blog/2016/06/12/four-months-with-haskell/)
 * [The Evolution of a Haskell Programmer](http://www.willamette.edu/~fruehr/haskell/evolution.html)
+* [Haskell 'sequence' Over Functions - Explained](http://derekwyatt.org/2012/01/25/haskell-sequence-over-functions-explained/)
