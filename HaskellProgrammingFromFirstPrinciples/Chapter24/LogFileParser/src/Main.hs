@@ -1,7 +1,8 @@
 module Main where
 
-
+import LogFileParser
+import Text.Trifecta
 
 main :: IO ()
 main = do
-  putStrLn "hello world"
+  print $ parseString parseLogFile mempty logSample

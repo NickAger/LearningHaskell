@@ -22,3 +22,4 @@ executable LogFileParser
                       ,containers
                       ,bytestring
                       ,hspec
+                      ,parsers

@@ -3,11 +3,13 @@
 module LogFileParser where
 
 import Control.Applicative
+import Data.Functor
 import Data.Char (isAlpha)
 import Data.Map (Map)
 import qualified Data.Map as M
 import Text.RawString.QQ
 import Text.Trifecta
+import Text.Parser.LookAhead
 
 type Hours = Int
 type Minutes = Int
@@ -22,11 +24,12 @@ data Date = Date Year Month Day deriving (Eq, Show)
 data LoggedDay = LoggedDay Date [LogEntry] deriving (Eq, Show)
 data LogFile = LogFile [LoggedDay] deriving (Eq, Show)
 
+logSample :: String
 logSample = [r|
--- comment
+
+-- wheee a comment
 
 # 2025-02-05
-
 08:00 Breakfast
 09:00 Sanitizing moisture collector
 11:00 Exercising in high-grav gym
@@ -52,35 +55,52 @@ logSample = [r|
 22:00 Sleep
 |]
 
-parseComment :: Parser ()
-parseComment = string "--" *> manyTill anyChar newline *> pure ()
-
 {-
 2016-05-03 16:52:50
 
-chipf0rk>	I'm trying to parse everything before it
+chipf0rk>	I'm trying to parse everything before a comment
 <chipf0rk>	and that's the part that's tripping me up;
-<nitrix>	Then you can do manipulations like skipMany comments, or, optional comment, or sepBy notComment comment, etc.
+<nitrix>	TYou can do manipulations like skipMany comments, or, optional comment, or sepBy notComment comment, etc.
 <nitrix>	Where notComment would be = manyTill anyChar (lookAhead (comment <|> eof))
-
 -}
 
-
-
-{--
-skipComment :: Parser ()
-skipComment = skipOptional (string "--" >> manyTill anyChar (void newline <|> eof))
-
-skipSpace :: Parser ()
-skipSpace = void $ (char ' ') <|> tab
-
-skipEmpty :: Parser ()
-skipEmpty = void newline <|> skipSpace
-
---}
-
 parseStartTime :: Parser Time
-parseStartTime = liftA2 Time (parseInt <* char ':')  (parseInt <* space)
+parseStartTime = liftA2 Time (parseInt <* char ':') parseInt
 
 parseInt :: Parser Int
 parseInt = fromInteger <$> integer
+
+-- to avoid `integer` eating trailing whitespace including newlines
+parseInt' :: Parser Int
+parseInt' = read <$> some digit
+
+parseLogEntry :: Parser LogEntry
+parseLogEntry = liftA2 LogEntry parseStartTime parseNotComment
+
+parseNotComment :: Parser Description
+parseNotComment = try parseLineWithComment <|> parseUntilNewLineOrEof
+
+parseLineWithComment :: Parser String
+parseLineWithComment = manyTill anyChar (try (string "--")) <* parseUntilNewLineOrEof
+
+parseUntilNewLineOrEof :: Parser String
+parseUntilNewLineOrEof = manyTill anyChar (void newline <|> eof)
+
+parseComment :: Parser ()
+parseComment = string "--" *> manyTill anyChar newline *> pure ()
+
+-- # 2025-02-05
+parseDayLine :: Parser Date
+parseDayLine = char '#' *> space *> liftA3 Date (parseInt <* char '-')  (parseInt <* char '-') (parseInt' <* parseUntilNewLineOrEof)
+
+parseLoggedDay :: Parser LoggedDay
+parseLoggedDay = liftA2 LoggedDay parseDayLine parseLogEntries
+
+parseLogEntries :: Parser [LogEntry]
+parseLogEntries = many parseLogEntry
+
+parseLogFile :: Parser [LoggedDay]
+parseLogFile = parseUpToLoggedDay *>  many (parseLoggedDay <* parseUpToLoggedDay)
+
+parseUpToLoggedDay :: Parser ()
+parseUpToLoggedDay = (manyTill anyChar (lookAhead $ string "\n#") *> void (char '\n')) <|> void (manyTill anyChar eof)

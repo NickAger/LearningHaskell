@@ -1,5 +1,7 @@
 ### Parsers from first principles
 
+* see also [NanoParsec](http://dev.stephendiehl.com/fun/002_parsers.html)
+
 From irc #haskell-beginners http://ircbrowse.net/browse/haskell-beginners?events_page=21897
 
 Iceland_jack:
