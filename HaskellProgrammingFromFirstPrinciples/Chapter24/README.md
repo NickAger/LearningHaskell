@@ -1,6 +1,10 @@
 ### Parsers from first principles
 
-* see also [NanoParsec](http://dev.stephendiehl.com/fun/002_parsers.html)
+see also:
+
+* [NanoParsec](http://dev.stephendiehl.com/fun/002_parsers.html)
+* [Monadic Parser Combinators](http://www.cs.nott.ac.uk/%7Epszgmh/monparsing.pdf)
+
 
 From irc #haskell-beginners http://ircbrowse.net/browse/haskell-beginners?events_page=21897
 
