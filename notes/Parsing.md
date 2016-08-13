@@ -1,7 +1,7 @@
 
 > 2016-05-03 16:52:50
 >
-> "<chipf0rk>"	I'm trying to parse everything before a comment
+> \<chipf0rk\>	I'm trying to parse everything before a comment
 >
 > <chipf0rk>	and that's the part that's tripping me up;
 >
