@@ -20,3 +20,6 @@ executable LogFileParser
                       ,trifecta
                       ,raw-strings-qq
                       ,parsers
+                      ,containers
+                      ,bytestring
+                      ,hspec
