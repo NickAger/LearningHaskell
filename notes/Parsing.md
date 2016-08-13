@@ -16,3 +16,17 @@
 manyTill anyChar (string "--")
 ```
 return all characters upto (but not including) "--" and moves the parse point after "--"
+
+
+### Log file parser struggles
+
+Originally `parseLineWithComment` was defined as:
+```haskell
+parseLineWithComment = manyTill anyChar (string "--") <* parseToNextLineOrEof
+```
+
+which unfortunately parsed all the content until it found `string "--"` which was defined in the second day. The solution I found was change the definition to:
+
+```haskell
+parseLineWithComment = manyTill (noneOf "\n") (string "--") <* parseToNextLineOrEof
+```
