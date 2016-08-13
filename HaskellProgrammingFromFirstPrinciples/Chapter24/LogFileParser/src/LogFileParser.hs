@@ -78,23 +78,23 @@ parseLogEntry :: Parser LogEntry
 parseLogEntry = liftA2 LogEntry parseStartTime parseDescriptionIgnoringComment
 
 parseDescriptionIgnoringComment :: Parser Description
-parseDescriptionIgnoringComment = try parseLineWithComment <|> parseUntilNewLineOrEof
+parseDescriptionIgnoringComment = try parseLineWithComment <|> parseToNextLineOrEof
 
 parseLineWithComment :: Parser String
-parseLineWithComment = manyTill anyChar (string "--") <* parseUntilNewLineOrEof
+parseLineWithComment = manyTill anyChar (string "--") <* parseToNextLineOrEof
 
-parseUntilNewLineOrEof :: Parser String
-parseUntilNewLineOrEof = manyTill anyChar (void newline <|> eof)
+parseToNextLineOrEof :: Parser String
+parseToNextLineOrEof = manyTill anyChar (void newline <|> eof)
 
-parseUntilNewLine :: Parser String
-parseUntilNewLine = manyTill anyChar newline
+parseToNextLine :: Parser String
+parseToNextLine = manyTill anyChar newline
 
 parseComment :: Parser ()
 parseComment = string "--" *> manyTill anyChar newline *> pure ()
 
 -- # 2025-02-05
 parseDayLine :: Parser Date
-parseDayLine = char '#' *> space *> liftA3 Date (parseInt <* char '-')  (parseInt <* char '-') (parseInt' <* parseUntilNewLine)
+parseDayLine = char '#' *> space *> liftA3 Date (parseInt <* char '-')  (parseInt <* char '-') (parseInt' <* parseToNextLine)
 
 parseLoggedDay :: Parser LoggedDay
 parseLoggedDay = liftA2 LoggedDay parseDayLine parseLogEntries
@@ -107,3 +107,19 @@ parseLogFile = many (parseUpToLoggedDay *> parseLoggedDay)
 
 parseUpToLoggedDay :: Parser Char
 parseUpToLoggedDay = manyTill anyChar (lookAhead $ string "\n#") *> newline
+
+--
+
+testParser :: Result [LoggedDay]
+testParser = parseString parseLogFile mempty logSample
+
+{-
+testParser gives:
+
+Success [LoggedDay (Date 2025 2 5) [LogEntry (Time 8 0) "Breakfast\n09:00 Sanitizing moisture collector\n11:00 Exercising in high-grav gym\n12:00 Lunch\n13:00 Prog
+ramming\n17:00 Commuting home in rover\n17:30 R&R\n19:00 Dinner\n21:00 Shower\n21:15 Read\n22:00 Sleep\n\n# 2025-02-07 ",LogEntry (Time 8 0) "Breakfast ",LogEntry
+(Time 9 0) "Bumped head, passed out",LogEntry (Time 13 36) "Wake up, headache",LogEntry (Time 13 37) "Go to medbay",LogEntry (Time 13 40) "Patch self up",LogEntry
+(Time 13 45) "Commute home for rest",LogEntry (Time 14 15) "Read",LogEntry (Time 21 0) "Dinner",LogEntry (Time 21 15) "Read",LogEntry (Time 22 0) "Sleep"]]
+
+I don't understand why its parsing the first log entry as the whole of the first day.
+-}
