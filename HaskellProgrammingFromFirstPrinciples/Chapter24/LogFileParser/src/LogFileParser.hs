@@ -1,12 +1,14 @@
 {-# LANGUAGE QuasiQuotes #-}
 
+-- build depends on:
+--            trifecta, raw-strings-qq, parsers
+
 module LogFileParser where
 
 import Control.Applicative
 import Data.Functor
-import Data.Char (isAlpha)
-import Data.Map (Map)
-import qualified Data.Map as M
+--import Data.Map (Map)
+-- import qualified Data.Map as M
 import Text.RawString.QQ
 import Text.Trifecta
 import Text.Parser.LookAhead
@@ -55,14 +57,6 @@ logSample = [r|
 22:00 Sleep
 |]
 
-{-
-2016-05-03 16:52:50
-
-chipf0rk>	I'm trying to parse everything before a comment
-<chipf0rk>	and that's the part that's tripping me up;
-<nitrix>	TYou can do manipulations like skipMany comments, or, optional comment, or sepBy notComment comment, etc.
-<nitrix>	Where notComment would be = manyTill anyChar (lookAhead (comment <|> eof))
--}
 
 parseStartTime :: Parser Time
 parseStartTime = liftA2 Time (parseInt <* char ':') parseInt

@@ -19,7 +19,4 @@ executable LogFileParser
   build-depends:       base >= 4.7 && < 5
                       ,trifecta
                       ,raw-strings-qq
-                      ,containers
-                      ,bytestring
-                      ,hspec
                       ,parsers
