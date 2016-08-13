@@ -75,23 +75,26 @@ parseInt' :: Parser Int
 parseInt' = read <$> some digit
 
 parseLogEntry :: Parser LogEntry
-parseLogEntry = liftA2 LogEntry parseStartTime parseNotComment
+parseLogEntry = liftA2 LogEntry parseStartTime parseDescriptionIgnoringComment
 
-parseNotComment :: Parser Description
-parseNotComment = try parseLineWithComment <|> parseUntilNewLineOrEof
+parseDescriptionIgnoringComment :: Parser Description
+parseDescriptionIgnoringComment = try parseLineWithComment <|> parseUntilNewLineOrEof
 
 parseLineWithComment :: Parser String
-parseLineWithComment = manyTill anyChar (try (string "--")) <* parseUntilNewLineOrEof
+parseLineWithComment = manyTill anyChar (string "--") <* parseUntilNewLineOrEof
 
 parseUntilNewLineOrEof :: Parser String
 parseUntilNewLineOrEof = manyTill anyChar (void newline <|> eof)
+
+parseUntilNewLine :: Parser String
+parseUntilNewLine = manyTill anyChar newline
 
 parseComment :: Parser ()
 parseComment = string "--" *> manyTill anyChar newline *> pure ()
 
 -- # 2025-02-05
 parseDayLine :: Parser Date
-parseDayLine = char '#' *> space *> liftA3 Date (parseInt <* char '-')  (parseInt <* char '-') (parseInt' <* parseUntilNewLineOrEof)
+parseDayLine = char '#' *> space *> liftA3 Date (parseInt <* char '-')  (parseInt <* char '-') (parseInt' <* parseUntilNewLine)
 
 parseLoggedDay :: Parser LoggedDay
 parseLoggedDay = liftA2 LoggedDay parseDayLine parseLogEntries
@@ -100,7 +103,7 @@ parseLogEntries :: Parser [LogEntry]
 parseLogEntries = many parseLogEntry
 
 parseLogFile :: Parser [LoggedDay]
-parseLogFile = parseUpToLoggedDay *>  many (parseLoggedDay <* parseUpToLoggedDay)
+parseLogFile = many (parseUpToLoggedDay *> parseLoggedDay)
 
-parseUpToLoggedDay :: Parser ()
-parseUpToLoggedDay = (manyTill anyChar (lookAhead $ string "\n#") *> void (char '\n')) <|> void (manyTill anyChar eof)
+parseUpToLoggedDay :: Parser Char
+parseUpToLoggedDay = manyTill anyChar (lookAhead $ string "\n#") *> newline
