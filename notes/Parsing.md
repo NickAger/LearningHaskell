@@ -30,3 +30,4 @@ which unfortunately parsed all the content until it found `string "--"` which wa
 ```haskell
 parseLineWithComment = manyTill (noneOf "\n") (string "--") <* parseToNextLineOrEof
 ```
+so `parseLineWithComment` would only suceed if the comment was defined on that line, previously it would succeed if there was a comment on any line throughout the file.
