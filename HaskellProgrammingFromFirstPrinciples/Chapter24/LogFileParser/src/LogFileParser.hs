@@ -125,14 +125,25 @@ activityDurations entries =
     zipEntries (LogEntry start activity) (LogEntry end _) = (activity, duration start end)
     lastDuration (LogEntry start activity) = (activity, duration start (Time 23 59))
 
-sumActivities :: [LoggedDay] -> Map Activity DurationMinutes
-sumActivities days =
+
+collectActivities :: [LoggedDay] -> Map Activity [DurationMinutes]
+collectActivities days =
   let
     activities = concatMap (\(LoggedDay _ entries) -> activityDurations entries) days
-    in foldr (\(activity, duration) mp -> M.insertWithKey (const (+)) activity duration mp) M.empty activities
+    in foldr (\(activity, duration) mp -> M.insertWithKey (const (++)) activity [duration] mp) M.empty activities
+
+collectActivitiesLog :: LogFileString -> Result (Map Activity [DurationMinutes])
+collectActivitiesLog logFile =
+  let
+    parserResult = parseString parseLogFile mempty logFile
+    in fmap collectActivities parserResult
 
 sumActivitiesLog :: LogFileString -> Result (Map Activity DurationMinutes)
 sumActivitiesLog logFile =
-  let
-    parserResult = parseString parseLogFile mempty logFile
-    in fmap sumActivities parserResult
+  (fmap.fmap) sum $ collectActivitiesLog logFile
+
+averageActivitiesLog :: LogFileString -> Result (Map Activity DurationMinutes)
+averageActivitiesLog logFile =
+  (fmap.fmap) average $ collectActivitiesLog logFile
+    where
+      average a = sum a `div` length a

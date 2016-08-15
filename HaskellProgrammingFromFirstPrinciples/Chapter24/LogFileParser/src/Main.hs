@@ -7,3 +7,4 @@ main :: IO ()
 main = do
   print $ parseString parseLogFile mempty logSample
   print $ sumActivitiesLog logSample
+  print $ averageActivitiesLog logSample
