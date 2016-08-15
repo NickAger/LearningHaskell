@@ -1,5 +1,13 @@
 {-# LANGUAGE QuasiQuotes #-}
 
+{-
+Exercise 5.
+
+Write a parser for a log file format and sum the time spent in each
+activity. Additionally, provide an alternative aggregation for the data
+that provides average time spent per activity per day.
+-}
+
 module LogFileParser where
 
 import Control.Applicative
@@ -12,18 +20,19 @@ import Text.Parser.LookAhead
 
 type Hours = Int
 type Minutes = Int
-type Description = String
+type Activity = String
 type Year = Int
 type Month = Int
 type Day = Int
 
 data Time = Time Hours Minutes deriving (Eq, Show)
-data LogEntry = LogEntry Time Description deriving (Eq, Show)
+data LogEntry = LogEntry Time Activity deriving (Eq, Show)
 data Date = Date Year Month Day deriving (Eq, Show)
 data LoggedDay = LoggedDay Date [LogEntry] deriving (Eq, Show)
 data LogFile = LogFile [LoggedDay] deriving (Eq, Show)
 
-logSample :: String
+type LogFileString = String
+logSample :: LogFileString
 logSample = [r|
 
 -- wheee a comment
@@ -66,13 +75,13 @@ parseInt' :: Parser Int
 parseInt' = read <$> some digit
 
 parseLogEntry :: Parser LogEntry
-parseLogEntry = liftA2 LogEntry parseStartTime parseDescriptionIgnoringComment
+parseLogEntry = liftA2 LogEntry parseStartTime parseActivityIgnoringComment
 
-parseDescriptionIgnoringComment :: Parser Description
-parseDescriptionIgnoringComment = try parseLineWithComment <|> parseToNextLineOrEof
+parseActivityIgnoringComment :: Parser Activity
+parseActivityIgnoringComment = try parseLineWithComment <|> parseToNextLineOrEof
 
 parseLineWithComment :: Parser String
-parseLineWithComment = manyTill (noneOf "\n") (string "--") <* parseToNextLineOrEof
+parseLineWithComment = manyTill (noneOf "\n") (many (char ' ') *> string "--") <* parseToNextLineOrEof
 
 parseToNextLineOrEof :: Parser String
 parseToNextLineOrEof = manyTill anyChar (void newline <|> eof)
@@ -98,3 +107,32 @@ parseLogFile = many (parseUpToLoggedDay *> parseLoggedDay)
 
 parseUpToLoggedDay :: Parser Char
 parseUpToLoggedDay = manyTill anyChar (lookAhead $ string "\n#") *> newline
+
+--
+type DurationMinutes = Int
+
+duration :: Time -> Time -> DurationMinutes
+duration (Time startHour startMinute) (Time endHour endMinute) = ((endHour - startHour) * 60) + endMinute - startMinute
+
+activityDurations :: [LogEntry] -> [(Activity, DurationMinutes)]
+activityDurations [] = []
+activityDurations entries =
+  let
+    durations = zipWith zipEntries entries (tail entries)
+  in
+    durations ++ [lastDuration (last entries)]
+  where
+    zipEntries (LogEntry start activity) (LogEntry end _) = (activity, duration start end)
+    lastDuration (LogEntry start activity) = (activity, duration start (Time 23 59))
+
+sumActivities :: [LoggedDay] -> Map Activity DurationMinutes
+sumActivities days =
+  let
+    activities = concatMap (\(LoggedDay _ entries) -> activityDurations entries) days
+    in foldr (\(activity, duration) mp -> M.insertWithKey (const (+)) activity duration mp) M.empty activities
+
+sumActivitiesLog :: LogFileString -> Result (Map Activity DurationMinutes)
+sumActivitiesLog logFile =
+  let
+    parserResult = parseString parseLogFile mempty logFile
+    in fmap sumActivities parserResult
