@@ -1,4 +1,5 @@
 {-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 {-
 Exercise 5.
@@ -17,6 +18,9 @@ import qualified Data.Map as M
 import Text.RawString.QQ
 import Text.Trifecta
 import Text.Parser.LookAhead
+import Formatting ((%), left, format, int)
+import Data.Text.Lazy (Text, unpack)
+import Data.List (intercalate)
 
 type Hours = Int
 type Minutes = Int
@@ -25,11 +29,11 @@ type Year = Int
 type Month = Int
 type Day = Int
 
-data Time = Time Hours Minutes deriving (Eq, Show)
-data LogEntry = LogEntry Time Activity deriving (Eq, Show)
-data Date = Date Year Month Day deriving (Eq, Show)
-data LoggedDay = LoggedDay Date [LogEntry] deriving (Eq, Show)
-data LogFile = LogFile [LoggedDay] deriving (Eq, Show)
+data Time = Time Hours Minutes deriving Eq
+data LogEntry = LogEntry Time Activity deriving Eq
+data Date = Date Year Month Day deriving Eq
+data LoggedDay = LoggedDay Date [LogEntry] deriving Eq
+data LogFile = LogFile [LoggedDay] deriving Eq
 
 type LogFileString = String
 logSample :: LogFileString
@@ -102,8 +106,8 @@ parseLoggedDay = liftA2 LoggedDay parseDayLine parseLogEntries
 parseLogEntries :: Parser [LogEntry]
 parseLogEntries = many parseLogEntry
 
-parseLogFile :: Parser [LoggedDay]
-parseLogFile = many (parseUpToLoggedDay *> parseLoggedDay)
+parseLogFile :: Parser LogFile
+parseLogFile = liftA LogFile (many (parseUpToLoggedDay *> parseLoggedDay))
 
 parseUpToLoggedDay :: Parser Char
 parseUpToLoggedDay = manyTill anyChar (lookAhead $ string "\n#") *> newline
@@ -126,8 +130,8 @@ activityDurations entries =
     lastDuration (LogEntry start activity) = (activity, duration start (Time 23 59))
 
 
-collectActivities :: [LoggedDay] -> Map Activity [DurationMinutes]
-collectActivities days =
+collectActivities :: LogFile -> Map Activity [DurationMinutes]
+collectActivities (LogFile days) =
   let
     activities = concatMap (\(LoggedDay _ entries) -> activityDurations entries) days
     in foldr (\(activity, duration) mp -> M.insertWithKey (const (++)) activity [duration] mp) M.empty activities
@@ -147,3 +151,26 @@ averageActivitiesLog logFile =
   (fmap.fmap) average $ collectActivitiesLog logFile
     where
       average a = sum a `div` length a
+
+-- show instances
+
+instance Show Time where
+  show (Time hours minutes) =
+    unpack $ format (left 2 '0' % ":" % left 2 '0' ) hours minutes
+
+instance Show LogEntry where
+  show (LogEntry time activity) =
+    show time ++ " " ++ activity
+
+-- format: "2025-02-05"
+instance Show Date where
+  show (Date year month day) =
+    unpack $ format (int % "-" % left 2 '0' % "-" % left 2 '0' ) year month day
+
+instance Show LoggedDay where
+  show (LoggedDay date entries) =
+    "# " ++ show date ++ "\n" ++ intercalate "\n" (map show entries)
+
+instance Show LogFile where
+  show (LogFile days) =
+    "\n\n" ++ intercalate "\n\n" (map show days) ++ "\n"
