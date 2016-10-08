@@ -1,4 +1,4 @@
-See also "Phantom types" in (Four months with Haskell)[https://lexi-lambda.github.io/blog/2016/06/12/four-months-with-haskell/]
+See also "Phantom types" in [Four months with Haskell](https://lexi-lambda.github.io/blog/2016/06/12/four-months-with-haskell/)
 
 ---
 
