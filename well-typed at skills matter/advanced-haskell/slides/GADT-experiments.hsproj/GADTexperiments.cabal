@@ -1,0 +1,17 @@
+name: GADTexperiments
+version: 1.0
+cabal-version: 1.11
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+x-ghc-framework-version: 7.10.3-5.18-1
+x-last-ide-version: HfM1.3.0
+Executable GADTexperiments
+  main-is: GADT_expressions.hs
+  buildable: True
+  build-depends:
+      base -any
+  other-modules:
+      GADT_expressions3
+      Question1
+      GADT_expressions2

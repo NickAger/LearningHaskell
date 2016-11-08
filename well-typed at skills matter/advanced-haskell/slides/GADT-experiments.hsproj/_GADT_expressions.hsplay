@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+
+-- if isZero (0 + 1) then False else TrueIf (IsZero (Plus (Int 0) (Int 1))) (Bool False) (Bool True)
+
