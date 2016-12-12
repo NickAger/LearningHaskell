@@ -8,6 +8,7 @@ Most code is contained in workspaces made within http://haskellformac.com, howev
 For comparing solutions, I've found the following other developers' repositories of exercises from [Haskell Programming from first principles](http://haskellbook.com) useful:
 * https://github.com/dmvianna/haskellbook
 * https://lukleh.github.io/haskell-book-exercises/
+* https://github.com/martinrist/haskell-sandbox
 
 Some other resources:
 * [HaskellBook subreddit](https://www.reddit.com/r/HaskellBook/)
