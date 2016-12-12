@@ -25,6 +25,7 @@ Cale:
 > If the list is empty, it means that the parser failed
 > In many cases, the list will have just one element, but that need not be the case
 > This representation makes it completely trivial to write something which will run our parser and get a list of the parses: it's really just a field extractor:
+```
 > runParser :: Parser a -> Text -> [(a,Text)]
 > runParser (P f) s = f s
 > or indeed
@@ -192,3 +193,4 @@ Cale:
 > Indeed, that's the same as guard (T.null s) for the list monad
 > So eof = P (\s -> guard (T.null s)) is yet another option for that style
 >
+```
