@@ -24,6 +24,7 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 
 # Links
 
+* [Monads and all that  - John Hughes](https://www.youtube.com/watch?v=w_KY2I34-f8) - excellent series of lectures.
 * [MagicHaskeller](http://nautilus.cs.miyazaki-u.ac.jp/~skata/MagicHaskeller.html) - specify parameters and output and it will find the function composition for you eg: `f "hello" == "HELLO"` -> `f = map toUpper`
 * [Haskell CheatSheet PDF](http://cheatsheet.codeslower.com/CheatSheet.pdf)
 * [Functors, Applicatives and Monads in pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
