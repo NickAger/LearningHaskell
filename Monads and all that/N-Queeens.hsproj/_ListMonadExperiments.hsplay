@@ -1,0 +1,27 @@
+-- Haskell Playground 1.0
+import Control.Monad
+
+-- https://wiki.haskell.org/List_comprehension
+
+
+let x = [ x*y | x <- [2,5,10], y <- [8,10,11]]  
+x
+
+
+let nouns = ["hobo","frog","pope"]
+let adjectives = ["lazy","grouchy","scheming"]
+
+let descriptions = [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns] 
+
+descriptions
+
+do i <- [1,2]
+   q <- foldr1 mplus (map return [1..8])
+   return (i,q)
+   
+do noun <- ["hobo","frog","pope"]
+   adjective <- ["lazy","grouchy","scheming"]
+   return (adjective ++ " " ++ noun)
+   
+["hobo","frog","pope"] >>= (\noun ->
+  ["lazy","grouchy","scheming"] >>= (\adjective -> [adjective ++ " " ++ noun]))

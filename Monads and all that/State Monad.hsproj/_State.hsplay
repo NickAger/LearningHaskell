@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+
+quickCheck prop_get_get
+quickCheck prop_put_put

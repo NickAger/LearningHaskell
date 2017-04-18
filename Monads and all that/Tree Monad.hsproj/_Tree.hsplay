@@ -1,0 +1,14 @@
+-- Haskell Playground 1.0
+let y = (Branch (Branch (Leaf 5) (Leaf 6)) (Leaf 6))
+
+fmap (*6) y
+
+let addit x = (+) x :: Int -> Int 
+let w = fmap addit y
+w <*> y
+
+quickCheck prop_TreeLeftUnit
+quickCheck prop_TreeRightUnit
+quickCheck prop_TreeAssoc
+
+
