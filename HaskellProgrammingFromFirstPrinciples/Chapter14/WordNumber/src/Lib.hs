@@ -1,6 +1,6 @@
 module Lib where
 
-import Data.List (intersperse)
+import Data.List (intercalate)
 
 -- from Chapter 8
 
@@ -23,9 +23,9 @@ digitToWord 9 = "nine"
 digits :: Int -> [Int]
 digits n = go n []
   where go n acc
-          | n < 10 = (mod n 10) : acc
-          | otherwise = go (div n 10) ((mod n 10) : acc)
+          | n < 10 = mod n 10 : acc
+          | otherwise = go (div n 10) (mod n 10 : acc)
 
 wordNumber :: Int -> String
-wordNumber n = concat $ intersperse "-" digitsArray
+wordNumber n = intercalate "-" digitsArray
   where digitsArray = map digitToWord (digits n)
