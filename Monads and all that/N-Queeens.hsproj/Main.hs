@@ -4,6 +4,11 @@ import Control.Monad
 The line: `q <- foldr1 mplus (map return [1..8])`
 is equivalent to: `q <- [1..8]` for the *List* monad.
 The first implementation is general to any MonadPlus.
+That is the generic version has the type signature:
+
+queens :: (Eq a, Num a, MonadPlus m) => a -> m [Integer]
+
+... but I think it only works for the *List* monad.
 
 Similarly, `if safe q qs then return (q:qs) else mzero`
 is equivalent to:  `guard (safe q qs); return (q:qs)`
@@ -15,9 +20,10 @@ queens 0 = return []
 queens n =
   do
     qs <- queens (n-1)
+    
 --    q <- foldr1 mplus (map return [1..8])
-
     q <- [1..8]
+    
 --    if safe q qs then return (q:qs) else mzero
     guard (safe q qs)
     return (q:qs)

@@ -1,5 +1,6 @@
 -- Haskell Playground 1.0
 length $ queens 8
 
+queens 8
 
 
