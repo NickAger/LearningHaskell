@@ -1,0 +1,48 @@
+-- Haskell Playground 1.0
+fizzBuzz 3
+fizzBuzz 5
+
+map  fizzBuzz [1..30]
+
+[fizzBuzz x | x <- [1..100]]
+
+let test1 x = (concat[n|(f,n)<-[(3,"Fizz"),(5,"Buzz")],mod x f==0])
+let test2 x = [n|(f,n)<-[(3,"Fizz"),(5,"Buzz")],mod x f==0]
+let test3 = [n|(f,n)<-[(3,"Fizz"),(5,"Buzz")]]
+
+test3
+
+[x | x <- [1..10], x `mod` 2 == 0]
+
+test2 3
+test2 5
+test2 15
+test2 10
+test2 6
+
+test1 2
+
+max "4" ""
+
+
+concat [[4,5],[1,2],[5]]
+
+map fizzBuzz3 [1..100]
+
+let h = (return "2") :: FizzBuzzState
+runState h 3
+
+
+null []
+null [1]
+if (null []) then "yes" else "no"
+
+snd $ runState (mapM fizzBuzzState [1..100]) 0
+
+snd $ runState (mapM fizzBuzz2State [1..100]) 0
+
+snd $ runState (mapM fizzBuzz3State [1..100]) 0
+
+runState (do modify (+1); return "blaH") 0
+
+runWriter fizzBuzz4State
