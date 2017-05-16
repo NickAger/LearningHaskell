@@ -1,4 +1,11 @@
 -- Haskell Playground 1.0
+import Data.List (find)
+import Data.Maybe (fromJust)
+import Data.Either
+
+(either id id) $ Left "Hello"
+(either id id) $ Right "Goodbye"
+
 fizzBuzz 3
 fizzBuzz 5
 
@@ -46,3 +53,15 @@ snd $ runState (mapM fizzBuzz3State [1..100]) 0
 runState (do modify (+1); return "blaH") 0
 
 runWriter fizzBuzz4State
+
+snd $ runWriter (mapM fizzBuzz6State [1..100]) 
+snd $ runWriter (mapM fizzBuzz7State [1..100])
+runWriter (mapM fizzBuzz9State [1..100])
+
+
+let w = [writer (4, Sum 1), writer (0, Sum 3)] :: [Writer (Sum Int) Int]
+w
+
+main
+
+unlines ["hello", "world"]

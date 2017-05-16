@@ -11,4 +11,6 @@ Executable FizzBuzz
   buildable: True
   build-depends:
       base -any,
-      mtl -any
+      containers -any,
+      mtl -any,
+      either -any
