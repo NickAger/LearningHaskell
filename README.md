@@ -42,3 +42,8 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and
 * [The Evolution of a Haskell Programmer](http://www.willamette.edu/~fruehr/haskell/evolution.html)
 * [Haskell 'sequence' Over Functions - Explained](http://derekwyatt.org/2012/01/25/haskell-sequence-over-functions-explained/)
 * [The Interpreter Pattern Revisited](https://www.youtube.com/watch?v=hmX2s3pe_qk) idea of algebraic types as simple languages "The Interpreter Pattern is the only pattern from the GOF book worth considering"
+
+# Free Monad
+* [No Silver Bullets in Functional Programming by Brian McKenna at Functional Conf 16](https://www.youtube.com/watch?v=UfowUAjQC3Y) - about referential transparency and how to add it imperative programs; hint it use Free Monads
+* [Free monads in 7 easy steps](http://joashc.github.io/posts/2015-09-13-free-monad-steps.html)
+* [Free monads in category theory](http://joashc.github.io/posts/2016-03-23-free-monads.html)
