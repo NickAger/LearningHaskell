@@ -4,7 +4,7 @@ see also:
 
 * [NanoParsec](http://dev.stephendiehl.com/fun/002_parsers.html)
 * [Monadic Parser Combinators](http://www.cs.nott.ac.uk/%7Epszgmh/monparsing.pdf)
-
+* Scott Wlaschin (F# fame) - [Understanding Parser Combinators: A Deep Dive](https://skillsmatter.com/skillscasts/9731-understanding-parser-combinators-a-deep-dive)
 
 From irc #haskell-beginners http://ircbrowse.net/browse/haskell-beginners?events_page=21897
 
