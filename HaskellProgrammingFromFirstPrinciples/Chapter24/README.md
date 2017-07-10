@@ -5,6 +5,7 @@ see also:
 * [NanoParsec](http://dev.stephendiehl.com/fun/002_parsers.html)
 * [Monadic Parser Combinators](http://www.cs.nott.ac.uk/%7Epszgmh/monparsing.pdf)
 * Scott Wlaschin (F# fame) - [Understanding Parser Combinators: A Deep Dive](https://skillsmatter.com/skillscasts/9731-understanding-parser-combinators-a-deep-dive)
+* [Introduction to Parser Combinators (in F#)](http://santialbo.com/blog/2013/03/24/introduction-to-parser-combinators/)
 
 From irc #haskell-beginners http://ircbrowse.net/browse/haskell-beginners?events_page=21897
 
