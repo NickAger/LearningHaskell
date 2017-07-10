@@ -48,6 +48,7 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 # Free Monad
 * [No Silver Bullets in Functional Programming by Brian McKenna at Functional Conf 16](https://www.youtube.com/watch?v=UfowUAjQC3Y) - about referential transparency and how to add it imperative programs; hint it use Free Monads
 * [Purity in an impure language with the free monad – by example of a Tic-Tac-Toe backend with CQRS and event sourcing](http://blog.leifbattermann.de/2016/12/25/purity-in-an-impure-language-free-monad-tic-tac-toe-cqrs-event-souring/)
+* [Way 12. Monadic control flow, in which we make decisions in the turtle workflow based on results from earlier commands.](https://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle-2/#way13) from [Thirteen ways of looking at a turtle](https://fsharpforfunandprofit.com/turtle/)
 * [Free monads in 7 easy steps](http://joashc.github.io/posts/2015-09-13-free-monad-steps.html)
 * [Free monads in category theory](http://joashc.github.io/posts/2016-03-23-free-monads.html)
 
