@@ -7,8 +7,8 @@ Learning Haskell by studying:
 
 The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://github.com/NickAger/LearningHaskell/tree/master/HaskellProgrammingFromFirstPrinciples). I would love to compare my exercises solutions with others learning haskell through [Haskell Programming from first principles](http://haskellbook.com) book. Please contact me.
 
-Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outside of [Haskell for Mac](http://haskellformac.com) playgrounds uses
-[Atom configured for Haskell](http://achernyak.me/universal-haskell-dev-enviornment)/[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Vans.haskero).
+Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outside of [Haskell for Mac](http://haskellformac.com) playgrounds was developed using
+[Atom configured for Haskell](http://achernyak.me/universal-haskell-dev-enviornment) and then laterly using [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Vans.haskero).
 
 ## My Notes
 
