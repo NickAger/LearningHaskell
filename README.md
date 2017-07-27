@@ -30,6 +30,7 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 * [Functors, Applicatives and Monads in pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 * [You Could Have Invented Monads! (And Maybe You Already Have.)](http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html)
 * [Open-source Haskell projects](https://github.com/bitemyapp/learnhaskell/blob/master/code_to_learn_from.md) - "Code to learn from"
+* [Teaching Haskell for Understanding](https://docs.google.com/presentation/d/1_I5mYXivG5NbOHnICld_Xo41uOyAT57Yade5qfz2toQ/edit#slide=id.g226ee758c3_0_284)
 * [The five arguments on why people struggle with monads](http://chrisdone.com/posts/monads)
 * [A wreq tutorial](http://www.serpentine.com/wreq/tutorial.html) - Learn how to write web clients. "We start easy, then ramp up the power."
 * [Announcing: Snap 1.0](https://www.reddit.com/r/haskell/comments/4wody6/announcing_snap_10/)
