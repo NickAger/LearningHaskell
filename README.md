@@ -53,4 +53,4 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 * [Free monad cheetsheet](http://jeremymikkola.com/posts/2017_07_11_free_monad_cheatsheet.html)
 * [Free monads in 7 easy steps](http://joashc.github.io/posts/2015-09-13-free-monad-steps.html)
 * [Free monads in category theory](http://joashc.github.io/posts/2016-03-23-free-monads.html)
-
+* [What is referential transparency](https://stackoverflow.com/questions/210835/what-is-referential-transparency/11740176#11740176)
