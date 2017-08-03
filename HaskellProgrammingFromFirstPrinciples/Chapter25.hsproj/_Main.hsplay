@@ -1,0 +1,19 @@
+-- Haskell Playground 1.0
+
+Compose [Just 1, Nothing]
+
+fmap (+1) $ Just 2
+
+-- notice how fmap is defined to tranverse three levels (Compose, [] and Maybe):
+fmap (+1) $ Compose [Just 1, Nothing]
+
+(Compose [Just (+1), Nothing]) <*> (Compose [Just 1, Nothing])
+
+(Compose $ Just (Just (+1))) <*> (Compose $ Just (Just 1))
+
+(<*>) (fmap (<*>) (Just (Just (+1))))
+
+(<*>) (Just (+1)) 
+
+(+) <$> (Just 1) <*> (Just 2)
+liftA2 (+) (Just 1) (Just 2)

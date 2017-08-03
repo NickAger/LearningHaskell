@@ -1,4 +1,4 @@
-name: Chapter17
+name: Chapter29
 version: 1.0
 cabal-version: 1.11
 build-type: Simple
@@ -6,14 +6,13 @@ license: AllRightsReserved
 stability: experimental
 x-ghc-framework-version: 8.0.2-8.9-3
 x-last-ide-version: HfM1.5.0
-Executable Chapter17
-  main-is: Chapter17.hs
+Executable Chapter29
+  main-is: Main.hs
   buildable: True
   build-depends:
-      base -any
+      base -any,
+      random -any,
+      time -any
   other-modules:
-      Constant
-      Exercises17_9
-      Exercises1
-      Identity
-      FixerUpper
+      NestedIO
+      WhatHappens
