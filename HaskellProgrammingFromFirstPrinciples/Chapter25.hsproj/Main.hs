@@ -58,3 +58,13 @@ instance (Applicative f, Applicative g) => Applicative (Compose f g) where
   (<*>) :: Compose f g (a -> b) -> Compose f g a -> Compose f g b
   (Compose fgatob) <*> (Compose fga) = Compose $ liftA2 (<*>) fgatob fga
   
+-- Compose Foldable
+instance (Foldable f, Foldable g) => Foldable (Compose f g) where
+  foldMap = undefined
+  
+-- Compose Traverable
+instance (Traversable f, Traversable g) => Traversable (Compose f g) where
+  traverse = undefined
+  
+ 
+  
