@@ -54,3 +54,12 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 * [Free monads in 7 easy steps](http://joashc.github.io/posts/2015-09-13-free-monad-steps.html)
 * [Free monads in category theory](http://joashc.github.io/posts/2016-03-23-free-monads.html)
 * [What is referential transparency](https://stackoverflow.com/questions/210835/what-is-referential-transparency/11740176#11740176)
+
+# Laziness
+* [More points for lazy evaluation](http://augustss.blogspot.co.uk/2011/05/more-points-for-lazy-evaluation-in.html)
+* https://www.reddit.com/r/haskell/comments/5xge0v/today_i_used_laziness_for/
+* http://stackoverflow.com/questions/23893320/why-isnt-this-recursive-function-being-optimized-haskell/23893575#23893575
+> Philip Walder:
+> With distribution becoming so important, we need to focus on programs that run on multiple machines, sending values from one to the other. When you send a value, you probably want it to be the value itself (eager evaluation), rather than a program (and the values of all the free variables of the program) that can be evaluated to yield the value. So, in the distributed world, I think it would be better to be eager by default but make it easy to be lazy when you want. 
+
+> lazy in the spine, strict in the leaves.
