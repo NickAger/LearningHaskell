@@ -47,6 +47,9 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 * [Rust as a gateway drug to Haskell](https://news.ycombinator.com/item?id=14550606) - article contains lots of interesting comparisons between Haskell and Rust and the Hacker News comments have lots of interesting links to Haskell background and extensions.
 
 # Free Monad
+
+> Free monads let you decompose any impure program into a pure representation of its behavior and a minimal impure interpreter
+
 * [No Silver Bullets in Functional Programming by Brian McKenna at Functional Conf 16](https://www.youtube.com/watch?v=UfowUAjQC3Y) - about referential transparency and how to add it imperative programs; hint it use Free Monads
 * [Purify code using free monads](http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html)
 * [Why free monads matter](http://www.haskellforall.com/2012/06/you-could-have-invented-free-monads.html)
