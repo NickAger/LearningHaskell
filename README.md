@@ -48,8 +48,8 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 
 # Free Monad
 
-> Free monads let you decompose any impure program into a pure representation of its behavior and a minimal impure interpreter
-[Purify code using free monads](http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html)
+> Free monads let you decompose any impure program into a pure representation of its behavior and a minimal impure interpreter.
+Source: [Purify code using free monads](http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html)
 
 * [No Silver Bullets in Functional Programming by Brian McKenna at Functional Conf 16](https://www.youtube.com/watch?v=UfowUAjQC3Y) - about referential transparency and how to add it imperative programs; hint it use Free Monads
 * [Purify code using free monads](http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html)
