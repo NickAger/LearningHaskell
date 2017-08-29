@@ -74,3 +74,6 @@ Source: [Purify code using free monads](http://www.haskellforall.com/2012/07/pur
 > With distribution becoming so important, we need to focus on programs that run on multiple machines, sending values from one to the other. When you send a value, you probably want it to be the value itself (eager evaluation), rather than a program (and the values of all the free variables of the program) that can be evaluated to yield the value. So, in the distributed world, I think it would be better to be eager by default but make it easy to be lazy when you want. 
 
 > lazy in the spine, strict in the leaves.
+
+# Category theory
+* [Category Theory for the Working Hacker by Philip Wadler](https://www.youtube.com/watch?v=V10hzjgoklA)
