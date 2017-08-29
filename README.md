@@ -77,3 +77,6 @@ Source: [Purify code using free monads](http://www.haskellforall.com/2012/07/pur
 
 # Category theory
 * [Category Theory for the Working Hacker by Philip Wadler](https://www.youtube.com/watch?v=V10hzjgoklA)
+* [Dr Eugenia Cheng Category Theory videos](https://www.youtube.com/watch?v=yeQcmxM2e5I&list=PLlGXNwjYhXYxKVa67r0pKuYufECy713bv)
+* [Dr Eugenia Cheng Category Theory lecture notes](http://cheng.staff.shef.ac.uk/catnotes/categorynotes-cheng.pdf)
+
