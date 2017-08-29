@@ -46,6 +46,10 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 * [The Interpreter Pattern Revisited](https://www.youtube.com/watch?v=hmX2s3pe_qk) idea of algebraic types as simple languages "The Interpreter Pattern is the only pattern from the GOF book worth considering"
 * [Rust as a gateway drug to Haskell](https://news.ycombinator.com/item?id=14550606) - article contains lots of interesting comparisons between Haskell and Rust and the Hacker News comments have lots of interesting links to Haskell background and extensions.
 
+# Beyond Functors
+* [Phil Freeman - Fun with Profunctors](https://www.youtube.com/watch?v=OJtGECfksds)
+* [George Wilson - The Extended Functor Family](https://www.youtube.com/watch?v=JZPXzJ5tp9w)
+
 # Free Monad
 
 > Free monads let you decompose any impure program into a pure representation of its behavior and a minimal impure interpreter.
