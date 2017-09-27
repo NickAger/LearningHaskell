@@ -66,6 +66,7 @@ Source: [Purify code using free monads](http://www.haskellforall.com/2012/07/pur
 * [Free monads in 7 easy steps](http://joashc.github.io/posts/2015-09-13-free-monad-steps.html)
 * [Free monads in category theory](http://joashc.github.io/posts/2016-03-23-free-monads.html)
 * [What is referential transparency](https://stackoverflow.com/questions/210835/what-is-referential-transparency/11740176#11740176)
+* [The Interpreter Pattern Revisited](https://www.youtube.com/watch?v=hmX2s3pe_qk) - amusing video from Runar Bjarnason about the GoF book, the Interpreter Pattern and functional programming (Free Monad):
 
 # Laziness
 * [More points for lazy evaluation](http://augustss.blogspot.co.uk/2011/05/more-points-for-lazy-evaluation-in.html)
