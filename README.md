@@ -70,6 +70,26 @@ Source: [Purify code using free monads](http://www.haskellforall.com/2012/07/pur
 * [Free monad considered harmful](https://markkarpov.com/post/free-monad-considered-harmful.html)
 * [What does Free buy us?](http://www.parsonsmatt.org/2017/09/22/what_does_free_buy_us.html)
 
+As a counter from a comment in [Dependency rejection](http://blog.ploeh.dk/2017/02/02/dependency-rejection/):
+>  I don't advocate the "free monad" style that's presently trendy in Scala-land because I find it unnecessarily complex. 90% of the purported advantages of free monads are already supported by simpler language features.
+
+and:
+> The Haskell philosophy isn't about rejecting side effects outright - it's about measuring and controlling them. I wouldn't write tryAcceptComposition using IO. Instead I'd program to the interface, not the implementation, using an mtl-style class to abstract over monads which support saving and loading reservations.
+
+where the code becomes:
+
+```haskell
+class Monad m => MonadReservation m where
+    readReservations :: ConnectionString -> Date -> m [Reservation]
+    createReservation :: ConnectionString -> Reservation -> m ReservationId
+
+tryAcceptComposition :: MonadReservation m => Reservation -> m (Maybe ReservationId)
+tryAcceptComposition r = runMaybeT $ do
+    reservations <- lift $ readReservations connectionString (date r)
+    accepted <- MaybeT $ return $ tryAccept 10 reservations r
+    lift $ createReservation connectionString accepted
+```
+
 # Laziness
 * [More points for lazy evaluation](http://augustss.blogspot.co.uk/2011/05/more-points-for-lazy-evaluation-in.html)
 * https://www.reddit.com/r/haskell/comments/5xge0v/today_i_used_laziness_for/
