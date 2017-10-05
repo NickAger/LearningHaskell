@@ -90,6 +90,10 @@ tryAcceptComposition r = runMaybeT $ do
     lift $ createReservation connectionString accepted
 ```
 
+also from [A tale of two Monads: Free vs MTL](http://tech.frontrowed.com/2017/09/28/benching-free/):
+
+> What we learned is utilizing Free vs mtl is not universally good or bad. They are each fantastic abstractions and it really comes down to your use case. If your use case is going to end up building deeply nested graphs of Free data types then it probably isn’t for you. In the end we gained a lot clarity from prototyping with Free and a lot of performance from refactoring to mtl.
+
 # Laziness
 * [More points for lazy evaluation](http://augustss.blogspot.co.uk/2011/05/more-points-for-lazy-evaluation-in.html)
 * https://www.reddit.com/r/haskell/comments/5xge0v/today_i_used_laziness_for/
