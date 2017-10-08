@@ -45,14 +45,3 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 * [Haskell 'sequence' Over Functions - Explained](http://derekwyatt.org/2012/01/25/haskell-sequence-over-functions-explained/)
 * [The Interpreter Pattern Revisited](https://www.youtube.com/watch?v=hmX2s3pe_qk) idea of algebraic types as simple languages "The Interpreter Pattern is the only pattern from the GOF book worth considering"
 * [Rust as a gateway drug to Haskell](https://news.ycombinator.com/item?id=14550606) - article contains lots of interesting comparisons between Haskell and Rust and the Hacker News comments have lots of interesting links to Haskell background and extensions.
-
-# Beyond Functors
-* [Phil Freeman - Fun with Profunctors](https://www.youtube.com/watch?v=OJtGECfksds)
-* [George Wilson - The Extended Functor Family](https://www.youtube.com/watch?v=JZPXzJ5tp9w)
-
-
-# Category theory
-* [Category Theory for the Working Hacker by Philip Wadler](https://www.youtube.com/watch?v=V10hzjgoklA)
-* [Dr Eugenia Cheng Category Theory videos](https://www.youtube.com/watch?v=yeQcmxM2e5I&list=PLlGXNwjYhXYxKVa67r0pKuYufECy713bv)
-* [Dr Eugenia Cheng Category Theory lecture notes](http://cheng.staff.shef.ac.uk/catnotes/categorynotes-cheng.pdf)
-
