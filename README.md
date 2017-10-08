@@ -50,49 +50,6 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 * [Phil Freeman - Fun with Profunctors](https://www.youtube.com/watch?v=OJtGECfksds)
 * [George Wilson - The Extended Functor Family](https://www.youtube.com/watch?v=JZPXzJ5tp9w)
 
-# Free Monad
-
-> Free monads let you decompose any impure program into a pure representation of its behavior and a minimal impure interpreter.
-Source: [Purify code using free monads](http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html)
-
-* [No Silver Bullets in Functional Programming by Brian McKenna at Functional Conf 16](https://www.youtube.com/watch?v=UfowUAjQC3Y) - about referential transparency and how to add it imperative programs; hint it use Free Monads
-* [Purify code using free monads](http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html)
-* [Free Monads Are Simple](https://underscore.io/blog/posts/2015/04/14/free-monads-are-simple.html) - example using Haxl.
-* [Why free monads matter](http://www.haskellforall.com/2012/06/you-could-have-invented-free-monads.html)
-* [Purity in an impure language with the free monad – by example of a Tic-Tac-Toe backend with CQRS and event sourcing](http://blog.leifbattermann.de/2016/12/25/purity-in-an-impure-language-free-monad-tic-tac-toe-cqrs-event-souring/)
-* [Way 12. Monadic control flow, in which we make decisions in the turtle workflow based on results from earlier commands.](https://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle-2/#way13) from [Thirteen ways of looking at a turtle](https://fsharpforfunandprofit.com/turtle/)
-* [Free for DSLs, cofree for interpreters](http://dlaing.org/cofun/posts/free_and_cofree.html)
-* [Free monad cheetsheet](http://jeremymikkola.com/posts/2017_07_11_free_monad_cheatsheet.html)
-* [Free monads in 7 easy steps](http://joashc.github.io/posts/2015-09-13-free-monad-steps.html)
-* [Free monads in category theory](http://joashc.github.io/posts/2016-03-23-free-monads.html)
-* [What is referential transparency](https://stackoverflow.com/questions/210835/what-is-referential-transparency/11740176#11740176)
-* [The Interpreter Pattern Revisited](https://www.youtube.com/watch?v=hmX2s3pe_qk) - amusing video from Runar Bjarnason about the GoF book, the Interpreter Pattern and functional programming (Free Monad):
-* [Free monad considered harmful](https://markkarpov.com/post/free-monad-considered-harmful.html)
-* [What does Free buy us?](http://www.parsonsmatt.org/2017/09/22/what_does_free_buy_us.html)
-
-As a counter from a comment in [Dependency rejection](http://blog.ploeh.dk/2017/02/02/dependency-rejection/):
->  I don't advocate the "free monad" style that's presently trendy in Scala-land because I find it unnecessarily complex. 90% of the purported advantages of free monads are already supported by simpler language features.
-
-and:
-> The Haskell philosophy isn't about rejecting side effects outright - it's about measuring and controlling them. I wouldn't write tryAcceptComposition using IO. Instead I'd program to the interface, not the implementation, using an mtl-style class to abstract over monads which support saving and loading reservations.
-
-where the code becomes:
-
-```haskell
-class Monad m => MonadReservation m where
-    readReservations :: ConnectionString -> Date -> m [Reservation]
-    createReservation :: ConnectionString -> Reservation -> m ReservationId
-
-tryAcceptComposition :: MonadReservation m => Reservation -> m (Maybe ReservationId)
-tryAcceptComposition r = runMaybeT $ do
-    reservations <- lift $ readReservations connectionString (date r)
-    accepted <- MaybeT $ return $ tryAccept 10 reservations r
-    lift $ createReservation connectionString accepted
-```
-
-also from [A tale of two Monads: Free vs MTL](http://tech.frontrowed.com/2017/09/28/benching-free/):
-
-> What we learned is utilizing Free vs mtl is not universally good or bad. They are each fantastic abstractions and it really comes down to your use case. If your use case is going to end up building deeply nested graphs of Free data types then it probably isn’t for you. In the end we gained a lot clarity from prototyping with Free and a lot of performance from refactoring to mtl.
 
 # Laziness
 * [More points for lazy evaluation](http://augustss.blogspot.co.uk/2011/05/more-points-for-lazy-evaluation-in.html)
