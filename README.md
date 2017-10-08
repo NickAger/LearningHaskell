@@ -51,15 +51,6 @@ Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outs
 * [George Wilson - The Extended Functor Family](https://www.youtube.com/watch?v=JZPXzJ5tp9w)
 
 
-# Laziness
-* [More points for lazy evaluation](http://augustss.blogspot.co.uk/2011/05/more-points-for-lazy-evaluation-in.html)
-* https://www.reddit.com/r/haskell/comments/5xge0v/today_i_used_laziness_for/
-* http://stackoverflow.com/questions/23893320/why-isnt-this-recursive-function-being-optimized-haskell/23893575#23893575
-> Philip Walder:
-> With distribution becoming so important, we need to focus on programs that run on multiple machines, sending values from one to the other. When you send a value, you probably want it to be the value itself (eager evaluation), rather than a program (and the values of all the free variables of the program) that can be evaluated to yield the value. So, in the distributed world, I think it would be better to be eager by default but make it easy to be lazy when you want. 
-
-> lazy in the spine, strict in the leaves.
-
 # Category theory
 * [Category Theory for the Working Hacker by Philip Wadler](https://www.youtube.com/watch?v=V10hzjgoklA)
 * [Dr Eugenia Cheng Category Theory videos](https://www.youtube.com/watch?v=yeQcmxM2e5I&list=PLlGXNwjYhXYxKVa67r0pKuYufECy713bv)
