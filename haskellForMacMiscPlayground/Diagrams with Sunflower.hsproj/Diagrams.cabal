@@ -9,10 +9,10 @@ description:
     This project demonstrates the use of the Rasterific, Diagrams, and Chart libraries in Haskell for Mac’s interactive playgrounds. Most of the code is taken from samples of the respective packages.
 category: Sample project
 data-files:
-    SourceSansPro_R.svg
     SourceSansPro_RB.svg
-x-ghc-framework-version: 7.10.3-5.9-2
-x-last-ide-version: HfM1.2.1
+    SourceSansPro_R.svg
+x-ghc-framework-version: 8.0.2-8.9-3
+x-last-ide-version: HfM1.5.1
 Executable Diagrams
   main-is: Diagrams.hs
   buildable: True
@@ -30,6 +30,6 @@ Executable Diagrams
       diagrams-lib -any
   other-modules:
       BrewerSet
-      ExampleStocks
       Chart
       Rasterific
+      ExampleStocks

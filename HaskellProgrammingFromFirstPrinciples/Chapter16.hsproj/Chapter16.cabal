@@ -4,8 +4,8 @@ cabal-version: 1.11
 build-type: Simple
 license: AllRightsReserved
 stability: experimental
-x-ghc-framework-version: 7.10.3-5.9-2
-x-last-ide-version: HfM1.2.1
+x-ghc-framework-version: 8.0.2-8.9-3
+x-last-ide-version: HfM1.5.1
 Executable Chapter16
   main-is: Chapter16.hs
   buildable: True
@@ -14,12 +14,12 @@ Executable Chapter16
       QuickCheck -any,
       HUnit -any
   other-modules:
-      Exercises2
-      InstancesOfFunctorExercises
-      Either
-      Possibility
-      ReplacementExperiment
-      FunctorLaws
+      Exercises
       ExercisesHeavyLifting
       Experiments
-      Exercises
+      InstancesOfFunctorExercises
+      Either
+      Exercises2
+      FunctorLaws
+      Possibility
+      ReplacementExperiment
