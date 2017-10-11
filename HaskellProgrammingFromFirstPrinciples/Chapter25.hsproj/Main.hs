@@ -51,27 +51,33 @@ Xion___: (note how both of these are just (a -> b) -> a -> b (i.e. regular ($)) 
 Xion___: )
 -} 
 
-instance (Applicative f, Applicative g) => Applicative (Compose f g) where
-  pure :: a -> Compose f g a
-  pure = Compose . pure . pure
-  
-  (<*>) :: Compose f g (a -> b) -> Compose f g a -> Compose f g b
-  (Compose fgatob) <*> (Compose fga) = Compose $ liftA2 (<*>) fgatob fga
+-- here what I came up with, but I don't really understand it:
+--instance (Applicative f, Applicative g) => Applicative (Compose f g) where
+--  pure :: a -> Compose f g a
+--  pure = Compose . pure . pure
+--  
+--  (<*>) :: Compose f g (a -> b) -> Compose f g a -> Compose f g b
+--  (Compose fgatob) <*> (Compose fga) = Compose $ liftA2 (<*>) fgatob fga
   
 
 -- Looking at Martin's solution - https://github.com/martinrist/haskell-sandbox/blob/master/app/programmingHaskell/chapter25/notes.md
+-- Makes a bit more sense.
+-- pure (pure a)
+--  |     |
+--  |      - pure from Applicative g
+--  ---pure from Applicative f
 
---instance (Applicative f, Applicative g) =>
---         Applicative (Compose f g) where
---
---    pure :: a -> Compose f g a
---    pure a = Compose $ pure (pure a)
---
---    (<*>) :: Compose f g (a -> b)
---          -> Compose f g a
---          -> Compose f g b
---    (Compose fgab) <*> (Compose fga) =
---        Compose $ (<*>) <$> fgab <*> fga
+instance (Applicative f, Applicative g) =>
+         Applicative (Compose f g) where
+
+    pure :: a -> Compose f g a
+    pure a = Compose $ pure (pure a)
+
+    (<*>) :: Compose f g (a -> b)
+          -> Compose f g a
+          -> Compose f g b
+    (Compose fgab) <*> (Compose fga) =
+        Compose $ (<*>) <$> fgab <*> fga
         
 -- Compose Foldable
 instance (Foldable f, Foldable g) => Foldable (Compose f g) where
