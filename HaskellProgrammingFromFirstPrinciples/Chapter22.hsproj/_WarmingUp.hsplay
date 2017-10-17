@@ -16,3 +16,5 @@ tupledBind "Julie"
 
 tupledDo "Monad confusion"
 
+let foo = do x <- id; y <- id; return (x,y) in foo "bar"
+

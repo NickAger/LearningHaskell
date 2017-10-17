@@ -1,6 +1,22 @@
 -- Haskell Playground 1.0
+import Control.Monad
+
 -- from this:
 fmap (+1) (Just 1)
 
 -- to this:
 (,,) <$> Just 1 <*> Just "lol" <*> Just [1, 2]
+
+:t (>>=)
+
+
+testIdentity a = Identity (show a)
+
+
+Identity 3 >>= Identity
+Identity 3 >>= testIdentity
+
+let test = show . (+1)
+test 5
+
+join (Just (Just 1))

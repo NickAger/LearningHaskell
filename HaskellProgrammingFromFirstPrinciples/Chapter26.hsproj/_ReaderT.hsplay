@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+:t const
+:t flip . const
+:t flip

@@ -1,21 +1,18 @@
-name: Chapter22
+name: Chapter26
 version: 1.0
-cabal-version: 1.11
+cabal-version: 1.22
 build-type: Simple
 license: AllRightsReserved
 stability: experimental
 x-ghc-framework-version: 8.0.2-8.9-3
 x-last-ide-version: HfM1.5.1
-Executable Chapter22
-  main-is: Chapter22.hs
+Executable Chapter26
+  main-is: Main.hs
   buildable: True
   build-depends:
       base -any
+  default-language: Haskell2010
   other-modules:
-      ANewBeginning
-      FunctionApplicative
-      TypedHoles
-      ReaderPractice
-      MonadOfFunctions
-      WarmingUp
-      Ask
+      EitherT
+      StateT
+      ReaderT
