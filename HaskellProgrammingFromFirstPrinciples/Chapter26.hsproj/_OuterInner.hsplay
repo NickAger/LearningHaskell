@@ -1,0 +1,6 @@
+-- Haskell Playground 1.0
+readerUnwrap ()
+-- why is Right (Just 1) the result?
+
+-- we get the same result here:
+(const . Right . Just $ 1) ()
