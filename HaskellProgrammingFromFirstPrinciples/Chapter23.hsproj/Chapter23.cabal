@@ -4,23 +4,28 @@ cabal-version: 1.11
 build-type: Simple
 license: AllRightsReserved
 stability: experimental
-x-ghc-framework-version: 7.10.3-5.9-2
-x-last-ide-version: HfM1.2.1
+x-ghc-framework-version: 8.0.2-8.9-3
+x-last-ide-version: HfM1.5.1
 Executable Chapter23
   main-is: Chapter23.hs
   buildable: True
   build-depends:
-      base -any,
+      hedis -any,
       random -any,
+      text -any,
+      scotty -any,
+      transformers -any,
+      base -any,
+      network-uri -any,
       dlist -any,
-      transformers -any
+      bytestring -any
   other-modules:
-      MoiState
-      FizzBuzz3
-      FromToExperiments
-      RandomExample2
-      RandomExample
-      FizzBuzzDifferently
       FizzBuzz2
       Exercises
+      FromToExperiments
       FizzBuzz
+      FizzBuzz3
+      MoiState
+      RandomExample
+      FizzBuzzDifferently
+      RandomExample2
