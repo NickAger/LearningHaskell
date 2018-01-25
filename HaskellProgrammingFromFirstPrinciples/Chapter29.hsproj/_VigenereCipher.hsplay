@@ -1,0 +1,10 @@
+-- Haskell Playground 1.0
+concat (repeat "ALLY")
+cycle "ALLY"
+
+map toUpper "hello"
+
+
+vigenèreCipher (Seed "ALLY") (Message "MEET AT DAWN")
+
+

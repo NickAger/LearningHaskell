@@ -2,3 +2,4 @@
 normalMVar
 mVarUnsafeIO
 
+--deadlock

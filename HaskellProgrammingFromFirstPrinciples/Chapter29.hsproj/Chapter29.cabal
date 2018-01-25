@@ -14,5 +14,7 @@ Executable Chapter29
       random -any,
       time -any
   other-modules:
-      NestedIO
       WhatHappens
+      VigenereCipher
+      NestedIO
+      ToShareOrNotToShare

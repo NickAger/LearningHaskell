@@ -31,3 +31,7 @@ mVarUnsafeIO = do
   putMVar myDataUnsafeIO 0
   zero <- takeMVar myDataUnsafeIO
   print zero
+  
+main :: IO ()
+main = 
+  deadlock
