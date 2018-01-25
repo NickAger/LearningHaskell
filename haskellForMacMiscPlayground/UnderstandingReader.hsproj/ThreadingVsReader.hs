@@ -26,5 +26,10 @@ g = undefined
 
 -- ALSO
 
+-- https://blog.jle.im/entry/inside-my-world-ode-to-functor-and-monad
+-- http://adit.io/posts/2013-06-10-three-useful-monads.html#the-reader-monad
+-- https://gist.github.com/egonSchiele/5752172
+-- https://stackoverflow.com/questions/14178889/what-is-the-purpose-of-the-reader-monad/14206724#14206724
+-- https://stackoverflow.com/questions/3451546/help-with-reader-monad
 -- https://stackoverflow.com/questions/14178889/what-is-the-purpose-of-the-reader-monad
 
