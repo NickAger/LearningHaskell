@@ -1,0 +1,18 @@
+-- Haskell Playground 1.0
+-- main
+
+--main
+--benchmarking index list 9999
+--time                 31.72 μs   (30.96 μs .. 32.33 μs)
+--                     0.996 R²   (0.994 R² .. 0.997 R²)
+--mean                 31.89 μs   (31.13 μs .. 32.66 μs)
+--std dev              2.768 μs   (2.193 μs .. 3.593 μs)
+--variance introduced by outliers: 80% (severely inflated)
+--
+--benchmarking index list maybe index 9999
+--time                 10.15 ms   (10.11 ms .. 10.22 ms)
+--                     1.000 R²   (0.999 R² .. 1.000 R²)
+--mean                 10.22 ms   (10.18 ms .. 10.29 ms)
+--std dev              140.1 μs   (78.45 μs .. 235.5 μs)
+
+:t bench
