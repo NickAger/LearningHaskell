@@ -1,0 +1,29 @@
+-- Haskell Playground 1.0
+-- Nonstrictness
+
+let wc x z =
+        let y = 
+                undefined `seq` 'y' in x
+                
+foldr wc 'z' ['a' .. 'e']
+foldr (flip wc) 'z' ['a' .. 'e']
+
+-- above: never evaluated _y_ so we never forced bottom
+
+let bot = undefined
+let wc' x z =
+        let y = 
+                bot `seq` 'y' 
+        in y `seq` x
+        
+
+foldr wc' 'z' ['a' .. 'e']
+foldr (flip wc') 'z' ['a' .. 'e']
+
+let dc = (,) undefined undefined
+let noDc = undefined
+let lam = \_ -> undefined
+dc `seq` 1
+noDc `seq` 1
+lam `seq` 1
+
