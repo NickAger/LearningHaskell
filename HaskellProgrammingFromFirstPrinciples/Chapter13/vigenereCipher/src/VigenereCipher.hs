@@ -29,3 +29,28 @@ vigenèreCipher seed s =
     insertSpaces :: [Int] -> String -> String
     insertSpaces spaces s = foldr (\n acc -> let (fst, snd) = splitAt n acc in fst ++ (' ':snd)) s $ reverse spaces
     
+newtype Seed = Seed String
+newtype Message = Message String
+newtype EncodedMessage = EncodedMessage String deriving Show
+
+vigenèreCipher2 :: Seed -> Message -> EncodedMessage
+vigenèreCipher2 (Seed seed) (Message message) = 
+    let
+        repeatingSeed = cycle $ map toUpper seed
+        (encodedMessage, _) = foldl processCharacter ("", repeatingSeed) message 
+    in
+        (EncodedMessage encodedMessage)
+    where
+        applyCipherToChar :: Char -> Int -> Char
+        applyCipherToChar c s = chr (ord 'A' + ((ord . toUpper $ c) - ord 'A' + s) `mod` 26)
+        
+        processCharacter :: (String, String) -> Char -> (String, String)
+        processCharacter (encodeMsg, repeatingSeed@(s:sx)) c  =
+            let 
+                cipherInt = (ord s) - (ord 'A')
+                (encoded, remainingSeed) = if (c == ' ') 
+                    then (encodeMsg ++ " ", repeatingSeed) 
+                    else (encodeMsg ++ [applyCipherToChar c cipherInt], sx)
+            in
+                (encoded, remainingSeed)
+      
