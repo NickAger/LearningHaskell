@@ -1,0 +1,6 @@
+-- Haskell Playground 1.0
+runDisc 0
+runDisc 1
+runDisc 2
+
+:i Typeable
