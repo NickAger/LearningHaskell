@@ -1,0 +1,40 @@
+-- Haskell Playground 1.0
+import Data.List
+
+let x = Add
+putStrLn $ show x
+let x n = [n | n > 0]
+x (-1)
+x 0
+x 4
+
+valid Sub 2 3
+valid Sub 3 2
+
+
+
+show (App Add (Val 1) (App Mul (Val 2) (Val 3)))
+
+values (App Add (Val 1) (App Mul (Val 2) (Val 3)))
+
+eval (App Add (Val 1) (App Mul (Val 2) (Val 3)))
+
+
+
+let s1 = subs [1,2,3]
+let s2 = subsequences [1,2,3]
+s1
+s2
+length $ s1
+length $ s2
+
+and $ map (\s -> elem s s2) s1 
+
+perms [1,2,3]
+
+split [1,2,3,4]
+exprs [1,2,3]
+
+
+
+-- solutions' [1,3,7,10,25,50] 765
