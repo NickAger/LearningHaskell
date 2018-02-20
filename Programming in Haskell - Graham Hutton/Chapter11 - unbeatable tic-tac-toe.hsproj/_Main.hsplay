@@ -1,0 +1,19 @@
+-- Haskell Playground 1.0
+transpose [[1,2,3], [4,5,6]]
+let h = [replicate ((12) -1) '-']
+h
+
+concat [[1,2,3], [4,5,6]]
+
+diag [[O,B,O], [X,B,X], [B,O,X]]
+
+replicate 3 "|"
+
+interleave 'a' "hello"
+
+intersperse 'a' "hello"
+
+-- main
+
+prune 2 (gametree empty O)
+
