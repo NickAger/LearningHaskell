@@ -1,0 +1,23 @@
+-- Haskell Playground 1.0
+let (tree, crumbs) = (freeTree, []) |> goRight |> goLeft
+
+print tree
+mapM_ print crumbs
+
+
+-- (Node 'W' (Node 'C' Empty Empty) (Node 'R' Empty Empty),[L,R]) 
+
+let zipper = (exprTree, []) |> goRight |> goLeft
+let (tree1, crumbs1) = zipper
+
+print tree1
+mapM_ print crumbs1
+
+let zipperUp = goUp zipper
+let (tree2, crumbs2) = zipperUp
+
+print tree2
+mapM_ print crumbs2
+
+let zipper2 = (exprTree2, []) |> goLeft |> goLeft
+print zipper2
