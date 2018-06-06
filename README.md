@@ -29,6 +29,7 @@ See also [associated wiki](https://github.com/NickAger/LearningHaskell/wiki)
 * [Monads and all that  - John Hughes](https://www.youtube.com/watch?v=w_KY2I34-f8) - excellent series of lectures.
 * [MagicHaskeller](http://nautilus.cs.miyazaki-u.ac.jp/~skata/MagicHaskeller.html) - specify parameters and output and it will find the function composition for you eg: `f "hello" == "HELLO"` -> `f = map toUpper`
 * [Haskell CheatSheet PDF](http://cheatsheet.codeslower.com/CheatSheet.pdf)
+* [Practical Haskell and Purescript examples](https://lettier.github.io) eg [Making a movie monad)[https://lettier.github.io/posts/2016-08-15-making-movie-monad.html]
 * [Functors, Applicatives and Monads in pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 * [You Could Have Invented Monads! (And Maybe You Already Have.)](http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html)
 * [Open-source Haskell projects](https://github.com/bitemyapp/learnhaskell/blob/master/code_to_learn_from.md) - "Code to learn from"
