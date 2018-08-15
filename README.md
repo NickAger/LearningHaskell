@@ -55,3 +55,4 @@ See also [associated wiki](https://github.com/NickAger/LearningHaskell/wiki)
 * [FP Complete A Haskell Study Syllabus](https://www.fpcomplete.com/haskell-syllabus)
 * [A Guide to GHC's Extensions](https://limperg.de/ghc-extensions/)
 * [unliftio](https://www.fpcomplete.com/blog/2017/07/announcing-new-unliftio-library)
+* [Haskell Web Skills](https://mmhaskell.com/haskell-web/) - "our Haskell Web Skills series, we'll take you through a whole slew of libraries that allow you to write a web backend"
