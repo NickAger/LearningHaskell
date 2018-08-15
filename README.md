@@ -48,4 +48,6 @@ See also [associated wiki](https://github.com/NickAger/LearningHaskell/wiki)
 * [Haskell 'sequence' Over Functions - Explained](http://derekwyatt.org/2012/01/25/haskell-sequence-over-functions-explained/)
 * [The Interpreter Pattern Revisited](https://www.youtube.com/watch?v=hmX2s3pe_qk) idea of algebraic types as simple languages "The Interpreter Pattern is the only pattern from the GOF book worth considering"
 * [Rust as a gateway drug to Haskell](https://news.ycombinator.com/item?id=14550606) - article contains lots of interesting comparisons between Haskell and Rust and the Hacker News comments have lots of interesting links to Haskell background and extensions.
-* [MonadIO Considered Harmful](https://chrispenner.ca/posts/monadio-considered-harmful) - defining class instances to specify exactly what IO operations are performed
+* [MonadIO Considered Harmful](https://chrispenner.ca/posts/monadio-considered-harmful) - defining class instances to specify exactly what IO operations are performed - interesting [discussion on redit](https://www.reddit.com/r/haskell/comments/703a55/monadio_considered_harmful/)
+* [Rank 'n Classy Limited Effects](http://www.parsonsmatt.org/2016/07/14/rank_n_classy_limited_effects.html)- similar to the above but going further.
+* [An opinionated guide to Haskell in 2018](https://lexi-lambda.github.io/blog/2018/02/10/an-opinionated-guide-to-haskell-in-2018/) - useful tips about running haddock and hoogle locally
