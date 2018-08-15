@@ -48,3 +48,4 @@ See also [associated wiki](https://github.com/NickAger/LearningHaskell/wiki)
 * [Haskell 'sequence' Over Functions - Explained](http://derekwyatt.org/2012/01/25/haskell-sequence-over-functions-explained/)
 * [The Interpreter Pattern Revisited](https://www.youtube.com/watch?v=hmX2s3pe_qk) idea of algebraic types as simple languages "The Interpreter Pattern is the only pattern from the GOF book worth considering"
 * [Rust as a gateway drug to Haskell](https://news.ycombinator.com/item?id=14550606) - article contains lots of interesting comparisons between Haskell and Rust and the Hacker News comments have lots of interesting links to Haskell background and extensions.
+* [MonadIO Considered Harmful](https://chrispenner.ca/posts/monadio-considered-harmful) - defining class instances to specify exactly what IO operations are performed
