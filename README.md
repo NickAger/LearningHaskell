@@ -51,3 +51,6 @@ See also [associated wiki](https://github.com/NickAger/LearningHaskell/wiki)
 * [MonadIO Considered Harmful](https://chrispenner.ca/posts/monadio-considered-harmful) - defining class instances to specify exactly what IO operations are performed - interesting [discussion on redit](https://www.reddit.com/r/haskell/comments/703a55/monadio_considered_harmful/)
 * [Rank 'n Classy Limited Effects](http://www.parsonsmatt.org/2016/07/14/rank_n_classy_limited_effects.html)- similar to the above but going further.
 * [An opinionated guide to Haskell in 2018](https://lexi-lambda.github.io/blog/2018/02/10/an-opinionated-guide-to-haskell-in-2018/) - useful tips about running haddock and hoogle locally as well as a great summary of extensions. Also [redit discussion](https://www.reddit.com/r/haskell/comments/7wmhyi/an_opinionated_guide_to_haskell_in_2018/)
+* [The ReaderT Design Pattern](https://www.fpcomplete.com/blog/2017/06/readert-design-pattern)
+* [FP Complete A Haskell Study Syllabus](https://www.fpcomplete.com/haskell-syllabus)
+* [A Guide to GHC's Extensions](https://limperg.de/ghc-extensions/)
