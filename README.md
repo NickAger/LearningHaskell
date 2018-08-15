@@ -61,3 +61,4 @@ See also [associated wiki](https://github.com/NickAger/LearningHaskell/wiki)
 * [unliftio](https://www.fpcomplete.com/blog/2017/07/announcing-new-unliftio-library)
 * [Haskell Web Skills](https://mmhaskell.com/haskell-web/) - "our Haskell Web Skills series, we'll take you through a whole slew of libraries that allow you to write a web backend"
 * [Monad transformers, free monads, mtl, laws and a new approach](https://ocharles.org.uk/blog/posts/2016-01-26-transformers-free-monads-mtl-laws.html)
+* [Note to self: reader monad transformer](https://carlo-hamalainen.net/2014/03/05/note-to-self-reader-monad-transformer/)
