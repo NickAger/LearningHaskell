@@ -4,11 +4,12 @@ cabal-version: 1.11
 build-type: Simple
 license: AllRightsReserved
 stability: experimental
-x-ghc-framework-version: 7.10.3-6.29-1
-x-last-ide-version: HfM1.4.0
-Executable Knightstour
-  main-is: Main.hs
-  buildable: True
-  build-depends:
-      base -any,
-      diagrams-lib -any
+x-ghc-framework-version: 8.0.2-9.6-1
+x-last-ide-version: HfM1.6.0
+
+executable Knightstour
+    main-is: Main.hs
+    build-depends:
+        base -any,
+        diagrams-lib -any
+

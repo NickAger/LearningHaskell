@@ -11,25 +11,26 @@ category: Sample project
 data-files:
     SourceSansPro_RB.svg
     SourceSansPro_R.svg
-x-ghc-framework-version: 8.0.2-8.9-3
-x-last-ide-version: HfM1.5.1
-Executable Diagrams
-  main-is: Diagrams.hs
-  buildable: True
-  build-depends:
-      Chart-diagrams -any,
-      SVGFonts -any,
-      Chart -any,
-      diagrams-rasterific -any,
-      time -any,
-      base -any,
-      colour -any,
-      containers -any,
-      JuicyPixels -any,
-      Rasterific -any,
-      diagrams-lib -any
-  other-modules:
-      BrewerSet
-      Chart
-      Rasterific
-      ExampleStocks
+x-ghc-framework-version: 8.0.2-9.6-1
+x-last-ide-version: HfM1.6.0
+
+executable Diagrams
+    main-is: Diagrams.hs
+    build-depends:
+        Chart-diagrams -any,
+        SVGFonts -any,
+        Chart -any,
+        diagrams-rasterific -any,
+        time -any,
+        base -any,
+        colour -any,
+        containers -any,
+        JuicyPixels -any,
+        Rasterific -any,
+        diagrams-lib -any
+    other-modules:
+        BrewerSet
+        Chart
+        Rasterific
+        ExampleStocks
+
