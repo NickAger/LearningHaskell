@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://wiki.haskell.org/wikistatic/haskellwiki_logo.png">
+</p>
+
 # LearningHaskell
 Learning Haskell by studying:
 
