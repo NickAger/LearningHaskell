@@ -11,6 +11,8 @@ import qualified Database.Redis as R
 import Network.URI (URI, parseURI)
 import qualified System.Random as SR
 import Web.Scotty
+import Control.Monad.Trans.Reader
+import Control.Monad.Trans.Class
 
 alphaNum :: String
 alphaNum = ['A'..'Z'] ++ ['0'..'9']
@@ -62,10 +64,11 @@ shortyFound :: TL.Text -> TL.Text
 shortyFound tbs =
   TL.concat ["<a href=\"", tbs, "\">", tbs, "</a>"]
 
-app :: R.Connection
-    -> ScottyM ()
-app rConn = do
-  get "/" $ do
+
+app :: ReaderT R.Connection ScottyM ()
+app = do
+  rConn <- ask
+  lift $ get "/" $ do
     uri <- param "uri"
     let parsedUri :: Maybe URI
         parsedUri = parseURI (TL.unpack uri)
@@ -77,7 +80,7 @@ app rConn = do
         resp <- liftIO (saveURI rConn shorty uri')
         html (shortyCreated resp shawty)
       Nothing -> text (shortyAintUri uri)
-  get "/:short" $ do
+  lift $ get "/:short" $ do
     short <- param "short"
     uri <- liftIO (getURI rConn short)
     case uri of
@@ -91,4 +94,4 @@ app rConn = do
 main :: IO ()
 main = do
   rConn <- R.connect R.defaultConnectInfo
-  scotty 3000 (app rConn)
+  scotty 3000 $ runReaderT app rConn
