@@ -1,0 +1,2 @@
+-- Haskell Playground 1.0
+prettyPrint (Add (I 3) (I 4))

@@ -1,0 +1,14 @@
+-- Haskell Playground 1.0
+{-# LANGUAGE DataKinds #-} 
+{-# LANGUAGE KindSignatures #-} 
+{-# LANGUAGE GADTs #-}
+{-# LANGUAGE TypeFamilies #-} 
+{-# LANGUAGE UndecidableInstances #-}
+data Nat = Zero | Succ Nat
+:k 'Zero
+:k 'Succ
+
+:t Zero
+:t Succ
+
+:k Add (Succ' (Succ' Zero)) (Succ' Zero)

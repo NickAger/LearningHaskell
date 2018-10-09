@@ -1,0 +1,7 @@
+-- Haskell Playground 1.0
+let a = Foo "b" "x"
+-- ^ doesn't work as Foo doesn't have a constructor - its impossible to create a *value* of this type.
+
+:k Zero
+:k Foo
+:k Succ

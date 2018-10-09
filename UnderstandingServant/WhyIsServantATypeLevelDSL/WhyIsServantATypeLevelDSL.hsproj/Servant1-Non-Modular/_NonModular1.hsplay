@@ -1,0 +1,17 @@
+-- Haskell Playground 1.0
+linkTo getHelloNew
+linkTo twoCaptures
+linkTo noCaptures
+
+
+linkWithCapturesTo ["w"] getHelloNew
+linkWithCapturesTo ["w", "z"] twoCaptures
+linkWithCapturesTo [] noCaptures
+
+:t Static
+:t Capture
+:t Verb
+
+:t endpoint1
+:t twoCaptures
+:t oneCapture

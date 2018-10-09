@@ -1,0 +1,27 @@
+-- Haskell Playground 1.0
+:t endpoint1
+:t twoCaptures
+:t oneCapture
+
+
+linkTo endpoint1
+let a = linkTo twoCaptures
+linkTo oneCapture
+
+:t Static "hello"
+
+:t Static "hello" (Verb Get)
+
+Capture (Verb Post)
+Capture (Capture (Verb Post))
+
+:t linkTo twoCaptures 
+
+linkTo twoCaptures  "one" "two"
+
+show Get
+
+
+linkToTrace twoCaptures "one" "two"
+
+:t Capture (Verb Post)
