@@ -24,6 +24,8 @@ dependencies:
 - servant-server
 - warp
 - text
+- stm
+- aeson
 
 default-extensions:
 - DataKinds
