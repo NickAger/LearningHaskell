@@ -1,3 +1,6 @@
+{-# Language DeriveGeneric #-}
+{-# Language DeriveAnyClass #-}
+
 module Lib
     ( someFunc
     , Booking
@@ -6,7 +9,11 @@ module Lib
     , consBooking
     , mkEmptyBookingDB
     , addBooking
+    , getID
     ) where
+
+import qualified GHC.Generics as G
+import qualified Data.Aeson as A
 
 import qualified Data.Text as T
 import Control.Monad (when)
@@ -19,7 +26,10 @@ data Booking = Booking {
     _start :: Int,
     _end :: Int,
     _description :: T.Text
-} deriving Show
+} deriving (Show, G.Generic, A.ToJSON, A.FromJSON)
+
+getID :: Booking -> Int
+getID b = _start b
 
 mkBooking :: Int -> Int -> T.Text -> Either String Booking
 mkBooking s e d = do
