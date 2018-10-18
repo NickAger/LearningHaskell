@@ -14,7 +14,9 @@ The majority of the work is in: [HaskellProgrammingFromFirstPrinciples](https://
 Workspaces made within [Haskell for Mac](http://haskellformac.com) and code outside of [Haskell for Mac](http://haskellformac.com) playgrounds was developed using
 [Atom configured for Haskell](http://achernyak.me/universal-haskell-dev-enviornment) and then laterly using [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Vans.haskero).
 
-See also [associated wiki](https://github.com/NickAger/LearningHaskell/wiki)
+See also:
+* [associated wiki](https://github.com/NickAger/LearningHaskell/wiki)
+* [FP Complete Haskell Study Syllabus](https://www.fpcomplete.com/haskell-syllabus)
 
 ## My Notes
 
