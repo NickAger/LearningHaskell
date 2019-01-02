@@ -1,0 +1,82 @@
+-- Haskell Playground 1.0
+import Control.Monad        -- for `guard`
+import Control.Applicative  -- for `empty`
+
+-- guard           :: (Alternative f) => Bool -> f ()
+-- guard True      =  pure () -- for [] `guard True  = [()]`
+-- guard False     =  empty   -- for [] `guard False = []`
+
+-- Sequentially compose two actions, discarding any value produced
+-- by the first, like sequencing operators (such as the semicolon)
+-- in imperative languages.
+--    (>>)        :: forall a b. m a -> m b -> m b
+--    m >> k = m >>= \_ -> k
+
+-- instance Monad []  where
+--     xs >>= f             = [y | x <- xs, y <- f x]
+
+
+evensGuard 10
+evensGuard2 10
+
+let value = 6
+(guard (even value)) >> [value]
+(guard (even value)) :: [()]
+
+let value2 = 7
+(guard (even value2)) >> [value2]
+(guard (even value2)) :: [()]
+
+:t empty
+
+empty :: [Int]
+
+[] >> [5]
+[()] >> [5]
+
+
+[y | x <- [], y <- (\_ -> [5]) x]
+[y | x <- [()], y <- (\_ -> [5]) x]
+
+[y | x <- [], y <- [5]]
+[y | x <- [()], y <- [5]]
+
+-- I think I understand how `guard` works in this context:
+-- guard True = [()]
+-- guard False = []
+--
+-- [] >> [5]    gives []
+-- [()] >> [5]  gives [5]
+--
+-- but why?
+--
+-- as `>>` is defined as:
+-- m >> k = m >>= \_ -> k
+--
+-- and `>>=` for [] monad is:
+--   xs >>= f   =   [y | x <- xs, y <- f x]
+-- for each case is:
+-- [y | x <- [], y <- (\_ -> [5]) x]     gives []
+-- [y | x <- [()], y <- (\_ -> [5]) x]   gives [5]
+--
+-- simplifing:
+-- [y | x <- [], y <- [5]]  gives []
+-- [y | x <- [()], y <- [5]] gives [5]
+--
+-- see: https://stackoverflow.com/questions/49225530/haskell-list-comprehension-outputs-empty-list-why
+-- List comprehensions express nested loops:
+--
+-- example for `guard False = []` => `[] >> [5]` => `[]`
+-- [y | x <- [], y <- [5]]
+-- == do { x <- [] ; do { y <- [5] ; return (y) } }
+-- == { for each x in []: { for each y in [5]: yield (y) } }
+-- there is no iteration in the outer loop so nothing is returned
+--
+-- example for `guard True = [()]` => `[()] >> [5]` => `[5]`
+-- [y | x <- [()], y <- [5]]
+-- == do { x <- [()] ; do { y <- [5] ; return (y) } }
+-- == { for each x in [()]: { for each y in [5]: yield (y) } }
+-- there is a single iteration so it returns whatever is defined within the inner loop
+
+-- key thing is that `[()]` is a one element list.
+
