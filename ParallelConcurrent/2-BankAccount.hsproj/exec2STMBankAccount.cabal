@@ -1,0 +1,21 @@
+name: exec2STMBankAccount
+version: 1.0
+cabal-version: 1.11
+build-type: Simple
+license: AllRightsReserved
+stability: experimental
+x-ghc-framework-version: 8.0.2-8.9-3
+x-last-ide-version: HfM1.5.1
+Executable exec2STMBankAccount
+  main-is: Account3.hs
+  buildable: True
+  build-depends:
+      base -any,
+      stm -any
+  other-modules:
+      Account7
+      Account6
+      Account0
+      Account1
+      Account4
+      Account5

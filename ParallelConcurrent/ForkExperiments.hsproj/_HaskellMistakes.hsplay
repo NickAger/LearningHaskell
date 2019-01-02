@@ -1,0 +1,5 @@
+-- Haskell Playground 1.0
+fib 4
+
+take 4 fibs
+tail [1,2,3,4]
