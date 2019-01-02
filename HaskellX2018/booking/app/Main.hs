@@ -1,12 +1,14 @@
 module Main where
 
-import Lib
+import           Lib
 
-import qualified Servant as S
-import Servant ( (:>), (:<|>)(..) )
-import qualified Network.Wai.Handler.Warp as W
-import Control.Concurrent.STM as STM
-import Control.Monad.IO.Class (liftIO)
+import qualified Servant                       as S
+import           Servant                                  ( (:>)
+                                                          , (:<|>)(..)
+                                                          )
+import qualified Network.Wai.Handler.Warp      as W
+import           Control.Concurrent.STM        as STM
+import           Control.Monad.IO.Class                   ( liftIO )
 
 main :: IO ()
 main = do
@@ -17,11 +19,18 @@ main = do
 
 app db = S.serve api (server db)
 
-api :: S.Proxy (PingAPI :<|> PongAPI :<|> GetBookingTextAPI :<|> GetBookingAPI :<|> GetSingleBookingAPI :<|> PostBookingAPI)
+api
+    :: S.Proxy
+           (PingAPI :<|> PongAPI :<|> GetBookingTextAPI :<|> GetBookingAPI :<|> GetSingleBookingAPI :<|> PostBookingAPI)
 api = S.Proxy
 
-server db = handlePing :<|> handlePong :<|> (handleBookingsText db) :<|> (handleBookings db) 
-    :<|> (handleGetSingleBooking db) :<|> (handlePost db) 
+server db =
+    handlePing
+        :<|> handlePong
+        :<|> (handleBookingsText db)
+        :<|> (handleBookings db)
+        :<|> (handleGetSingleBooking db)
+        :<|> (handlePost db)
 
 type PingAPI = "ping" :> S.Get '[S.PlainText] String
 type PongAPI = "pong" :> S.Get '[S.PlainText] String
@@ -34,24 +43,23 @@ handlePost :: STM.TVar [Booking] -> Booking -> S.Handler String
 handlePost db booking = do
     res <- liftIO $ addBooking db booking
     case res of
-        Left err -> S.throwError $ S.err500 {S.errReasonPhrase = err }
+        Left  err       -> S.throwError $ S.err500 { S.errReasonPhrase = err }
         Right bookingID -> return (show bookingID)
 
 handleBookingsText db = liftIO $ do
     v <- STM.atomically $ STM.readTVar db
     return (show v)
 
-handleBookings db = liftIO $ do
-    STM.atomically $ STM.readTVar db
+handleBookings db = liftIO $ STM.atomically $ STM.readTVar db
 
 handleGetSingleBooking :: STM.TVar [Booking] -> Int -> S.Handler Booking
 handleGetSingleBooking db booking_id = do
     v <- liftIO $ STM.atomically $ STM.readTVar db
     let booking = filter (\b -> getID b == booking_id) v
     case booking of
-        [] -> S.throwError S.err404
+        []  -> S.throwError S.err404
         [v] -> return v
-        _ -> S.throwError S.err500
+        _   -> S.throwError S.err500
 
 handlePing :: S.Handler String
 handlePing = return "Hello World !!!"
