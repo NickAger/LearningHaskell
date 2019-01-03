@@ -1,0 +1,17 @@
+homepage: https://github.com/nickager/FoldingAndTraversing#readme
+copyright: Rocketbox Ltd
+category: Experiments
+maintainer: nick.ager@gmail.com
+dependencies:
+- base >=4.7 && <5
+- mtl
+name: FoldingAndTraversing
+version: 0.1.0.0
+extra-source-files:
+- README.md
+author: Nick Ager
+license: BSD3
+executables:
+  FoldingAndTraversing:
+    source-dirs: src
+    main: Main.hs
